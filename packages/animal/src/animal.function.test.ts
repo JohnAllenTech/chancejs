@@ -20,4 +20,9 @@ describe("animal", () => {
       AnimalOptionTypeException
     );
   });
+
+    it("accepts a seed", () => {
+    const randomAnimal = animal({seed: 1234567});
+    expect(typeof randomAnimal).toEqual("string");
+  });
 });

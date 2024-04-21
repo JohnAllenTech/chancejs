@@ -17,6 +17,7 @@ export interface AnimalOptions {
    * @default null
    */
   type?: AnimalTypes;
+  seed?: number
 }
 
 export interface AnimalGeneratorFunction {
