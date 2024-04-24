@@ -23,6 +23,8 @@
   "devDependencies": {
     "docpress": "0.7.1",
     "git-update-ghpages": "1.3.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "nyc": "^15.1.0",
     "plop": "^3.1.0",
     "prettier": "3.2.5"
@@ -35,7 +37,8 @@
     "generator:create": "plop --plopfile ./scripts/create-generator/plopfile.js",
     "method:add": "plop --plopfile ./scripts/add-method/plopfile.js",
     "test:all": "yarn test",
-    "build:all": "yarn build"
+    "build:all": "yarn build",
+    "prepare": "husky"
   },
   "keywords": [
     "chance",
@@ -65,6 +68,9 @@
     "css": [
       "docs/chance.css"
     ]
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "packageManager": "yarn@3.2.2"
 }
