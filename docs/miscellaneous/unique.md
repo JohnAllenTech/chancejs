@@ -43,5 +43,3 @@ Note, there could be cases where it is impossible to generate the unique number.
 chance.unique(chance.state, 55);
 => RangeError: Chance: num is likely too large for sample set
 ```
-
-

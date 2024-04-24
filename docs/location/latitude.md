@@ -3,8 +3,8 @@
 ```js
 // usage
 chance.latitude()
-chance.latitude({fixed: 7})
-chance.latitude({format: 'dms'})
+chance.latitude({ fixed: 7 })
+chance.latitude({ format: 'dms' })
 ```
 
 Generate a random latitude.

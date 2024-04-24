@@ -2,8 +2,8 @@
 
 ```js
 // usage
-chance.note();
-chance.note({ notes: 'flatkey' });
+chance.note()
+chance.note({ notes: 'flatkey' })
 ```
 
 Return a note. 🎵

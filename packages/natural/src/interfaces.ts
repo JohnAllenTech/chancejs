@@ -3,24 +3,24 @@ export interface NaturalOptions {
    * The bottom of the range of natural integers to choose from.
    * @default 0
    */
-  min?: number;
+  min?: number
 
   /**
    * The top of the range of natural integers to choose from.
    * @default Number.MAX_SAFE_INTEGER
    */
-  max?: number;
+  max?: number
 
   /**
    * An array of numbers to exclude from the range.
    */
-  exclude?: number[];
+  exclude?: number[]
 
   /**
    * The number of digits of the generated number.
    * NOTE: must be an integer between 1 and 16 inclusive.
    */
-  numerals?: number;
+  numerals?: number
 }
 
 export interface NaturalGeneratorFunction {
@@ -41,9 +41,9 @@ export interface NaturalGeneratorFunction {
    * // returns a number between 10 and 99 inclusive.
    * chance.natural({ numerals: 2 });
    */
-  (options?: NaturalOptions, seed?: number): number;
+  (options?: NaturalOptions, seed?: number): number
 }
 
 export interface INaturalGenerator {
-  natural: NaturalGeneratorFunction;
+  natural: NaturalGeneratorFunction
 }

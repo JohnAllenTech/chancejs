@@ -3,7 +3,7 @@
 ```js
 // usage
 chance.cc()
-chance.cc({type: 'Mastercard'})
+chance.cc({ type: 'Mastercard' })
 ```
 
 <p class="pullquote" data-pullquote='Somewhat obvious warning: Do not use this to hit live payment gateways...' markdown="1"></p>
@@ -29,7 +29,6 @@ The type can be specified by the long name, or by the short name:
 chance.cc({type: 'mc'});
 => '5103820202214116'
 ```
-
 
 The [types][types] are enumerated below.
 

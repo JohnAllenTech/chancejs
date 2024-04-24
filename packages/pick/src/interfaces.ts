@@ -10,7 +10,7 @@ export interface IPickOne {
    * // returns either 1, 2, or 3.
    * pickOne([1, 2, 3]);
    */
-  <T>(array: T[], seed?: number): T;
+  <T>(array: T[], seed?: number): T
 }
 
 export interface IPickSet {
@@ -26,10 +26,10 @@ export interface IPickSet {
    * // returns either [1, 2], [2, 3], [1, 3], [2, 1], [3, 2], or [3, 1].
    * pickSet([1, 2, 3], 2);
    */
-  <T>(array: T[], count: number, seed?: number): T[];
+  <T>(array: T[], count: number, seed?: number): T[]
 }
 
 export interface IPicker {
-  pickOne: IPickOne;
-  pickSet: IPickSet;
+  pickOne: IPickOne
+  pickSet: IPickSet
 }

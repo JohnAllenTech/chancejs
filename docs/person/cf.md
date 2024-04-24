@@ -4,6 +4,7 @@
 // usage
 chance.cf()
 ```
+
 Generate a random Italian social security number (Codice Fiscale).
 
 ```js

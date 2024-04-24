@@ -13,7 +13,6 @@ then in the HTML of your app:
 <script type="text/javascript" src="bower_components/chance/chance.js"></script>
 <script>
   // Use Chance
-  alert(chance.string());
+  alert(chance.string())
 </script>
 ```
-

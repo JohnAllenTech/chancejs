@@ -3,12 +3,12 @@ export interface HexOptions {
    * The numeric value of the generator range minimum (inclusive).
    * @default 0
    */
-  min?: number;
+  min?: number
   /**
    * The numeric value of the generator range maximum (inclusive).
    * @default Number.MAX_SAFE_INTEGER
    */
-  max?: number;
+  max?: number
   /**
    * The casing of the alphabetic characters in the hex string returned.
    * @default 'lower'
@@ -19,7 +19,7 @@ export interface HexOptions {
    * // returns 'A'
    * hex({ min: 10, max: 10, casing: 'upper' })
    */
-  casing?: "upper" | "lower";
+  casing?: 'upper' | 'lower'
 }
 
 export interface HexGeneratorFunction {
@@ -35,9 +35,9 @@ export interface HexGeneratorFunction {
    * // returns either '9', 'a' or 'b'.
    * chance.hex({min: 9, max: 11});
    */
-  (options?: HexOptions, seed?: number): string;
+  (options?: HexOptions, seed?: number): string
 }
 
 export interface IHexGenerator {
-  hex: HexGeneratorFunction;
+  hex: HexGeneratorFunction
 }

@@ -1,27 +1,27 @@
-import { times } from "@chancejs/generator";
-import Chance from "..";
+import { times } from '@chancejs/generator'
+import Chance from '..'
 
-describe("letter method", () => {
-  let chance: Chance;
+describe('letter method', () => {
+  let chance: Chance
   beforeEach(() => {
-    chance = new Chance();
-  });
+    chance = new Chance()
+  })
 
-  it("returns a letter", () => {
+  it('returns a letter', () => {
     times(1000, () => {
-      const letter = chance.letter();
-      expect(typeof letter).toBe("string");
-      expect(letter.length).toBe(1);
-      expect(letter).toMatch(/[a-z]/);
-    });
-  });
+      const letter = chance.letter()
+      expect(typeof letter).toBe('string')
+      expect(letter.length).toBe(1)
+      expect(letter).toMatch(/[a-z]/)
+    })
+  })
 
-  it("can take upper case", () => {
+  it('can take upper case', () => {
     times(1000, () => {
-      const letter = chance.letter({ casing: "upper" });
-      expect(typeof letter).toBe("string");
-      expect(letter.length).toBe(1);
-      expect(letter).toMatch(/[A-Z]/);
-    });
-  });
-});
+      const letter = chance.letter({ casing: 'upper' })
+      expect(typeof letter).toBe('string')
+      expect(letter.length).toBe(1)
+      expect(letter).toMatch(/[A-Z]/)
+    })
+  })
+})

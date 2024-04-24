@@ -3,7 +3,7 @@
 ```js
 // usage
 chance.guid()
-chance.guid({version: 5})
+chance.guid({ version: 5 })
 ```
 
 Return a random guid, version 5 by default.

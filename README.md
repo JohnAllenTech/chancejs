@@ -16,26 +16,28 @@ It includes the basic building blocks for all these items and is built on top
 of a Mersenne Twister so it can generate these things with repeatability, if
 desired.
 
-## Usage 
+## Usage
 
 See the [full docs](https://chancejs.com) for details on installation and usage.
 
 ## Dependent tools
 
-* [Chance CLI](https://github.com/chancejs/chance-cli) - Use Chance on the command line.
-* [Chance Token Replacer](https://github.com/drewbrokke/chance-token-replacer) - Replace tokens in a string with Chance generated items.
-* [Dream.js](https://github.com/adleroliveira/dreamjs) - Lightweight json data generator
-* [Fake JSON Schema](https://github.com/pateketrueke/json-schema-faker/) - Use chance generators to populate JSON Schema samples.
-* [Mocker Data Generator](https://github.com/danibram/mocker-data-generator/) - Minimal JSON data generator.
-* [swagger-mock-api](https://github.com/dzdrazil/swagger-mock-api/) - Generate API mocks from a Swagger spec file enriched with Chance types and constraints
-* [fony](https://github.com/captainsafia/fony) - A simple command line tool for generating fake data from a template string
+- [Chance CLI](https://github.com/chancejs/chance-cli) - Use Chance on the command line.
+- [Chance Token Replacer](https://github.com/drewbrokke/chance-token-replacer) - Replace tokens in a string with Chance generated items.
+- [Dream.js](https://github.com/adleroliveira/dreamjs) - Lightweight json data generator
+- [Fake JSON Schema](https://github.com/pateketrueke/json-schema-faker/) - Use chance generators to populate JSON Schema samples.
+- [Mocker Data Generator](https://github.com/danibram/mocker-data-generator/) - Minimal JSON data generator.
+- [swagger-mock-api](https://github.com/dzdrazil/swagger-mock-api/) - Generate API mocks from a Swagger spec file enriched with Chance types and constraints
+- [fony](https://github.com/captainsafia/fony) - A simple command line tool for generating fake data from a template string
 
 Or [view all of the dependents on npm](https://www.npmjs.com/package/chance)
 
-*Know a library that uses Chance that isn't here? Update the README and submit a PR!*
+_Know a library that uses Chance that isn't here? Update the README and submit a PR!_
 
 ## Author
+
 ### Victor Quinn
+
 [https://www.victorquinn.com](https://www.victorquinn.com)
 [@victorquinn](https://twitter.com/victorquinn)
 
@@ -45,7 +47,7 @@ Please feel free to reach out to me if you have any questions or suggestions.
 
 THANK YOU!
 
-### Contribute! 
+### Contribute!
 
 Be a part of this project! You can run the test using the following.
 
@@ -57,10 +59,8 @@ This project is licensed under the [MIT License](http://en.wikipedia.org/wiki/MI
 
 ### Run Tests
 
-Run tests for all packages with ```npm run test:all ```
+Run tests for all packages with `npm run test:all `
 
-Run test for individual package with ```yarn workspace @chancejs/${PACKAGE_TO_TEST} test``` ie ```yarn workspace @chancejs/letter test```
-
+Run test for individual package with `yarn workspace @chancejs/${PACKAGE_TO_TEST} test` ie `yarn workspace @chancejs/letter test`
 
 Proudly written in Washington, D.C.
-

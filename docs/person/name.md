@@ -23,7 +23,6 @@ Optionally include the middle name
   => 'Nelgatwu Powuku Heup'
 ```
 
-
 Optionally include the middle initial
 
 ```js
@@ -60,4 +59,3 @@ Optionally specify a nationality
 ```
 
 Note, currently support for nationality is limited to: `'en', 'it'`.
-

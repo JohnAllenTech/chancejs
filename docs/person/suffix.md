@@ -22,4 +22,4 @@ chance.suffix({ full: true });
 => 'Juris Doctor'
 ```
 
-*To maintain legacy support, this also responds to chance.name_suffix().*
+_To maintain legacy support, this also responds to chance.name_suffix()._

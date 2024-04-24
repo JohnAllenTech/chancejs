@@ -1,5 +1,5 @@
-export const FALSY_VALUES = [false, null, 0, NaN, "", undefined] as const;
-export type Falsy = typeof FALSY_VALUES[number];
+export const FALSY_VALUES = [false, null, 0, NaN, '', undefined] as const
+export type Falsy = (typeof FALSY_VALUES)[number]
 
 export interface FalsyOptions {
   /**
@@ -8,7 +8,7 @@ export interface FalsyOptions {
    * // returns either null or false
    * falsy({ pool: [null, false] })
    */
-  pool: Falsy[];
+  pool: Falsy[]
 }
 
 export interface FalsyGeneratorFunction {
@@ -22,9 +22,9 @@ export interface FalsyGeneratorFunction {
    * // returns Falsy
    * falsy()
    */
-  (options?: FalsyOptions, seed?: number): Falsy;
+  (options?: FalsyOptions, seed?: number): Falsy
 }
 
 export interface IFalsyGenerator {
-  falsy: FalsyGeneratorFunction;
+  falsy: FalsyGeneratorFunction
 }

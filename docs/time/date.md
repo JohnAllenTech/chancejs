@@ -3,9 +3,9 @@
 ```js
 // usage
 chance.date()
-chance.date({string: true})
-chance.date({string: true, american: false})
-chance.date({year: 1983})
+chance.date({ string: true })
+chance.date({ string: true, american: false })
+chance.date({ year: 1983 })
 ```
 
 Generate a random date

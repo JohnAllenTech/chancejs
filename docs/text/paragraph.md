@@ -34,6 +34,3 @@ Optionally specify if each sentence in the paragraph should start a new line.
       Veza ermethit osgues dohjeci pezlal su ibi cib zerezci bode ca hopmub gigwosut culhoca nubu.
      `
 ```
-
-
-

@@ -3,7 +3,7 @@
 ```js
 // usage
 chance.profession()
-chance.profession({rank: true})
+chance.profession({ rank: true })
 ```
 
 Return a random profession. Rank is false by default.

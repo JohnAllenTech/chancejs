@@ -6,7 +6,7 @@ export interface CharacterOptions {
    * // returns one of "a", "b", or "c"
    * // character({ pool: "abc" })
    */
-  pool?: string;
+  pool?: string
 
   /**
    * Sets the selection pool to either lower case or upper case alphabetic characters.
@@ -19,7 +19,7 @@ export interface CharacterOptions {
    * // character({ casing: "upper" })
    *
    */
-  casing?: "upper" | "lower";
+  casing?: 'upper' | 'lower'
 
   /**
    * Adds alphabetic characters (upper and lower case) to the selection pool.
@@ -28,7 +28,7 @@ export interface CharacterOptions {
    * // returns one of "a", "A", "b", "B", "c", "C", ..., "z", "Z"
    * // character({ alpha: true })
    */
-  alpha?: boolean;
+  alpha?: boolean
 
   /**
    * Adds numbers to the selection pool.
@@ -37,7 +37,7 @@ export interface CharacterOptions {
    * // returns one of "0", "1", "2", ..., "9"
    * // character({ numeric: true })
    */
-  numeric?: boolean;
+  numeric?: boolean
 
   /**
    * Adds symbols to the selection pool.
@@ -46,7 +46,7 @@ export interface CharacterOptions {
    * // returns one of "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "[", or "]"
    * // character({ symbols: true })
    */
-  symbols?: boolean;
+  symbols?: boolean
 }
 
 export interface CharacterGeneratorFunction {
@@ -64,9 +64,9 @@ export interface CharacterGeneratorFunction {
    * // returns a random alphnumeric character
    * character({ alpha: true, numeric: true })
    */
-  (options?: CharacterOptions, seed?: number): string;
+  (options?: CharacterOptions, seed?: number): string
 }
 
 export interface ICharacterGenerator {
-  character: CharacterGeneratorFunction;
+  character: CharacterGeneratorFunction
 }

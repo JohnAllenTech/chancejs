@@ -3,8 +3,9 @@
 ```js
 // usages
 chance.falsy()
-chance.falsy({ pool: [ NaN, undefined ] })
+chance.falsy({ pool: [NaN, undefined] })
 ```
+
 Return a random falsy value (`false`, `null`, `undefined`, `0`, `NaN`, `''`).
 
 ```js
@@ -18,5 +19,3 @@ The default pool can be changed to better meet the needs:
 chance.falsy({ pool: [ NaN, undefined ] });
 => NaN
 ```
-
-

@@ -3,7 +3,7 @@
 ```js
 // usage
 chance.n(chance.email, 5)
-chance.n(chance.email, 5, { domain: "socialradar.com" })
+chance.n(chance.email, 5, { domain: 'socialradar.com' })
 ```
 
 Provide any function that generates random stuff (usually another **Chance** function) and a number and `n()` will generate an array of items with a length matching the length you specified.

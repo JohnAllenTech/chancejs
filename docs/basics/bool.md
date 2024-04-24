@@ -4,12 +4,12 @@
 
 ```ts
 // tree-shakeable import
-import { bool } from "chance";
+import { bool } from 'chance'
 
 // returns either `true` or `false` with a 50/50 likelihood
-bool();
+bool()
 // returns either `true` or `false` with a 30/70 likelihood
-bool({ likelihood: 30 });
+bool({ likelihood: 30 })
 ```
 
 Return a random boolean value (`true` or `false`).
@@ -36,12 +36,12 @@ This approach avoids instantiating a new PRNG instance on every function call.
 
 ```ts
 // import the Chance class
-import { Chance } from "chance";
+import { Chance } from 'chance'
 
-const chance = new Chance("my-random-seed");
+const chance = new Chance('my-random-seed')
 
 // returns either `true` or `false` with a 50/50 likelihood
-chance.bool();
+chance.bool()
 // returns either `true` or `false` with a 30/70 likelihood
-chance.bool({ likelihood: 30 });
+chance.bool({ likelihood: 30 })
 ```

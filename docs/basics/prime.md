@@ -22,9 +22,8 @@ chance.prime({min: 1, max: 20});
 => 13
 ```
 
-
 These are inclusive, so they are included in the range. This means
-```chance.prime({min: 2, max: 5});``` would return either 2, 3, or 5 or:
+`chance.prime({min: 2, max: 5});` would return either 2, 3, or 5 or:
 
 ```js
 // Specific case
@@ -34,8 +33,6 @@ These are inclusive, so they are included in the range. This means
 min <= random number <= max
 ```
 
-
 [Prime Number on Wikipedia][prime]
 
 [prime]: https://en.wikipedia.org/wiki/Prime_number
-

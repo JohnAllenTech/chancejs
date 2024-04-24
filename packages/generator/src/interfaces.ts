@@ -6,7 +6,7 @@ export interface RandomNumberGeneratorFunction {
    * @return {number} A randomnly generated number between zero and one,
    * inclusive of zero, exclusive of one.
    */
-  (numericSeed?: number): number;
+  (numericSeed?: number): number
 }
 
 export interface GeneratorOptions {
@@ -14,13 +14,13 @@ export interface GeneratorOptions {
    * An optional pseudo-random number generator function to override the default
    * Mersenne Twister implementation.
    */
-  generator?: RandomNumberGeneratorFunction;
+  generator?: RandomNumberGeneratorFunction
   /**
    * An optional numeric parramter used to seed the PRNG.
    */
-  seed?: number;
+  seed?: number
 }
 
 export interface IRandomNumberGenerator {
-  random: RandomNumberGeneratorFunction;
+  random: RandomNumberGeneratorFunction
 }

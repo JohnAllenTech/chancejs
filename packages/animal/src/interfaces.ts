@@ -1,13 +1,13 @@
-import {animals} from './constants'
+import { animals } from './constants'
 
 export enum AnimalTypes {
-  OCEAN = "ocean",
-  DESERT = "desert",
-  GRASSLAND = "grassland",
-  FOREST = "forest",
-  FARM = "farm",
-  PET = "pet",
-  ZOO = "zoo",
+  OCEAN = 'ocean',
+  DESERT = 'desert',
+  GRASSLAND = 'grassland',
+  FOREST = 'forest',
+  FARM = 'farm',
+  PET = 'pet',
+  ZOO = 'zoo',
 }
 
 export interface AnimalOptions {
@@ -16,7 +16,7 @@ export interface AnimalOptions {
    * For example, if `type` is set to 'zoo', only animals that you would expect to see in a zoo will be returned.
    * @default null
    */
-  type?: AnimalTypes;
+  type?: AnimalTypes
   seed?: number
 }
 
@@ -32,9 +32,9 @@ export interface AnimalGeneratorFunction {
    * // returns animal that you would expect to find in a zoo
    * animal({ type: 'zoo' })
    */
-  (options?: AnimalOptions, seed?: number): string;
+  (options?: AnimalOptions, seed?: number): string
 }
 
 export interface IAnimalGenerator {
-  animal: AnimalGeneratorFunction;
+  animal: AnimalGeneratorFunction
 }

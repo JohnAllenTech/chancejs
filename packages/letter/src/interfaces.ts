@@ -3,7 +3,7 @@ export interface LetterOptions {
    * Specify the casing of the randomly generated letter (e.g. upper case or lower case).
    * @default 'lower'
    */
-  casing: "upper" | "lower";
+  casing: 'upper' | 'lower'
 }
 
 export interface LetterGeneratorFunction {
@@ -20,9 +20,9 @@ export interface LetterGeneratorFunction {
    * // returns "A", "B", "C", ..., or "Z"
    * letter({ casing: 'upper' })
    */
-  (options?: LetterOptions, seed?: number): string;
+  (options?: LetterOptions, seed?: number): string
 }
 
 export interface ILetterGenerator {
-  letter: LetterGeneratorFunction;
+  letter: LetterGeneratorFunction
 }

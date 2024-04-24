@@ -3,7 +3,7 @@
 ```js
 // usage
 chance.dollar()
-chance.dollar({max: 250})
+chance.dollar({ max: 250 })
 ```
 
 <p class="pullquote" data-pullquote="Dolla, dolla, bill ya'll" markdown="1"></p>

@@ -3,7 +3,7 @@
 ```js
 // usage
 chance.address()
-chance.address({short_suffix: true})
+chance.address({ short_suffix: true })
 ```
 
 Generate a random street address

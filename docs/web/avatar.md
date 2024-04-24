@@ -3,9 +3,9 @@
 ```js
 // usage
 chance.avatar()
-chance.avatar({protocol: 'https'})
-chance.avatar({fileExtension: 'jpg'})
-chance.avatar({email: 'mail@victorquinn.com'})
+chance.avatar({ protocol: 'https' })
+chance.avatar({ fileExtension: 'jpg' })
+chance.avatar({ email: 'mail@victorquinn.com' })
 ```
 
 Return a URL to a random avatar from Gravatar.
@@ -39,4 +39,3 @@ function:
 chance.avatar({email: 'mail@victorquinn.com'})
 => 'www.gravatar.com/avatar/8595c2591b0bca22e736813af33fa7c3'
 ```
-
