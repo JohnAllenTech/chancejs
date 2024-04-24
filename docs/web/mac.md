@@ -3,7 +3,7 @@
 ```js
 // usage
 chance.mac()
-chance.mac({delimiter: '-'})
+chance.mac({ delimiter: '-' })
 ```
 
 Return a random MAC Address (EUI-48).
@@ -19,4 +19,3 @@ Optionally specify a specific delimiter between octets.
 chance.domain({delimiter: '-'})
 => '00-0d-b9-52-f2-f0'
 ```
-

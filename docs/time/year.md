@@ -3,7 +3,7 @@
 ```js
 // usage
 chance.year()
-chance.year({min: 1900, max: 2100})
+chance.year({ min: 1900, max: 2100 })
 ```
 
 Generate a random year

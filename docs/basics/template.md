@@ -21,7 +21,6 @@ escaping with a backslash.
 
 The following replacement characters can be used in a replacement sequence:
 
-   * "#": a random digit
-   * "a": a random lower case letter
-   * "A": a random upper case letter
-
+- "#": a random digit
+- "a": a random lower case letter
+- "A": a random upper case letter

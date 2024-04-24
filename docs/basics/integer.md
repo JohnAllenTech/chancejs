@@ -26,11 +26,12 @@ chance.integer({ min: -20, max: 20 })
 => -7
 ```
 
-
 These min and max are inclusive, so they are included in the range. This means
+
 ```js
 chance.integer({ min: -2, max: 2 })
-``` 
+```
+
 would return either -2, -1, 0, 1, or 2.
 
 ```js

@@ -26,6 +26,6 @@ chance.aadhar({ onlyLastFour: true });
 Optionally specify dashes be removed
 
 ```js
-chance.aadhar({ separatedByWhiteSpace: false });
-'873300307032'
+chance.aadhar({ separatedByWhiteSpace: false })
+;('873300307032')
 ```

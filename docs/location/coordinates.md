@@ -3,8 +3,8 @@
 ```js
 // usage
 chance.coordinates()
-chance.coordinates({fixed: 2})
-chance.coordinates({format: 'dms'})
+chance.coordinates({ fixed: 2 })
+chance.coordinates({ format: 'dms' })
 ```
 
 Generate random coordinates, which are latitude and longitude, comma separated.

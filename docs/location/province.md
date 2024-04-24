@@ -3,8 +3,8 @@
 ```js
 // usage
 chance.province()
-chance.province({full: true})
-chance.province({full: true})
+chance.province({ full: true })
+chance.province({ full: true })
 ```
 
 Return a random province.

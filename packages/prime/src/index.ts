@@ -1,3 +1,3 @@
-export * from "./interfaces";
-export * from "./function";
-export * from "./generator";
+export * from './interfaces'
+export * from './function'
+export * from './generator'

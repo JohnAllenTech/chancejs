@@ -1,3 +1,3 @@
-export * from "./interfaces";
-export * from "./integer.function";
-export * from "./integer.generator";
+export * from './interfaces'
+export * from './integer.function'
+export * from './integer.generator'

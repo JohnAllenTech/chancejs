@@ -2,8 +2,8 @@
 
 ```js
 // usage
-chance.tempo(); //default between 40 to 320
-chance.tempo({ min: 60, max: 120 });
+chance.tempo() //default between 40 to 320
+chance.tempo({ min: 60, max: 120 })
 ```
 
 Return a tempo. 🎵

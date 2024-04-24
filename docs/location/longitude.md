@@ -3,8 +3,8 @@
 ```js
 // usage
 chance.longitude()
-chance.longitude({fixed: 7})
-chance.longitude({format: 'dms'})
+chance.longitude({ fixed: 7 })
+chance.longitude({ format: 'dms' })
 ```
 
 Generate a random longitude.

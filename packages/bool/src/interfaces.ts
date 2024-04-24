@@ -5,7 +5,7 @@ export interface BooleanOptions {
    *
    * @default 50
    */
-  likelihood?: number;
+  likelihood?: number
 }
 
 export interface BooleanGeneratorFunction {
@@ -21,9 +21,9 @@ export interface BooleanGeneratorFunction {
    * // returns true 80% of the time
    * bool({ likelihood: 80 })
    */
-  (options?: BooleanOptions, seed?: number): boolean;
+  (options?: BooleanOptions, seed?: number): boolean
 }
 
 export interface IBooleanGenerator {
-  bool: BooleanGeneratorFunction;
+  bool: BooleanGeneratorFunction
 }

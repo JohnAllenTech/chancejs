@@ -3,8 +3,8 @@
 ```js
 // usage
 chance.hash()
-chance.hash({length: 25})
-chance.hash({casing: 'upper'})
+chance.hash({ length: 25 })
+chance.hash({ casing: 'upper' })
 ```
 
 Return a random hex hash
@@ -31,5 +31,3 @@ rather than the default lowercase
 chance.hash({casing: 'upper'})
 => '3F2EB3FB85D88984C1EC4F46A3DBE740B5E0E56E'
 ```
-
-

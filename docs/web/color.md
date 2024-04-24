@@ -3,9 +3,9 @@
 ```js
 // usage
 chance.color()
-chance.color({format: 'hex'})
-chance.color({grayscale: true})
-chance.color({casing: 'upper'})
+chance.color({ format: 'hex' })
+chance.color({ grayscale: true })
+chance.color({ casing: 'upper' })
 ```
 
 Return a random color.

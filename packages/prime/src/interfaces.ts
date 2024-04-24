@@ -3,12 +3,12 @@ export interface PrimeOptions {
    * The inclusive minimum bound of the interval from which to select a prime number.
    * @default 0
    */
-  min?: number;
+  min?: number
   /**
    * The inclusive maximum bound of the interval from which to select a prime number.
    * @default 10000
    */
-  max?: number;
+  max?: number
 }
 
 export interface PrimeGeneratorFunction {
@@ -22,9 +22,9 @@ export interface PrimeGeneratorFunction {
    * // returns prime number
    * prime()
    */
-  (options?: PrimeOptions, seed?: number): number;
+  (options?: PrimeOptions, seed?: number): number
 }
 
 export interface IPrimeGenerator {
-  prime: PrimeGeneratorFunction;
+  prime: PrimeGeneratorFunction
 }

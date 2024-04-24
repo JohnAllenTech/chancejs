@@ -11,4 +11,3 @@ Return a random IP Address.
 chance.ip()
 => '153.208.102.234'
 ```
-

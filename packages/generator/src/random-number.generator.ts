@@ -1,11 +1,11 @@
-import { Generator } from "./generator";
-import { IRandomNumberGenerator } from "./interfaces";
+import { Generator } from './generator'
+import { IRandomNumberGenerator } from './interfaces'
 
 export class RandomNumberGenerator
   extends Generator
   implements IRandomNumberGenerator
 {
   random(): number {
-    return this.generator();
+    return this.generator()
   }
 }

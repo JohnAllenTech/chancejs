@@ -3,7 +3,7 @@
 ```js
 // usage
 chance.exp()
-chance.exp({raw: true})
+chance.exp({ raw: true })
 ```
 
 Generate a random credit card expiration.

@@ -3,7 +3,7 @@
 ```js
 // usage
 chance.euro()
-chance.euro({max: 250})
+chance.euro({ max: 250 })
 ```
 
 Return a random euro amount. Formatting depends on the current locale (samples are displayed with european formatting)

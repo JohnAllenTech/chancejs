@@ -25,9 +25,9 @@ export interface TemplateGeneratorFunction {
    *  // returns string
    *  template()
    */
-  (template: string, seed?: number): string;
+  (template: string, seed?: number): string
 }
 
 export interface ITemplateGenerator {
-  template: TemplateGeneratorFunction;
+  template: TemplateGeneratorFunction
 }

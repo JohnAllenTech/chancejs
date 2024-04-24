@@ -1,3 +1,3 @@
-export * from "./copy";
-export * from "./escape";
-export * from "./replace";
+export * from './copy'
+export * from './escape'
+export * from './replace'

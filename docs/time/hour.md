@@ -3,7 +3,7 @@
 ```js
 // usage
 chance.hour()
-chance.hour({twentyfour: true})
+chance.hour({ twentyfour: true })
 ```
 
 Generate a random hour

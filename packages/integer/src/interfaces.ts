@@ -3,13 +3,13 @@ export interface IntegerOptions {
    * The bottom of the range of natural integers to choose from.
    * @default Number.MIN_SAFE_INTEGER
    */
-  min?: number;
+  min?: number
 
   /**
    * The top of the range of natural integers to choose from.
    * @default Number.MAX_SAFE_INTEGER
    */
-  max?: number;
+  max?: number
 }
 
 export interface IntegerGeneratorFunction {
@@ -28,9 +28,9 @@ export interface IntegerGeneratorFunction {
    * // returns either 1, 2, or 3.
    * chance.integer({min: 1, max: 3});
    */
-  (options?: IntegerOptions, seed?: number): number;
+  (options?: IntegerOptions, seed?: number): number
 }
 
 export interface IIntegerGenerator {
-  integer: IntegerGeneratorFunction;
+  integer: IntegerGeneratorFunction
 }

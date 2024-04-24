@@ -20,7 +20,7 @@ browser and play!
     data-url="http://chancejs.com/"
     data-count="horizontal"
     data-via="victorquinn">
-    Tweet
+Tweet
 </a>
 
 <iframe src="https://ghbtns.com/github-btn.html?user=chancejs&repo=chancejs&type=star&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>

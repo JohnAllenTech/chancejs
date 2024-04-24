@@ -3,7 +3,7 @@
 ```js
 // usage
 chance.zip()
-chance.zip({plusfour: true})
+chance.zip({ plusfour: true })
 ```
 
 Generate a random (U.S.) zip code.

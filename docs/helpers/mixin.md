@@ -25,13 +25,11 @@ For example, let's say I have a user object which consists of first, last,
 and email.
 
 ```js
-
 var user = {
-first: 'John',
-last: 'Smith',
-email: 'john@aol.com'
-};
-
+  first: 'John',
+  last: 'Smith',
+  email: 'john@aol.com',
+}
 ```
 
 Let's say I want to be able to randomly generate these user objects.
@@ -66,21 +64,22 @@ chance.user();
 Mixins can even include other mixins!
 
 For example, to "extend" the user object:
+
 ```js
 chance.mixin({
-'user': function () {
-return {
-first: chance.first(),
-last: chance.last(),
-email: chance.email()
-};
-},
-'social_user': function () {
-var user = chance.user();
-user.network = chance.pick(['facebook', 'twitter']);
-return user;
-}
-});
+  user: function () {
+    return {
+      first: chance.first(),
+      last: chance.last(),
+      email: chance.email(),
+    }
+  },
+  social_user: function () {
+    var user = chance.user()
+    user.network = chance.pick(['facebook', 'twitter'])
+    return user
+  },
+})
 ```
 
 So we have a second mixin here, `social_user` which is using the `user` mixin

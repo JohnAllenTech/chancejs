@@ -38,11 +38,11 @@ chance.weighted(['a', 'b', 'c', 'd'], [0.1, 0.2, 0.3, 0.4]);
 There is no requirement that the weights sum to anything in particular, they are all compared relative to each other so all of the following are equivalent:
 
 ```js
-chance.weighted(['a', 'b', 'c', 'd'], [1, 2, 3, 4]);
-chance.weighted(['a', 'b', 'c', 'd'], [0.1, 0.2, 0.3, 0.4]);
-chance.weighted(['a', 'b', 'c', 'd'], [100, 200, 300, 400]);
-chance.weighted(['a', 'b', 'c', 'd'], [17, 34, 51, 68]);
-chance.weighted(['a', 'b', 'c', 'd'], [0.17, 0.34, 0.51, 0.68]);
+chance.weighted(['a', 'b', 'c', 'd'], [1, 2, 3, 4])
+chance.weighted(['a', 'b', 'c', 'd'], [0.1, 0.2, 0.3, 0.4])
+chance.weighted(['a', 'b', 'c', 'd'], [100, 200, 300, 400])
+chance.weighted(['a', 'b', 'c', 'd'], [17, 34, 51, 68])
+chance.weighted(['a', 'b', 'c', 'd'], [0.17, 0.34, 0.51, 0.68])
 ```
 
 Recall JavaScript has first class functions so you could do something like the following:

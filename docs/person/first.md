@@ -28,4 +28,3 @@ Chance.first({ nationality: "it" });
 ```
 
 Note, currently support for nationality is limited to: `'en', 'it', 'nl', 'fr'`.
-

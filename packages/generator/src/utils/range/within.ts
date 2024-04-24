@@ -1,5 +1,5 @@
-import { Range } from "./interfaces";
-import { validateRange } from "./validate";
+import { Range } from './interfaces'
+import { validateRange } from './validate'
 
 /**
  * Determines whether a number is within a given range.
@@ -10,9 +10,9 @@ import { validateRange } from "./validate";
  * @throws {RangeError} If the given range is invalid.
  */
 export const isWithin = (number: number, range: Range): boolean => {
-  const validatedRange = validateRange(range);
-  const { min, max } = validatedRange;
-  if (min && number < min) return false;
-  if (max && number > max) return false;
-  return true;
-};
+  const validatedRange = validateRange(range)
+  const { min, max } = validatedRange
+  if (min && number < min) return false
+  if (max && number > max) return false
+  return true
+}

@@ -3,7 +3,7 @@
 ```js
 // usage
 chance.tv()
-chance.tv({side: 'west'})
+chance.tv({ side: 'west' })
 ```
 
 Generate a TV station call sign. This is an alias for `radio()` since they both

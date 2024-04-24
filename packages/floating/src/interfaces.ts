@@ -2,11 +2,11 @@ export interface FloatingOptions {
   /**
    * The minimum for the range to generate the floating point number.
    */
-  min?: number;
+  min?: number
   /**
    * The maxiumum for the range to generate the floating point number.
    */
-  max?: number;
+  max?: number
 
   /**
    * The number of fixed digits after the decimal.
@@ -14,8 +14,8 @@ export interface FloatingOptions {
    * when this is cast as a number, the trailing zeroes are dropped.
    * Left to the consumer if trailing zeroes are needed.
    */
-  fixed?: number;
-  precision?: number;
+  fixed?: number
+  precision?: number
 }
 
 export interface FloatingGeneratorFunction {
@@ -32,9 +32,9 @@ export interface FloatingGeneratorFunction {
    * // returns a floating point number between 1 and 3
    * floating({ min: 1, max: 3 })
    */
-  (options?: FloatingOptions, seed?: number): number;
+  (options?: FloatingOptions, seed?: number): number
 }
 
 export interface IFloatingGenerator {
-  floating: FloatingGeneratorFunction;
+  floating: FloatingGeneratorFunction
 }

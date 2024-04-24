@@ -3,7 +3,7 @@
 ```js
 // usage
 chance.cc_type()
-chance.cc_type({raw: true})
+chance.cc_type({ raw: true })
 ```
 
 Return a random credit card type.
@@ -21,22 +21,22 @@ chance.cc_type({raw: true});
 => {name: 'Discover Card', short_name: 'discover', prefix: '6011', length: 16}
 ```
 
-The available types are (name - *short_name*):
+The available types are (name - _short_name_):
 
-* American Express - *amex*
-* Bankcard - *bankcard*
-* China UnionPay - *chinaunion*
-* Diners Club Carte Blanche - *dccarte*
-* Diners Club enRoute - *dcenroute*
-* Diners Club International - *dcintl*
-* Diners Club United States & Canada - *dcusc*
-* Discover Card - *discover*
-* InstaPayment - *instapay*
-* JCB - *jcb*
-* Laser - *laser*
-* Maestro - *maestro*
-* Mastercard - *mc*
-* Solo - *solo*
-* Switch - *switch*
-* Visa - *visa*
-* Visa Electron - *electron*
+- American Express - _amex_
+- Bankcard - _bankcard_
+- China UnionPay - _chinaunion_
+- Diners Club Carte Blanche - _dccarte_
+- Diners Club enRoute - _dcenroute_
+- Diners Club International - _dcintl_
+- Diners Club United States & Canada - _dcusc_
+- Discover Card - _discover_
+- InstaPayment - _instapay_
+- JCB - _jcb_
+- Laser - _laser_
+- Maestro - _maestro_
+- Mastercard - _mc_
+- Solo - _solo_
+- Switch - _switch_
+- Visa - _visa_
+- Visa Electron - _electron_

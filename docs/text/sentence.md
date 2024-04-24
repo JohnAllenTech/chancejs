@@ -17,8 +17,8 @@ The sentence starts with a capital letter, and ends with a period.
 
 Default is a sentence with a random number of words from 12 to 18.
 
-*This length is chosen as the default as it works out to the average English
-sentence is in that range.*
+_This length is chosen as the default as it works out to the average English
+sentence is in that range._
 
 Optionally specify the number of words in the sentence.
 

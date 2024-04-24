@@ -54,8 +54,8 @@ chance.character({ casing: 'lower' });
 => 'j'
 ```
 
-*Note, wanted to call this key just ```case``` but unfortunately that's a
-reserved word in JavaScript for use in a switch statement*
+_Note, wanted to call this key just `case` but unfortunately that's a
+reserved word in JavaScript for use in a switch statement_
 
 Optionally return only symbols
 

@@ -51,4 +51,3 @@ can handle their broken case.
   chance.word({ length: 5, syllables: 20 });
   => new RangeError("Chance: Cannot specify both syllables AND length.");
 ```
-

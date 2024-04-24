@@ -6,6 +6,7 @@ chance.floating()
 chance.floating({ fixed: 7 })
 chance.floating({ min: 0, max: 100 })
 ```
+
 <p class="pullquote">I wanted to use float or double as the method name but both are JS reserved words even though they aren't really used...</p>
 
 Return a random floating point number.
@@ -17,7 +18,7 @@ chance.floating();
 
 By default it will return a fixed number of at most 4 digits after the decimal.
 
-Note: *at most* 4 digits. This because, unless we returned trailing zeroes
+Note: _at most_ 4 digits. This because, unless we returned trailing zeroes
 (which aren't allowed on the JavaScript float) we can't guarantee 4 digits after
 the decimal. So if random chance comes back with `82383854.2000` then
 `82383854.2` is what will be returned.

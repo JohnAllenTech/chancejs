@@ -30,7 +30,7 @@ chance.natural({min: 1, max: 5, exclude: [1, 3]});
 ```
 
 These are inclusive, so they are included in the range. This means
-```chance.natural({min: 1, max: 3});``` would return either 1, 2, or 3 or:
+`chance.natural({min: 1, max: 3});` would return either 1, 2, or 3 or:
 
 ```js
 // Specific case
@@ -40,8 +40,6 @@ These are inclusive, so they are included in the range. This means
 min <= random number <= max
 ```
 
-
 [Natural Number on Wikipedia][natural]
 
 [natural]: https://en.wikipedia.org/wiki/Natural_number
-

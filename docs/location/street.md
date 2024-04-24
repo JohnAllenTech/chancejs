@@ -3,7 +3,7 @@
 ```js
 // usage
 chance.street()
-chance.street({country:it})
+chance.street({ country: it })
 ```
 
 Generate a random street

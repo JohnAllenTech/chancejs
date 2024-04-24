@@ -55,5 +55,3 @@ chance.street_suffixes();
 => [{name: 'Avenue', abbreviation: 'Ave'}, {name: 'Boulevard', abbreviation: 'Blvd'}, ...]
 
 ```
-
-

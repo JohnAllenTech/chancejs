@@ -4,8 +4,8 @@
 // usage
 chance.phone()
 chance.phone({ formatted: false })
-chance.phone({ country: "fr" })
-chance.phone({ country: "fr", mobile: true })
+chance.phone({ country: 'fr' })
+chance.phone({ country: 'fr', mobile: true })
 ```
 
 Generate a random phone

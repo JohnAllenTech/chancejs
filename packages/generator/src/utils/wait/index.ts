@@ -1,4 +1,4 @@
-import { validateNumber } from "..";
+import { validateNumber } from '..'
 
 /**
  * Utility function to wait a given amount of time.
@@ -9,8 +9,8 @@ import { validateNumber } from "..";
  * // wait(2000)
  */
 export const wait = (ms: number = 5): Promise<void> => {
-  validateNumber(ms);
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(), ms);
-  });
-};
+  validateNumber(ms)
+  return new Promise(resolve => {
+    setTimeout(() => resolve(), ms)
+  })
+}

@@ -32,4 +32,4 @@ chance.prefix({ gender: "female" });
 => 'Miss'
 ```
 
-*To maintain legacy support, this also responds to chance.name_prefix().*
+_To maintain legacy support, this also responds to chance.name_prefix()._

@@ -12,7 +12,7 @@ var chance = new Chance(Math.random);
 
 chance.address()
 => '131 Asmun Pike'
-chance.address() 
+chance.address()
 => '261 Pawnaf Highway'
 ```
 

@@ -3,7 +3,7 @@
 ```js
 // usage
 chance.animal()
-chance.animal({type: 'zoo'})
+chance.animal({ type: 'zoo' })
 ```
 
 Generate a random animal

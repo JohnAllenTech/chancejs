@@ -1,5 +1,5 @@
-import { CharacterGenerator } from "@chancejs/character";
+import { CharacterGenerator } from '@chancejs/character'
 
 export interface IToken {
-  substitute(generator: CharacterGenerator): string;
+  substitute(generator: CharacterGenerator): string
 }
