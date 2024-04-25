@@ -34,8 +34,6 @@ Or [view all of the dependents on npm](https://www.npmjs.com/package/chance)
 
 _Know a library that uses Chance that isn't here? Update the README and submit a PR!_
 
-## Author
-
 ### Victor Quinn
 
 [https://www.victorquinn.com](https://www.victorquinn.com)
