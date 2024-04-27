@@ -1,4 +1,3 @@
-import { times } from '@chancejs/generator'
 import { syllable } from './syllable'
 
 const consonants = 'bcdfghjklmnprstvwz' // consonants except hard to speak ones
@@ -53,7 +52,7 @@ describe('Testing Text Syllable', () => {
   })
 
   it('takes in a seed', () => {
-    const s = syllable({}, 1234)
+    const s = syllable({ seed: 1234 })
     expect(typeof s).toEqual('string')
     expect(all.includes(s.charAt(0))).toEqual(true)
     expect(

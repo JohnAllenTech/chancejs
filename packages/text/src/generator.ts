@@ -2,6 +2,7 @@ import { Generator, GeneratorOptions } from '@chancejs/generator'
 import { TextOptions, IText } from './interfaces'
 import { NaturalGenerator } from '@chancejs/natural'
 import { CharacterGenerator } from '@chancejs/character'
+import { WordOptions } from './word/interfaces'
 
 export class Text extends Generator implements IText {
   private naturalGenerator: NaturalGenerator
@@ -41,10 +42,35 @@ export class Text extends Generator implements IText {
     return options?.capitalize ? capitalize(text) : text
   }
 
-  public word(options?: TextOptions): string {
-    // Function body goes here.
-    // You should have access to your pseudo-random number generator via `this.generator()`.
-    return 'string'
+  public word(options?: WordOptions): string {
+    //todo fix this using typescript so length and symbols cant be both given
+
+    if (options?.length && options.syllables)
+      throw new Error('Chance: Cannot specify both syllables AND length.')
+
+    const syllables =
+      options?.syllables || this.naturalGenerator.natural({ min: 1, max: 3 })
+
+    let text = ''
+
+    if (options?.length) {
+      // Either bound word by length
+      do {
+        text += this.syllable()
+      } while (text.length < options.length)
+      text = text.substring(0, options.length)
+    } else {
+      // Or by number of syllables
+      for (let i = 0; i < syllables; i++) {
+        text += this.syllable()
+      }
+    }
+
+    if (options?.capitalize) {
+      text = capitalize(text)
+    }
+
+    return text
   }
 
   public sentence(options?: TextOptions): string {

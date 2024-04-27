@@ -1,3 +1,5 @@
+import { WordGeneratorFunction } from './word/interfaces'
+
 export interface TextOptions {
   seed?: number
   length?: number
@@ -9,17 +11,16 @@ export interface TextGeneratorFunction {
    * Return a random string.
    *
    * @param { TextOptions} [options={}]
-   * @param {number} [seed] A numeric seed to pass to the pseudo-random number generator.
    * @return { string }
    * @example
    * // returns string
    * text()
    */
-  (options?: TextOptions, seed?: number): string
+  (options?: TextOptions): string
 }
 
 export interface IText {
-  word: TextGeneratorFunction
+  word: WordGeneratorFunction
   syllable: TextGeneratorFunction
   sentence: TextGeneratorFunction
   paragraph: TextGeneratorFunction
