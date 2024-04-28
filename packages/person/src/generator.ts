@@ -1,0 +1,89 @@
+import { Generator, GeneratorOptions } from '@chancejs/generator'
+import { PersonOptions, IPerson, PersonGeneratorFunction } from './interfaces'
+import { NaturalGenerator } from '@chancejs/natural'
+import { CharacterGenerator } from '@chancejs/character'
+import { AgeOptions } from './age/interfaces'
+import { ageRanges } from './age/constants'
+
+export class Person extends Generator implements IPerson {
+  private naturalGenerator: NaturalGenerator
+  private characterGenerator: CharacterGenerator
+
+  constructor(options: GeneratorOptions) {
+    super(options)
+    this.naturalGenerator = new NaturalGenerator(options)
+    this.characterGenerator = new CharacterGenerator(options)
+  }
+
+  public age(options?: AgeOptions): number {
+    let ageRange = {
+      min: ageRanges.ADULT_AGE_MIN,
+      max: ageRanges.ADULT_AGE_MAX,
+    }
+    switch (options?.type) {
+      case 'child':
+        ageRange = {
+          min: ageRanges.CHILD_AGE_MIN,
+          max: ageRanges.CHILD_AGE_MAX,
+        }
+        break
+      case 'teen':
+        ageRange = {
+          min: ageRanges.TEEN_AGE_MIN,
+          max: ageRanges.TEEN_AGE_MAX,
+        }
+        break
+      case 'adult':
+        ageRange = {
+          min: ageRanges.ADULT_AGE_MIN,
+          max: ageRanges.ADULT_AGE_MAX,
+        }
+        break
+      case 'senior':
+        ageRange = {
+          min: ageRanges.SENIOR_AGE_MIN,
+          max: ageRanges.SENIOR_AGE_MAX,
+        }
+        break
+      case 'all':
+        ageRange = {
+          min: ageRanges.AGE_MIN,
+          max: ageRanges.AGE_MAX,
+        }
+        break
+      default:
+        break
+    }
+    return this.naturalGenerator.natural({ ...ageRange })
+  }
+  public birthday(options?: PersonOptions): string {
+    return 'string'
+  }
+  public cf(options?: PersonOptions): string {
+    return 'string'
+  }
+  public cpf(options?: PersonOptions): string {
+    return 'string'
+  }
+  public first(options?: PersonOptions): string {
+    return 'string'
+  }
+  public gender(options?: PersonOptions): string {
+    return 'string'
+  }
+  public last(options?: PersonOptions): string {
+    return 'string'
+  }
+  public name(options?: PersonOptions): string {
+    return 'string'
+  }
+  public prefix(options?: PersonOptions): string {
+    return 'string'
+  }
+  public ssn(options?: PersonOptions): string {
+    return 'string'
+  }
+  public suffix(options?: PersonOptions): string {
+    return 'string'
+  }
+}
