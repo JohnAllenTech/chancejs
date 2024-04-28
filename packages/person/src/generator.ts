@@ -1,18 +1,20 @@
 import { Generator, GeneratorOptions } from '@chancejs/generator'
 import { PersonOptions, IPerson, PersonGeneratorFunction } from './interfaces'
 import { NaturalGenerator } from '@chancejs/natural'
-import { CharacterGenerator } from '@chancejs/character'
+import { Picker } from '@chancejs/pick'
+
 import { AgeOptions } from './age/interfaces'
 import { ageRanges } from './age/constants'
+import { GenderOptions } from './gender/interfaces'
 
 export class Person extends Generator implements IPerson {
   private naturalGenerator: NaturalGenerator
-  private characterGenerator: CharacterGenerator
+  private picker: Picker
 
   constructor(options: GeneratorOptions) {
     super(options)
     this.naturalGenerator = new NaturalGenerator(options)
-    this.characterGenerator = new CharacterGenerator(options)
+    this.picker = new Picker(options)
   }
 
   public age(options?: AgeOptions): number {
@@ -68,8 +70,10 @@ export class Person extends Generator implements IPerson {
   public first(options?: PersonOptions): string {
     return 'string'
   }
-  public gender(options?: PersonOptions): string {
-    return 'string'
+  public gender(options?: GenderOptions): string {
+    return this.picker.pickOne(
+      ['Male', 'Female'].concat(options?.extraGenders ?? [])
+    )
   }
   public last(options?: PersonOptions): string {
     return 'string'

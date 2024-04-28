@@ -2,8 +2,6 @@ import { AgeGeneratorFunction } from './age/interfaces'
 
 export interface PersonOptions {
   seed?: number
-  length?: number
-  capitalize?: boolean
 }
 
 export interface PersonGeneratorFunction {
