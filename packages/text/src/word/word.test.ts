@@ -2,7 +2,7 @@ import { word } from './word'
 
 describe('Testing Text Word', () => {
   it('returns a string', () => {
-    const w = word({})
+    const w = word()
     expect(typeof w).toEqual('string')
     expect(w.length).toBeGreaterThan(1)
     expect(w.length).toBeLessThan(10)
@@ -13,7 +13,7 @@ describe('Testing Text Word', () => {
     expect(typeof w).toEqual('string')
     expect(w.length).toBeGreaterThan(1)
     expect(w.length).toBeLessThan(10)
-    expect(w.charAt(0)).toEqual(w.charAt(0).toUpperCase())
+    expect(w.charAt(0)).toMatch(/[A-Z]/m)
   })
 
   it('returns 3 character syllable with upper case first letter', () => {

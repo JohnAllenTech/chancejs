@@ -9,6 +9,8 @@ describe('Testing Text Syllable', () => {
     const s = syllable()
     expect(typeof s).toEqual('string')
     expect(all.includes(s.charAt(0))).toEqual(true)
+    expect(s.length).toBeGreaterThan(1)
+    expect(s.length).toBeLessThan(4)
     expect(
       consonants.includes(s.charAt(0))
         ? vowels.includes(s.charAt(1))
@@ -30,7 +32,7 @@ describe('Testing Text Syllable', () => {
   it('returns 3 character syllable with upper case first letter', () => {
     const s = syllable({ length: 4, capitalize: true })
     expect(s.length).toEqual(4)
-    expect(s.charAt(0)).toEqual(s.charAt(0).toUpperCase())
+    expect(s.charAt(0)).toMatch(/[A-Z]/m)
     expect(all.includes(s.charAt(0).toLowerCase())).toEqual(true)
     expect(
       consonants.includes(s.charAt(0).toLowerCase())
@@ -54,6 +56,8 @@ describe('Testing Text Syllable', () => {
   it('takes in a seed', () => {
     const s = syllable({ seed: 1234 })
     expect(typeof s).toEqual('string')
+    expect(s.length).toBeGreaterThan(1)
+    expect(s.length).toBeLessThan(4)
     expect(all.includes(s.charAt(0))).toEqual(true)
     expect(
       consonants.includes(s.charAt(0))

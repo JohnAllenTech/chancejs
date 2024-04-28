@@ -14,5 +14,5 @@ export interface WordGeneratorFunction {
    * // returns string
    * text()
    */
-  (options: WordOptions): string
+  (options?: WordOptions): string
 }
