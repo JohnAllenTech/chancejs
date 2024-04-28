@@ -624,6 +624,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@chancejs/person@workspace:packages/person":
+  version: 0.0.0-use.local
+  resolution: "@chancejs/person@workspace:packages/person"
+  dependencies:
+    "@chancejs/generator": 1.0.0
+    "@types/jest": ^27.4.1
+    eslint: ^8.14.0
+    jest: ^27.5.1
+    ts-jest: ^27.1.4
+    ts-node: ^10.7.0
+    typescript: ^4.6.3
+  languageName: unknown
+  linkType: soft
+
 "@chancejs/pick@1.0.0, @chancejs/pick@workspace:packages/pick":
   version: 0.0.0-use.local
   resolution: "@chancejs/pick@workspace:packages/pick"
