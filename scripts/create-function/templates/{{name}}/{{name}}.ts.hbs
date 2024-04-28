@@ -1,0 +1,8 @@
+import { {{pascalCase packageName}} } from '../generator'
+import { {{pascalCase name}}GeneratorFunction } from './interfaces'
+import { {{pascalCase name}}Options } from './interfaces'
+
+export const {{name}}: {{pascalCase name}}GeneratorFunction = (options?: {{pascalCase name}}Options) => {
+  const {{packageName}} = new {{pascalCase packageName}}({ seed: options?.seed })
+  return {{packageName}}.{{name}}(options)
+}

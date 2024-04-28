@@ -1,0 +1,18 @@
+import { {{pascalCase packageName}}Options } from '../interfaces'
+
+export interface {{pascalCase name}}Options extends {{pascalCase packageName}}Options {
+  sampleOption : string
+}
+
+export interface {{pascalCase name}}GeneratorFunction {
+  /**
+   * Returns a random {{name}}.
+   *
+   * @param { {{pascalCase name}}Options} [options={}]
+   * @return { number }
+   * @example
+   * // returns {{returnType}}
+   * {{name}}()
+   */
+  (options?: {{pascalCase name}}Options): {{returnType}}
+}

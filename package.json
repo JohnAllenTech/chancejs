@@ -35,7 +35,7 @@
     "docs:publish": "git-update-ghpages -e",
     "package:create": "plop --plopfile ./scripts/create-package/plopfile.js",
     "generator:create": "plop --plopfile ./scripts/create-generator/plopfile.js",
-    "method:add": "plop --plopfile ./scripts/add-method/plopfile.js",
+    "function:create": "plop --plopfile ./scripts/create-function/plopfile.js",
     "test:all": "yarn test",
     "build:all": "yarn build",
     "prepare": "husky"
