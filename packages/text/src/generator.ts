@@ -4,6 +4,8 @@ import { NaturalGenerator } from '@chancejs/natural'
 import { CharacterGenerator } from '@chancejs/character'
 import { WordOptions } from './word/interfaces'
 import { SentenceOptions } from './sentence/interfaces'
+import { ParagraphOptions } from './paragraph/interfaces'
+import { SyllableOptions } from './syllable/interfaces'
 
 export class Text extends Generator implements IText {
   private naturalGenerator: NaturalGenerator
@@ -14,7 +16,7 @@ export class Text extends Generator implements IText {
     this.naturalGenerator = new NaturalGenerator(options)
     this.characterGenerator = new CharacterGenerator(options)
   }
-  public syllable(options?: TextOptions): string {
+  public syllable(options?: SyllableOptions): string {
     const length =
         options?.length || this.naturalGenerator.natural({ min: 2, max: 3 }),
       consonants = 'bcdfghjklmnprstvwz', // consonants except hard to speak ones
@@ -93,10 +95,15 @@ export class Text extends Generator implements IText {
     return text
   }
 
-  public paragraph(options?: TextOptions): string {
-    // Function body goes here.
-    // You should have access to your pseudo-random number generator via `this.generator()`.
-    return 'string'
+  public paragraph(options?: ParagraphOptions): string {
+    const sentences =
+      options?.sentences || this.naturalGenerator.natural({ min: 3, max: 7 })
+    const sentence_array = Array.from({ length: sentences }, _ =>
+      this.sentence()
+    )
+    const separator = options?.linebreak ? '\n' : ' '
+
+    return sentence_array.join(separator)
   }
 }
 function capitalize(text: string): string {

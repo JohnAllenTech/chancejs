@@ -1,20 +1,19 @@
 import { TextOptions } from '../interfaces'
 
-export interface WordOptions extends TextOptions {
+export interface SyllableOptions extends TextOptions {
   length?: number
   capitalize?: boolean
-  syllables?: number
 }
 
-export interface WordGeneratorFunction {
+export interface SyllableGeneratorFunction {
   /**
    * Return a random string.
    *
-   * @param { WordOptions} [options={}]
+   * @param { SyllableOptions} [options={}]
    * @return { string }
    * @example
    * // returns string
    * text()
    */
-  (options?: WordOptions): string
+  (options?: SyllableOptions): string
 }
