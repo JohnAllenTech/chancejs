@@ -3,6 +3,7 @@ import { TextOptions, IText } from './interfaces'
 import { NaturalGenerator } from '@chancejs/natural'
 import { CharacterGenerator } from '@chancejs/character'
 import { WordOptions } from './word/interfaces'
+import { SentenceOptions } from './sentence/interfaces'
 
 export class Text extends Generator implements IText {
   private naturalGenerator: NaturalGenerator
@@ -73,10 +74,23 @@ export class Text extends Generator implements IText {
     return text
   }
 
-  public sentence(options?: TextOptions): string {
-    // Function body goes here.
-    // You should have access to your pseudo-random number generator via `this.generator()`.
-    return 'string'
+  public sentence(options?: SentenceOptions): string {
+    const words =
+      options?.words || this.naturalGenerator.natural({ min: 12, max: 18 })
+    const punctuation = options?.punctuation
+    let text
+
+    const word_array = Array.from({ length: words }, _ => this.word())
+
+    text = word_array.join(' ')
+
+    // Capitalize first letter of sentence
+    text = capitalize(text)
+
+    // Make sure punctuation has a usable value and add if '.' if not
+    text += punctuation && /^[.?;!:]$/.test(punctuation) ? punctuation : '.'
+
+    return text
   }
 
   public paragraph(options?: TextOptions): string {

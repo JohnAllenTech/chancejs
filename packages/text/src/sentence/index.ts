@@ -1,0 +1,1 @@
+export { sentence } from './sentence'
