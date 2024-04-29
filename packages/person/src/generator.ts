@@ -6,6 +6,8 @@ import { Picker } from '@chancejs/pick'
 import { AgeOptions } from './age/interfaces'
 import { ageRanges } from './age/constants'
 import { GenderOptions } from './gender/interfaces'
+import { SuffixOptions } from './suffix/interfaces'
+import { suffixes } from './suffix/constants'
 
 export class Person extends Generator implements IPerson {
   private naturalGenerator: NaturalGenerator
@@ -87,7 +89,9 @@ export class Person extends Generator implements IPerson {
   public ssn(options?: PersonOptions): string {
     return 'string'
   }
-  public suffix(options?: PersonOptions): string {
-    return 'string'
+  public suffix(options?: SuffixOptions): string {
+    return options?.full
+      ? this.picker.pickOne(suffixes).name
+      : this.picker.pickOne(suffixes).abbreviation
   }
 }
