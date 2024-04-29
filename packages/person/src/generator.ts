@@ -8,6 +8,8 @@ import { ageRanges } from './age/constants'
 import { GenderOptions } from './gender/interfaces'
 import { PrefixOptions } from './prefix/interfaces'
 import { allPrefixes, femalePrefixes, malePrefixes } from './prefix/constants'
+import { SuffixOptions } from './suffix/interfaces'
+import { suffixes } from './suffix/constants'
 
 export class Person extends Generator implements IPerson {
   private naturalGenerator: NaturalGenerator
@@ -95,7 +97,9 @@ export class Person extends Generator implements IPerson {
   public ssn(options?: PersonOptions): string {
     return 'string'
   }
-  public suffix(options?: PersonOptions): string {
-    return 'string'
+  public suffix(options?: SuffixOptions): string {
+    return options?.full
+      ? this.picker.pickOne(suffixes).name
+      : this.picker.pickOne(suffixes).abbreviation
   }
 }
