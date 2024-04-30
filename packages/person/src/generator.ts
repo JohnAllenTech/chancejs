@@ -1,11 +1,13 @@
 import { Generator, GeneratorOptions } from '@chancejs/generator'
-import { PersonOptions, IPerson, PersonGeneratorFunction } from './interfaces'
+import { PersonOptions, IPerson } from './interfaces'
 import { NaturalGenerator } from '@chancejs/natural'
 import { Picker } from '@chancejs/pick'
 
 import { AgeOptions } from './age/interfaces'
 import { ageRanges } from './age/constants'
 import { GenderOptions } from './gender/interfaces'
+import { PrefixOptions } from './prefix/interfaces'
+import { allPrefixes, femalePrefixes, malePrefixes } from './prefix/constants'
 import { SuffixOptions } from './suffix/interfaces'
 import { suffixes } from './suffix/constants'
 
@@ -83,8 +85,14 @@ export class Person extends Generator implements IPerson {
   public name(options?: PersonOptions): string {
     return 'string'
   }
-  public prefix(options?: PersonOptions): string {
-    return 'string'
+  public prefix(options?: PrefixOptions): string {
+    const prefix = options?.gender
+      ? this.picker.pickOne(
+          options.gender === 'male' ? malePrefixes : femalePrefixes
+        )
+      : this.picker.pickOne(allPrefixes)
+
+    return options?.full ? prefix.name : prefix.abbreviation
   }
   public ssn(options?: PersonOptions): string {
     return 'string'
