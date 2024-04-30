@@ -4,6 +4,8 @@ export interface GenderOptions extends PersonOptions {
   extraGenders?: Array<string>
 }
 
+export type Gender = 'male' | 'Female'
+
 export interface GenderGeneratorFunction {
   /**
    * Returns a random gender.
