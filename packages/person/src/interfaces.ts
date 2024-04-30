@@ -1,6 +1,7 @@
 import { AgeGeneratorFunction } from './age/interfaces'
 import { FirstGeneratorFunction } from './first/interfaces'
 import { GenderGeneratorFunction } from './gender/interfaces'
+import { LastGeneratorFunction } from './last/interfaces'
 import { PrefixGeneratorFunction } from './prefix/interfaces'
 import { SuffixGeneratorFunction } from './suffix/interfaces'
 
@@ -28,7 +29,7 @@ export interface IPerson {
   cpf: PersonGeneratorFunction
   first: FirstGeneratorFunction
   gender: GenderGeneratorFunction
-  last: PersonGeneratorFunction
+  last: LastGeneratorFunction
   name: PersonGeneratorFunction
   prefix: PrefixGeneratorFunction
   ssn: PersonGeneratorFunction
