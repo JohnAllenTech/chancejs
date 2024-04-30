@@ -5,11 +5,13 @@ import { Picker } from '@chancejs/pick'
 
 import { AgeOptions } from './age/interfaces'
 import { ageRanges } from './age/constants'
-import { GenderOptions } from './gender/interfaces'
+import { Gender, GenderOptions } from './gender/interfaces'
 import { PrefixOptions } from './prefix/interfaces'
 import { allPrefixes, femalePrefixes, malePrefixes } from './prefix/constants'
 import { SuffixOptions } from './suffix/interfaces'
 import { suffixes } from './suffix/constants'
+import { FirstOptions } from './first/interfaces'
+import { firstNames } from './first/constants'
 
 export class Person extends Generator implements IPerson {
   private naturalGenerator: NaturalGenerator
@@ -71,8 +73,13 @@ export class Person extends Generator implements IPerson {
   public cpf(options?: PersonOptions): string {
     return 'string'
   }
-  public first(options?: PersonOptions): string {
-    return 'string'
+  public first(options?: FirstOptions): string {
+    return this.picker.pickOne(
+      firstNames[
+        options?.gender ??
+          (this.gender().toLowerCase() as keyof typeof firstNames)
+      ][options?.nationality ?? 'en']
+    )
   }
   public gender(options?: GenderOptions): string {
     return this.picker.pickOne(
