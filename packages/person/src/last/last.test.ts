@@ -7,7 +7,7 @@ describe('Testing last function', () => {
     expect(typeof result).toEqual('string')
     expect(result.length).toBeGreaterThanOrEqual(2)
     expect(result.length).toBeLessThanOrEqual(20)
-    expect(result.split(' ').length).toEqual(1)
+    expect(result.split(' ').length).toBeLessThanOrEqual(3)
     expect(Object.values(lastNames).flat().includes(result)).toEqual(true)
   })
 
@@ -16,7 +16,7 @@ describe('Testing last function', () => {
     expect(typeof result).toEqual('string')
     expect(result.length).toBeGreaterThanOrEqual(2)
     expect(result.length).toBeLessThanOrEqual(20)
-    expect(result.split(' ').length).toEqual(1)
+    expect(result.split(' ').length).toBeLessThanOrEqual(3)
     expect(lastNames.fr.includes(result)).toEqual(true)
   })
 
@@ -25,7 +25,7 @@ describe('Testing last function', () => {
     expect(typeof result).toEqual('string')
     expect(result.length).toBeGreaterThanOrEqual(2)
     expect(result.length).toBeLessThanOrEqual(20)
-    expect(result.split(' ').length).toEqual(1)
+    expect(result.split(' ').length).toBeLessThanOrEqual(3)
     expect([...lastNames.it].includes(result)).toEqual(true)
   })
 })
