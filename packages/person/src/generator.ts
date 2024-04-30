@@ -14,14 +14,18 @@ import { FirstOptions } from './first/interfaces'
 import { firstNames } from './first/constants'
 import { LastOptions } from './last/interfaces'
 import { lastNames } from './last/constants'
+import { NameOptions } from './name/interfaces'
+import { CharacterGenerator } from '@chancejs/character'
 
 export class Person extends Generator implements IPerson {
   private naturalGenerator: NaturalGenerator
   private picker: Picker
+  private characterGenerator: CharacterGenerator
 
   constructor(options: GeneratorOptions) {
     super(options)
     this.naturalGenerator = new NaturalGenerator(options)
+    this.characterGenerator = new CharacterGenerator(options)
     this.picker = new Picker(options)
   }
 
@@ -95,8 +99,33 @@ export class Person extends Generator implements IPerson {
         : Object.values(lastNames).flat()
     )
   }
-  public name(options?: PersonOptions): string {
-    return 'string'
+  public name(options?: NameOptions): string {
+    const first = this.first(options)
+    const last = this.last(options)
+    let name
+
+    if (options?.middle) {
+      name = first + ' ' + this.first(options) + ' ' + last
+    } else if (options?.middle_initial) {
+      name =
+        first +
+        ' ' +
+        this.characterGenerator.character({ alpha: true, casing: 'upper' }) +
+        '. ' +
+        last
+    } else {
+      name = first + ' ' + last
+    }
+
+    if (options?.prefix) {
+      name = this.prefix(options) + ' ' + name
+    }
+
+    if (options?.suffix) {
+      name = name + ' ' + this.suffix(options)
+    }
+
+    return name
   }
   public prefix(options?: PrefixOptions): string {
     const prefix = options?.gender
