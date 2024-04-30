@@ -12,6 +12,8 @@ import { SuffixOptions } from './suffix/interfaces'
 import { suffixes } from './suffix/constants'
 import { FirstOptions } from './first/interfaces'
 import { firstNames } from './first/constants'
+import { LastOptions } from './last/interfaces'
+import { lastNames } from './last/constants'
 
 export class Person extends Generator implements IPerson {
   private naturalGenerator: NaturalGenerator
@@ -86,8 +88,12 @@ export class Person extends Generator implements IPerson {
       ['Male', 'Female'].concat(options?.extraGenders ?? [])
     )
   }
-  public last(options?: PersonOptions): string {
-    return 'string'
+  public last(options?: LastOptions): string {
+    return this.picker.pickOne(
+      options?.nationality
+        ? lastNames[options.nationality]
+        : Object.values(lastNames).flat()
+    )
   }
   public name(options?: PersonOptions): string {
     return 'string'
