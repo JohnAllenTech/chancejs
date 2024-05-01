@@ -1,0 +1,23 @@
+
+export interface {{pascalCase name}}Options {
+  seed?: number
+}
+
+export interface {{pascalCase name}}GeneratorFunction {
+  /**
+   * {{description}}.
+   *
+   * @param { {{pascalCase name}}Options} [options={}]
+   * @return { string }
+   * @example
+   * // returns string
+   * {{name}}()
+   */
+  (options?: {{pascalCase name}}Options): string
+}
+
+export interface I{{pascalCase name}} {
+  function1: {{pascalCase name}}GeneratorFunction
+  function2: {{pascalCase name}}GeneratorFunction
+  function3: {{pascalCase name}}GeneratorFunction
+}
