@@ -14,6 +14,7 @@ import { FirstOptions } from './first/interfaces'
 import { firstNames } from './first/constants'
 import { LastOptions } from './last/interfaces'
 import { lastNames } from './last/constants'
+import { BirthdayOptions } from './birthday/interfaces'
 
 export class Person extends Generator implements IPerson {
   private naturalGenerator: NaturalGenerator
@@ -66,7 +67,53 @@ export class Person extends Generator implements IPerson {
     }
     return this.naturalGenerator.natural({ ...ageRange })
   }
-  public birthday(options?: PersonOptions): string {
+  public birthday(options?: BirthdayOptions): string {
+    let age = this.age(options)
+    const now = new Date()
+    const currentYear = now.getFullYear()
+    let min = new Date().setFullYear(currentYear - age - 1)
+    let max = new Date().setFullYear(currentYear - age)
+
+    if (options && (options?.minAge || options?.maxAge)) {
+      if (options?.minAge && options?.minAge < 0)
+        throw new Error('Chance: MinAge cannot be less than zero.')
+      if (
+        options?.minAge &&
+        options?.maxAge &&
+        options?.minAge > options?.maxAge
+      )
+        throw new Error('Chance: MinAge cannot be greater than MaxAge.')
+
+      const minAge = options?.minAge ?? 0
+      const maxAge = options?.maxAge ?? 100
+
+      var minDate = new Date(
+        currentYear - maxAge - 1,
+        now.getMonth(),
+        now.getDate()
+      )
+      var maxDate = new Date(
+        currentYear - minAge,
+        now.getMonth(),
+        now.getDate()
+      )
+
+      minDate.setDate(minDate.getDate() + 1)
+
+      maxDate.setDate(maxDate.getDate() + 1)
+      maxDate.setMilliseconds(maxDate.getMilliseconds() - 1)
+
+      //   options = initOptions(options, {
+      //     min: minDate,
+      //     max: maxDate,
+      //   })
+    } else {
+      //   options = initOptions(options, {
+      //     year: currentYear - age,
+      //   })
+    }
+
+    //  return this.date(options)
     return 'string'
   }
   public cf(options?: PersonOptions): string {
