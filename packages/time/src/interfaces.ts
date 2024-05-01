@@ -16,7 +16,14 @@ export interface TimeGeneratorFunction {
 }
 
 export interface ITime {
-  function1: TimeGeneratorFunction
-  function2: TimeGeneratorFunction
-  function3: TimeGeneratorFunction
+  ampm: TimeGeneratorFunction
+  date: TimeGeneratorFunction
+  hour: TimeGeneratorFunction
+  millisecond: TimeGeneratorFunction
+  minute: TimeGeneratorFunction
+  month: TimeGeneratorFunction
+  timestamp: TimeGeneratorFunction
+  timezone: TimeGeneratorFunction
+  weekday: TimeGeneratorFunction
+  year: TimeGeneratorFunction
 }

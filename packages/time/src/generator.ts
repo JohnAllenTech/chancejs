@@ -10,15 +10,39 @@ export class Time extends Generator implements ITime {
     this.naturalGenerator = new NaturalGenerator(options)
   }
 
-  public function1(options?: TimeOptions): string {
+  public ampm(options?: TimeOptions): string {
     return 'string'
   }
 
-  public function2(options?: TimeOptions): string {
+  public date(options?: TimeOptions): string {
     return 'string'
   }
 
-  public function3(options?: TimeOptions): string {
+  public hammertime(options?: TimeOptions): string {
+    return 'string'
+  }
+  public hour(options?: TimeOptions): string {
+    return 'string'
+  }
+  public millisecond(options?: TimeOptions): string {
+    return 'string'
+  }
+  public minute(options?: TimeOptions): string {
+    return 'string'
+  }
+  public month(options?: TimeOptions): string {
+    return 'string'
+  }
+  public timestamp(options?: TimeOptions): string {
+    return 'string'
+  }
+  public timezone(options?: TimeOptions): string {
+    return 'string'
+  }
+  public weekday(options?: TimeOptions): string {
+    return 'string'
+  }
+  public year(options?: TimeOptions): string {
     return 'string'
   }
 }
