@@ -630,6 +630,7 @@ __metadata:
   dependencies:
     "@chancejs/generator": 1.0.0
     "@types/jest": ^27.4.1
+    "@types/node": ^18.7.2
     eslint: ^8.14.0
     jest: ^27.5.1
     ts-jest: ^27.1.4
@@ -709,6 +710,21 @@ __metadata:
   dependencies:
     "@chancejs/generator": 1.0.0
     "@types/jest": ^27.4.1
+    "@types/node": ^18.7.2
+    eslint: ^8.14.0
+    jest: ^27.5.1
+    ts-jest: ^27.1.4
+    ts-node: ^10.7.0
+    typescript: ^4.6.3
+  languageName: unknown
+  linkType: soft
+
+"@chancejs/time@workspace:packages/time":
+  version: 0.0.0-use.local
+  resolution: "@chancejs/time@workspace:packages/time"
+  dependencies:
+    "@types/jest": ^27.4.1
+    "@types/node": ^18.7.2
     eslint: ^8.14.0
     jest: ^27.5.1
     ts-jest: ^27.1.4

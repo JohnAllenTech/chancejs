@@ -1,7 +1,7 @@
 {
-  "name": "@chancejs/text",
+  "name": "@chancejs/time",
   "version": "1.0.0",
-  "description": "Generate a random text with Chance.js.",
+  "description": "provides time based randomness",
   "homepage": "https://chancejs.com/",
   "author": "Victor Quinn <mail@victorquinn.com>",
   "main": "./lib/cjs/index.js",
@@ -35,8 +35,5 @@
     "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
-  },
-  "dependencies": {
-    "@chancejs/generator": "1.0.0"
   }
 }

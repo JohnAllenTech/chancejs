@@ -1,0 +1,27 @@
+import { Generator, GeneratorOptions } from '@chancejs/generator'
+import { I{{pascalCase name}}, {{pascalCase name}}Options } from './interfaces'
+import { NaturalGenerator } from '@chancejs/natural'
+
+
+export class {{pascalCase name}} extends Generator implements I{{pascalCase name}} {
+  private naturalGenerator: NaturalGenerator
+
+  constructor(options: GeneratorOptions) {
+    super(options)
+    this.naturalGenerator = new NaturalGenerator(options)
+  }
+
+  public function1(options?: {{pascalCase name}}Options): string {
+    return "string"
+  }
+
+   public function2(options?: {{pascalCase name}}Options): string {
+    return "string"
+  }
+
+   public function3(options?: {{pascalCase name}}Options): string {
+    return "string"
+  }
+
+
+}

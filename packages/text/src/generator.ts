@@ -1,5 +1,5 @@
 import { Generator, GeneratorOptions } from '@chancejs/generator'
-import { TextOptions, IText } from './interfaces'
+import { IText } from './interfaces'
 import { NaturalGenerator } from '@chancejs/natural'
 import { CharacterGenerator } from '@chancejs/character'
 import { WordOptions } from './word/interfaces'
