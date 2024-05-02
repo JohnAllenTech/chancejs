@@ -1,0 +1,1 @@
+export { weekday } from './weekday'

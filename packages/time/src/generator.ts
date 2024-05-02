@@ -10,6 +10,8 @@ import { MonthOptions, MonthReturnType, RawMonth } from './month/interfaces'
 import { MinuteOptions } from './minute/interfaces'
 import { MillisecondOptions } from './millisecond/interfaces'
 import { HourOptions } from './hour/interfaces'
+import { WeekdayOptions } from './weekday/interfaces'
+import { days } from './weekday/constants'
 
 export class Time extends Generator implements ITime {
   private naturalGenerator: NaturalGenerator
@@ -135,8 +137,9 @@ export class Time extends Generator implements ITime {
   public timezone(options?: TimeOptions): string {
     return 'string'
   }
-  public weekday(options?: TimeOptions): string {
-    return 'string'
+  public weekday(options?: WeekdayOptions): string {
+    const daysToSelectFrom = options?.weekday_only ? days.slice(0, 4) : days
+    return this.picker.pickOne(daysToSelectFrom)
   }
   public year(options?: TimeOptions): string {
     return 'string'
