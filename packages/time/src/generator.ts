@@ -9,6 +9,7 @@ import { months } from './month/constants'
 import { MonthOptions, MonthReturnType, RawMonth } from './month/interfaces'
 import { MinuteOptions } from './minute/interfaces'
 import { MillisecondOptions } from './millisecond/interfaces'
+import { HourOptions } from './hour/interfaces'
 
 export class Time extends Generator implements ITime {
   private naturalGenerator: NaturalGenerator
@@ -84,8 +85,22 @@ export class Time extends Generator implements ITime {
   public hammertime(options?: TimeOptions): string {
     return 'string'
   }
-  public hour(options?: TimeOptions): string {
-    return 'string'
+  public hour(options?: HourOptions): number {
+    const min = options?.min ? options.min : options?.twentyfour ? 0 : 1
+    const max = options?.max ? options.max : options?.twentyfour ? 23 : 12
+
+    testRange(min < 0, 'Chance: Min cannot be less than 0.')
+    testRange(min > max, 'Chance: Min cannot be greater than Max.')
+    testRange(
+      !!options?.twentyfour && max > 23,
+      'Chance: Max cannot be greater than 23 for twentyfour option.'
+    )
+    testRange(
+      !options?.twentyfour && max > 12,
+      'Chance: Max cannot be greater than 12.'
+    )
+
+    return this.naturalGenerator.natural({ min, max })
   }
   public minute(options?: MinuteOptions): number {
     const min = options?.min ?? 0
