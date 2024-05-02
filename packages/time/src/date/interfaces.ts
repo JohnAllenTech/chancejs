@@ -1,7 +1,17 @@
 import { TimeOptions } from '../interfaces'
 
 export interface DateOptions extends TimeOptions {
-  sampleOption: string
+  min?: Date
+  max?: Date
+  american?: boolean
+  year?: number
+  month?: number
+  day?: number
+  hour?: number
+  minute?: number
+  second?: number
+  millisecond?: number
+  string?: boolean
 }
 
 export interface DateGeneratorFunction {
