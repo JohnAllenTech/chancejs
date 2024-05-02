@@ -1,5 +1,7 @@
+import { RawMonth } from './interfaces'
+
 // Delete if not needed
-export const months = [
+export const months: Array<RawMonth> = [
   { name: 'January', short_name: 'Jan', numeric: '01', days: 31 },
   // Not messing with leap years...
   { name: 'February', short_name: 'Feb', numeric: '02', days: 28 },
