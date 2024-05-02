@@ -88,8 +88,8 @@ export class Time extends Generator implements ITime {
   public minute(options?: TimeOptions): string {
     return 'string'
   }
-  public second(options?: TimeOptions): string {
-    return 'string'
+  public second(): number {
+    return this.naturalGenerator.natural({ min: 0, max: 59 })
   }
   public millisecond(options?: TimeOptions): string {
     return 'string'
