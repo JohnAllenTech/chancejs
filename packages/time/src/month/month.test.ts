@@ -1,6 +1,6 @@
 import { month } from './month'
 
-describe('Testing Month Month function', () => {
+describe('Testing Time Month function', () => {
   it('returns an random month', () => {
     const result = month()
     expect(typeof result).toEqual('string')
