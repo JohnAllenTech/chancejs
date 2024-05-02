@@ -1,0 +1,1 @@
+export { millisecond } from './millisecond'

@@ -1,4 +1,5 @@
 import { DateGeneratorFunction } from './date/interfaces'
+import { MillisecondGeneratorFunction } from './millisecond/interfaces'
 import { MinuteGeneratorFunction } from './minute/interfaces'
 import { MonthGeneratorFunction, MonthOptions } from './month/interfaces'
 import { SecondGeneratorFunction } from './second/interfaces'
@@ -26,7 +27,7 @@ export interface ITime {
   hour: TimeGeneratorFunction
   second: SecondGeneratorFunction
   minute: MinuteGeneratorFunction
-  millisecond: TimeGeneratorFunction
+  millisecond: MillisecondGeneratorFunction
   month: MonthGeneratorFunction
   timestamp: TimeGeneratorFunction
   timezone: TimeGeneratorFunction

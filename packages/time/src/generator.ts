@@ -8,6 +8,7 @@ import { DateOptions } from './date/interfaces'
 import { months } from './month/constants'
 import { MonthOptions, MonthReturnType, RawMonth } from './month/interfaces'
 import { MinuteOptions } from './minute/interfaces'
+import { MillisecondOptions } from './millisecond/interfaces'
 
 export class Time extends Generator implements ITime {
   private naturalGenerator: NaturalGenerator
@@ -97,8 +98,8 @@ export class Time extends Generator implements ITime {
   public second(): number {
     return this.naturalGenerator.natural({ min: 0, max: 59 })
   }
-  public millisecond(options?: TimeOptions): string {
-    return 'string'
+  public millisecond(_options?: MillisecondOptions): number {
+    return this.naturalGenerator.natural({ max: 999 })
   }
 
   public month<O extends MonthOptions>(options?: O) {
