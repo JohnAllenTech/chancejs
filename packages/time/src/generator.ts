@@ -7,6 +7,7 @@ import { Picker } from '@chancejs/pick'
 import { DateOptions } from './date/interfaces'
 import { months } from './month/constants'
 import { MonthOptions, MonthReturnType, RawMonth } from './month/interfaces'
+import { MinuteOptions } from './minute/interfaces'
 
 export class Time extends Generator implements ITime {
   private naturalGenerator: NaturalGenerator
@@ -85,8 +86,13 @@ export class Time extends Generator implements ITime {
   public hour(options?: TimeOptions): string {
     return 'string'
   }
-  public minute(options?: TimeOptions): string {
-    return 'string'
+  public minute(options?: MinuteOptions): number {
+    const min = options?.min ?? 0
+    const max = options?.max ?? 59
+    testRange(min < 0, 'Chance: Min cannot be less than 0.')
+    testRange(max > 59, 'Chance: Max cannot be greater than 59.')
+    testRange(min > max, 'Chance: Min cannot be greater than Max.')
+    return this.naturalGenerator.natural({ min, max })
   }
   public second(): number {
     return this.naturalGenerator.natural({ min: 0, max: 59 })
