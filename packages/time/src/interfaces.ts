@@ -3,11 +3,12 @@ import { DateGeneratorFunction } from './date/interfaces'
 import { HourGeneratorFunction } from './hour/interfaces'
 import { MillisecondGeneratorFunction } from './millisecond/interfaces'
 import { MinuteGeneratorFunction } from './minute/interfaces'
-import { MonthGeneratorFunction, MonthOptions } from './month/interfaces'
+import { MonthGeneratorFunction } from './month/interfaces'
 import { SecondGeneratorFunction } from './second/interfaces'
 import { TimestampGeneratorFunction } from './timestamp/interfaces'
 import { TimezoneGeneratorFunction } from './timezone/interfaces'
 import { WeekdayGeneratorFunction } from './weekday/interfaces'
+import { YearGeneratorFunction } from './year/interfaces'
 
 export interface TimeOptions {
   seed?: number
@@ -37,5 +38,5 @@ export interface ITime {
   timestamp: TimestampGeneratorFunction
   timezone: TimezoneGeneratorFunction
   weekday: WeekdayGeneratorFunction
-  year: TimeGeneratorFunction
+  year: YearGeneratorFunction
 }
