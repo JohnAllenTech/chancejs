@@ -12,6 +12,8 @@ import { MillisecondOptions } from './millisecond/interfaces'
 import { HourOptions } from './hour/interfaces'
 import { WeekdayOptions } from './weekday/interfaces'
 import { days } from './weekday/constants'
+import { timezones } from './timezone/constants'
+import { Timezone } from './timezone/interfaces'
 import { YearOptions } from './year/interfaces'
 
 export class Time extends Generator implements ITime {
@@ -138,8 +140,8 @@ export class Time extends Generator implements ITime {
       max: new Date().getTime() / 1000,
     })
   }
-  public timezone(options?: TimeOptions): string {
-    return 'string'
+  public timezone(_options?: TimeOptions): Timezone {
+    return this.picker.pickOne(timezones)
   }
   public weekday(options?: WeekdayOptions): string {
     const daysToSelectFrom = options?.weekday_only ? days.slice(0, 4) : days
