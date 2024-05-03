@@ -12,6 +12,7 @@ import { MillisecondOptions } from './millisecond/interfaces'
 import { HourOptions } from './hour/interfaces'
 import { WeekdayOptions } from './weekday/interfaces'
 import { days } from './weekday/constants'
+import { YearOptions } from './year/interfaces'
 
 export class Time extends Generator implements ITime {
   private naturalGenerator: NaturalGenerator
@@ -144,8 +145,14 @@ export class Time extends Generator implements ITime {
     const daysToSelectFrom = options?.weekday_only ? days.slice(0, 4) : days
     return this.picker.pickOne(daysToSelectFrom)
   }
-  public year(options?: TimeOptions): string {
-    return 'string'
+  public year(options?: YearOptions): string {
+    const min = options?.min ?? new Date().getFullYear()
+    return this.naturalGenerator
+      .natural({
+        min: min,
+        max: options?.max ?? min + 100,
+      })
+      .toString()
   }
 }
 
