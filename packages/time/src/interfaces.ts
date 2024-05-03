@@ -1,3 +1,4 @@
+import { AmpmGeneratorFunction } from './ampm/interfaces'
 import { DateGeneratorFunction } from './date/interfaces'
 import { HourGeneratorFunction } from './hour/interfaces'
 import { MillisecondGeneratorFunction } from './millisecond/interfaces'
@@ -24,7 +25,7 @@ export interface TimeGeneratorFunction {
 }
 
 export interface ITime {
-  ampm: TimeGeneratorFunction
+  ampm: AmpmGeneratorFunction
   date: DateGeneratorFunction
   hour: HourGeneratorFunction
   second: SecondGeneratorFunction

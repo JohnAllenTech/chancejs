@@ -25,8 +25,8 @@ export class Time extends Generator implements ITime {
     this.picker = new Picker(options)
   }
 
-  public ampm(options?: TimeOptions): string {
-    return 'string'
+  public ampm(_options?: TimeOptions): string {
+    return this.picker.pickOne(['am', 'pm'])
   }
 
   public date(options?: DateOptions): string | Date {
