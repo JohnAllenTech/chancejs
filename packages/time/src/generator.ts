@@ -131,8 +131,11 @@ export class Time extends Generator implements ITime {
     const m = options?.raw ? month : month.name
     return m as MonthReturnType<O>
   }
-  public timestamp(options?: TimeOptions): string {
-    return 'string'
+  public timestamp(options?: TimeOptions): number {
+    return this.naturalGenerator.natural({
+      min: 1,
+      max: new Date().getTime() / 1000,
+    })
   }
   public timezone(options?: TimeOptions): string {
     return 'string'
