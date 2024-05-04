@@ -50,7 +50,7 @@ export class Time extends Generator implements ITime {
         : monthData.days
 
       const year = options?.year ?? parseInt(this.year(), 10)
-      const month = options?.month ?? parseInt(monthData.numeric)
+      const month = options?.month ?? parseInt(monthData.numeric) - 1
       const day =
         options?.day ??
         this.naturalGenerator.natural({ min: 1, max: daysInMonth })
@@ -75,8 +75,8 @@ export class Time extends Generator implements ITime {
     return returnDate as DateReturnType<O>
   }
 
-  public hammertime(options?: TimeOptions): string {
-    return 'string'
+  public hammertime(_options?: TimeOptions): number {
+    return this.date().getTime()
   }
   public hour(options?: HourOptions): number {
     const min = options?.min ? options.min : options?.twentyfour ? 0 : 1
