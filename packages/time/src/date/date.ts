@@ -1,7 +1,7 @@
 import { Time } from '../generator'
-import { DateGeneratorFunction, DateOptions } from './interfaces'
+import { DateGeneratorFunction } from './interfaces'
 
-export const date: DateGeneratorFunction = (options?: DateOptions) => {
+export const date: DateGeneratorFunction = options => {
   const time = new Time({ seed: options?.seed })
   return time.date(options)
 }
