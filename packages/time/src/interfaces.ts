@@ -6,6 +6,7 @@ import { MinuteGeneratorFunction } from './minute/interfaces'
 import { MonthGeneratorFunction } from './month/interfaces'
 import { SecondGeneratorFunction } from './second/interfaces'
 import { TimestampGeneratorFunction } from './timestamp/interfaces'
+import { TimezoneGeneratorFunction } from './timezone/interfaces'
 import { WeekdayGeneratorFunction } from './weekday/interfaces'
 import { YearGeneratorFunction } from './year/interfaces'
 
@@ -35,7 +36,7 @@ export interface ITime {
   millisecond: MillisecondGeneratorFunction
   month: MonthGeneratorFunction
   timestamp: TimestampGeneratorFunction
-  timezone: TimeGeneratorFunction
+  timezone: TimezoneGeneratorFunction
   weekday: WeekdayGeneratorFunction
   year: YearGeneratorFunction
 }
