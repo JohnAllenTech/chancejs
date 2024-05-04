@@ -1,5 +1,9 @@
 import { TimeOptions } from '../interfaces'
 
+export type DateReturnType<O extends DateOptions> = O['string'] extends true
+  ? string
+  : Date
+
 export interface DateOptions extends TimeOptions {
   min?: Date
   max?: Date
@@ -14,15 +18,15 @@ export interface DateOptions extends TimeOptions {
   string?: boolean
 }
 
-export interface DateGeneratorFunction {
+export type DateGeneratorFunction = <O extends DateOptions>(
   /**
    * Returns a random date.
    *
    * @param { DateOptions} [options={}]
-   * @return { number }
+   * @return { string | Date }
    * @example
    * // returns string | Date
    * date()
    */
-  (options?: DateOptions): string | Date
-}
+  options?: O
+) => DateReturnType<O>

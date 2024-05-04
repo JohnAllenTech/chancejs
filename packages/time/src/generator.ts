@@ -4,7 +4,7 @@ import { NaturalGenerator } from '@chancejs/natural'
 import { IntegerGenerator } from '@chancejs/integer'
 import { Picker } from '@chancejs/pick'
 
-import { DateOptions } from './date/interfaces'
+import { DateOptions, DateReturnType } from './date/interfaces'
 import { months } from './month/constants'
 import { MonthOptions, MonthReturnType, RawMonth } from './month/interfaces'
 import { MinuteOptions } from './minute/interfaces'
@@ -32,59 +32,47 @@ export class Time extends Generator implements ITime {
     return this.picker.pickOne(['am', 'pm'])
   }
 
-  public date(options?: DateOptions): string | Date {
-    // let date_string, date
-    // const dateOptions = {
-    //   year: options?.year,
-    //   month: options?.month,
-    //   day: options?.day,
-    //   hour: options?.hour,
-    //   minute: options?.minute,
-    //   second: options?.second,
-    //   millisecond: options?.millisecond,
-    // }
+  public date<O extends DateOptions>(options?: O) {
+    let date_string
+    let date
 
-    // // If interval is specified we ignore preset
-    // if (options && (options?.min || options?.max)) {
-    //   const min = options?.min?.getTime() ?? 1
-    //   // 100,000,000 days measured relative to midnight at the beginning of 01 January, 1970 UTC. http://es5.github.io/#x15.9.1.1
-    //   const max = options?.max?.getTime() ?? 8640000000000000
+    if (options && (options.min || options.max)) {
+      const min = options.min?.getTime() ?? 1
+      // 100,000,000 days measured relative to midnight at the beginning of 01 January, 1970 UTC. http://es5.github.io/#x15.9.1.1
+      const max = options.max?.getTime() ?? 8640000000000000
 
-    //   date = new Date(this.integerGenerator.integer({ min: min, max: max }))
+      date = new Date(this.integerGenerator.integer({ min, max }))
+    } else {
+      const monthData = this.month({ raw: true })
+      const daysInMonth = options?.month
+        ? // Mod 12 to allow months outside range of 0-11 (not encouraged, but also not prevented).
+          months[((options.month % 12) + 12) % 12].days
+        : monthData.days
 
-    //   date = new Date(this.integerGenerator.integer({ min: min, max: max }))
-    // } else {
-    //   let m = this.month({ raw: true })
-    //   let daysInMonth = m.days
+      const year = options?.year ?? parseInt(this.year(), 10)
+      const month = options?.month ?? parseInt(monthData.numeric)
+      const day =
+        options?.day ??
+        this.naturalGenerator.natural({ min: 1, max: daysInMonth })
+      const hour = options?.hour ?? this.hour({ twentyfour: true })
+      const minute = options?.minute ?? this.minute()
+      const second = options?.second ?? this.second()
+      const millisecond = options?.millisecond ?? this.millisecond()
 
-    //   if (options && options.month) {
-    //     // Mod 12 to allow months outside range of 0-11 (not encouraged, but also not prevented).
-    //     daysInMonth = months[((options.month % 12) + 12) % 12].days
-    //   }
+      date = new Date(year, month, day, hour, minute, second, millisecond)
+    }
 
-    //   date = new Date(
-    //     parseInt(this.year(), 10),
-    //     m.numeric - 1,
-    //     this.naturalGenerator.natural({ min: 1, max: daysInMonth }),
-    //     this.hour({ twentyfour: true }),
-    //     this.minute(),
-    //     this.second(),
-    //     this.millisecond()
-    //   )
-    // }
+    const monthIndex = date.getMonth() + 1
+    const dayIndex = date.getDate()
+    const yearIndex = date.getFullYear()
 
-    // if (!options?.american) {
-    //   // Adding 1 to the month is necessary because Date() 0-indexes
-    //   // months but not day for some odd reason.
-    //   date_string =
-    //     date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear()
-    // } else {
-    //   date_string =
-    //     date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear()
-    // }
+    date_string = options?.american
+      ? `${monthIndex}/${dayIndex}/${yearIndex}`
+      : `${dayIndex}/${monthIndex}/${yearIndex}`
 
-    // return options?.string ? date_string : date
-    return ''
+    const returnDate = options?.string ? date_string : date
+
+    return returnDate as DateReturnType<O>
   }
 
   public hammertime(options?: TimeOptions): string {
@@ -134,7 +122,7 @@ export class Time extends Generator implements ITime {
     const m = options?.raw ? month : month.name
     return m as MonthReturnType<O>
   }
-  public timestamp(options?: TimeOptions): number {
+  public timestamp(_options?: TimeOptions): number {
     return this.naturalGenerator.natural({
       min: 1,
       max: new Date().getTime() / 1000,
