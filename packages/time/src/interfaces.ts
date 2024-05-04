@@ -1,5 +1,6 @@
 import { AmpmGeneratorFunction } from './ampm/interfaces'
 import { DateGeneratorFunction } from './date/interfaces'
+import { HammertimeGeneratorFunction } from './hammertime/interfaces'
 import { HourGeneratorFunction } from './hour/interfaces'
 import { MillisecondGeneratorFunction } from './millisecond/interfaces'
 import { MinuteGeneratorFunction } from './minute/interfaces'
@@ -31,6 +32,7 @@ export interface ITime {
   ampm: AmpmGeneratorFunction
   date: DateGeneratorFunction
   hour: HourGeneratorFunction
+  hammertime: HammertimeGeneratorFunction
   second: SecondGeneratorFunction
   minute: MinuteGeneratorFunction
   millisecond: MillisecondGeneratorFunction
