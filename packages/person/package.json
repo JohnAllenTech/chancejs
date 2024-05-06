@@ -38,8 +38,6 @@
   },
   "dependencies": {
     "@chancejs/generator": "1.0.0",
-    "@chancejs/time": "1.0.0",
-    "@chancejs/picker": "1.0.0",
     "@chancejs/natural": "1.0.0"
   }
 }
