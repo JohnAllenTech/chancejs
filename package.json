@@ -36,8 +36,8 @@
     "package:create": "plop --plopfile ./scripts/create-package/plopfile.js",
     "generator:create": "plop --plopfile ./scripts/create-generator/plopfile.js",
     "function:create": "plop --plopfile ./scripts/create-function/plopfile.js",
-    "test:all": "yarn test",
-    "build:all": "yarn build",
+    "test:all": "yarn cache clean && yarn test",
+    "build:all": "yarn cache clean && yarn build",
     "prepare": "husky"
   },
   "keywords": [
