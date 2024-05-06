@@ -2,7 +2,7 @@ import { Generator, GeneratorOptions } from '@chancejs/generator'
 import { PersonOptions, IPerson } from './interfaces'
 import { NaturalGenerator } from '@chancejs/natural'
 import { Picker } from '@chancejs/pick'
-
+import { date } from '@chancejs/time'
 import { AgeOptions } from './age/interfaces'
 import { ageRanges } from './age/constants'
 import { GenderOptions } from './gender/interfaces'
@@ -17,7 +17,6 @@ import { lastNames } from './last/constants'
 import { NameOptions } from './name/interfaces'
 import { CharacterGenerator } from '@chancejs/character'
 import { BirthdayOptions, BirthdayReturnType } from './birthday/interfaces'
-import { date } from '@chancejs/time'
 
 export class Person extends Generator implements IPerson {
   private naturalGenerator: NaturalGenerator
