@@ -27,3 +27,6 @@ package-lock.json
 
 # Ignore build artifacts from version control
 lib
+
+
+.nx/cache

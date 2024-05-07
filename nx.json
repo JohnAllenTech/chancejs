@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "lint": {
+      "cache": true
+    },
+    "test": {
+      "cache": true
+    },
+    "build": {
+      "cache": true
+    }
+  },
+  "defaultBase": "main",
+  "plugins": [
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      }
+    }
+  ]
+}
