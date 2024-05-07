@@ -1,4 +1,5 @@
 import { AgeGeneratorFunction } from './age/interfaces'
+import { BirthdayGeneratorFunction } from './birthday/interfaces'
 import { FirstGeneratorFunction } from './first/interfaces'
 import { GenderGeneratorFunction } from './gender/interfaces'
 import { LastGeneratorFunction } from './last/interfaces'
@@ -24,7 +25,7 @@ export interface PersonGeneratorFunction {
 
 export interface IPerson {
   age: AgeGeneratorFunction
-  birthday: PersonGeneratorFunction
+  birthday: BirthdayGeneratorFunction
   cf: PersonGeneratorFunction
   cpf: PersonGeneratorFunction
   first: FirstGeneratorFunction

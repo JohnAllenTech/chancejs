@@ -2,10 +2,10 @@ import { Generator, GeneratorOptions } from '@chancejs/generator'
 import { PersonOptions, IPerson } from './interfaces'
 import { NaturalGenerator } from '@chancejs/natural'
 import { Picker } from '@chancejs/pick'
-
+import { date } from '@chancejs/time'
 import { AgeOptions } from './age/interfaces'
 import { ageRanges } from './age/constants'
-import { Gender, GenderOptions } from './gender/interfaces'
+import { GenderOptions } from './gender/interfaces'
 import { PrefixOptions } from './prefix/interfaces'
 import { allPrefixes, femalePrefixes, malePrefixes } from './prefix/constants'
 import { SuffixOptions } from './suffix/interfaces'
@@ -16,6 +16,7 @@ import { LastOptions } from './last/interfaces'
 import { lastNames } from './last/constants'
 import { NameOptions } from './name/interfaces'
 import { CharacterGenerator } from '@chancejs/character'
+import { BirthdayOptions, BirthdayReturnType } from './birthday/interfaces'
 
 export class Person extends Generator implements IPerson {
   private naturalGenerator: NaturalGenerator
@@ -70,8 +71,60 @@ export class Person extends Generator implements IPerson {
     }
     return this.naturalGenerator.natural({ ...ageRange })
   }
-  public birthday(options?: PersonOptions): string {
-    return 'string'
+  public birthday<O extends BirthdayOptions>(
+    options?: O
+  ): BirthdayReturnType<O> {
+    const age = this.age({
+      seed: options?.seed,
+      type: options?.type,
+    })
+    const now = new Date()
+    const currentYear = now.getFullYear()
+
+    let min: Date | undefined
+    let max: Date | undefined
+
+    const minAge = options?.minAge ? options.minAge : 0
+    const maxAge = options?.maxAge ? options.maxAge : 100
+
+    if (options && options.type) {
+      min = new Date(currentYear - age - 1, now.getMonth(), now.getDate())
+      max = new Date(currentYear - age, now.getMonth(), now.getDate())
+    } else if (
+      options &&
+      (options.minAge !== undefined || options.maxAge !== undefined)
+    ) {
+      testRange(minAge < 0, 'Chance: MinAge cannot be less than zero.')
+      testRange(
+        minAge > maxAge,
+        'Chance: MinAge cannot be greater than MaxAge.'
+      )
+
+      min = new Date(currentYear - maxAge - 1, now.getMonth(), now.getDate())
+      max = new Date(currentYear - minAge, now.getMonth(), now.getDate())
+
+      min.setDate(min.getDate() + 1)
+      max.setDate(max.getDate() + 1)
+      max.setMilliseconds(max.getMilliseconds() - 1)
+    } else {
+      min = new Date(
+        options?.year ?? currentYear - age,
+        now.getMonth(),
+        now.getDate()
+      )
+      max = new Date(
+        options?.year ?? currentYear - age,
+        now.getMonth(),
+        now.getDate()
+      )
+    }
+
+    return date({
+      min,
+      max,
+      year: options?.year,
+      string: options?.string,
+    }) as BirthdayReturnType<O>
   }
   public cf(options?: PersonOptions): string {
     return 'string'
@@ -143,5 +196,10 @@ export class Person extends Generator implements IPerson {
     return options?.full
       ? this.picker.pickOne(suffixes).name
       : this.picker.pickOne(suffixes).abbreviation
+  }
+}
+function testRange(test: boolean, errorMessage: string | undefined) {
+  if (test) {
+    throw new RangeError(errorMessage)
   }
 }

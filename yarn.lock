@@ -629,6 +629,7 @@ __metadata:
   resolution: "@chancejs/person@workspace:packages/person"
   dependencies:
     "@chancejs/generator": 1.0.0
+    "@chancejs/natural": 1.0.0
     "@types/jest": ^27.4.1
     "@types/node": ^18.7.2
     eslint: ^8.14.0
@@ -723,6 +724,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chancejs/time@workspace:packages/time"
   dependencies:
+    "@chancejs/generator": 1.0.0
+    "@chancejs/integer": 1.0.0
+    "@chancejs/natural": 1.0.0
     "@types/jest": ^27.4.1
     "@types/node": ^18.7.2
     eslint: ^8.14.0
