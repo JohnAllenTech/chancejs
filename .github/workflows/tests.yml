@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -22,7 +22,6 @@ jobs:
       - name: yarn install and test
         run: |
           yarn install
-          yarn build
           yarn test
         env:
           CI: true
