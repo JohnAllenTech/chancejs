@@ -1,4 +1,7 @@
+import { CountiesGeneratorFunction } from './counties'
 import { CountryGeneratorFunction } from './country/interfaces'
+import { StateGeneratorFunction } from './state/interfaces'
+import { ZipGeneratorFunction } from './zip/interfaces'
 
 export interface LocationOptions {
   seed?: number
@@ -24,6 +27,7 @@ export interface ILocation {
   city: LocationGeneratorFunction
   coordinates: LocationGeneratorFunction
   country: CountryGeneratorFunction
+  counties: CountiesGeneratorFunction
   depth: LocationGeneratorFunction
   geohash: LocationGeneratorFunction
   latitude: LocationGeneratorFunction
@@ -33,7 +37,7 @@ export interface ILocation {
   postal: LocationGeneratorFunction
   postcode: LocationGeneratorFunction
   province: LocationGeneratorFunction
-  state: LocationGeneratorFunction
+  state: StateGeneratorFunction
   street: LocationGeneratorFunction
-  zip: LocationGeneratorFunction
+  zip: ZipGeneratorFunction
 }

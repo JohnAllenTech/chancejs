@@ -7,6 +7,8 @@ import { Picker } from '@chancejs/pick'
 import { CountryOptions, CountryReturnType } from './country/interfaces'
 import { CountiesOptions } from './counties'
 import { countiesObject } from './counties'
+import { RawState, StateOptions, StateReturnType } from './state/interfaces'
+import { states } from './state/constants'
 
 export class Location extends Generator implements ILocation {
   private naturalGenerator: NaturalGenerator
@@ -73,9 +75,27 @@ export class Location extends Generator implements ILocation {
   public province(options?: LocationOptions): string {
     return 'string'
   }
-  public state(options?: LocationOptions): string {
-    return 'string'
+  public state<O extends StateOptions>(options?: O): StateReturnType<O> {
+    let validStates: RawState[] = []
+    const country = options?.country || 'us'
+
+    if (options?.us_states_and_dc && country !== 'us') {
+      validStates = validStates.concat(states.us)
+    }
+    if (options?.territories) {
+      validStates = validStates.concat(states.us_territories)
+    }
+    if (options?.armed_forces) {
+      validStates = validStates.concat(states.us_armed_forces)
+    }
+
+    validStates = validStates.concat(states[country])
+    const state = this.picker.pickOne(validStates)
+    return (
+      options?.raw ? state : options?.full ? state.name : state.abbreviation
+    ) as StateReturnType<O>
   }
+
   public counties(options: CountiesOptions = { country: 'uk' }): string {
     return this.picker.pickOne(countiesObject[options.country]).name
   }
