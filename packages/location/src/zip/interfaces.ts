@@ -1,7 +1,7 @@
 import { LocationOptions } from '../interfaces'
 
 export interface ZipOptions extends LocationOptions {
-  sampleOption: string
+  plusfour?: boolean
 }
 
 export interface ZipGeneratorFunction {

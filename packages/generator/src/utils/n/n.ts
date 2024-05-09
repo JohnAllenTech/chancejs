@@ -1,5 +1,3 @@
-import { NGeneratorFunction } from './interfaces'
-
 export const n = <ReturnType, Args extends any[]>(
   fn: (...args: Args) => ReturnType,
   n: number = 1,
