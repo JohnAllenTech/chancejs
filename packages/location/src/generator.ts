@@ -1,6 +1,7 @@
-import { Generator, GeneratorOptions } from '@chancejs/generator'
+import { Generator, GeneratorOptions, n } from '@chancejs/generator'
 import { ILocation, LocationOptions } from './interfaces'
 import { NaturalGenerator } from '@chancejs/natural'
+import { ZipOptions } from './zip/interfaces'
 
 export class Location extends Generator implements ILocation {
   private naturalGenerator: NaturalGenerator
@@ -64,15 +65,12 @@ export class Location extends Generator implements ILocation {
   public street(options?: LocationOptions): string {
     return 'string'
   }
-  public zip(options?: LocationOptions): string {
-    // var zip = this.n(this.naturalGenerator.natural, 5, { max: 9 })
+  public zip(options?: ZipOptions): string {
+    let zip = n(
+      () => this.naturalGenerator.natural({ max: 9 }).toString(),
+      options?.plusfour ? 9 : 5
+    ).join('')
 
-    // if (options && options?.plusfour === true) {
-    //   zip.push('-')
-    //   zip = zip.concat(this.n(this.naturalGenerator.natural, 4, { max: 9 }))
-    // }
-
-    // return zip.join('')
-    return 'string'
+    return options?.plusfour ? zip.slice(0, 5) + '-' + zip.slice(5) : zip
   }
 }
