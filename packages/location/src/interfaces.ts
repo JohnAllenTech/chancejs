@@ -1,3 +1,5 @@
+import { CountryGeneratorFunction } from './country/interfaces'
+
 export interface LocationOptions {
   seed?: number
 }
@@ -21,7 +23,7 @@ export interface ILocation {
   areacode: LocationGeneratorFunction
   city: LocationGeneratorFunction
   coordinates: LocationGeneratorFunction
-  country: LocationGeneratorFunction
+  country: CountryGeneratorFunction
   depth: LocationGeneratorFunction
   geohash: LocationGeneratorFunction
   latitude: LocationGeneratorFunction
