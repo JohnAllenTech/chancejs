@@ -1,5 +1,4 @@
 import { TimeOptions } from '../interfaces'
-import { months } from './constants'
 
 export interface MonthOptions extends TimeOptions {
   min?: number
