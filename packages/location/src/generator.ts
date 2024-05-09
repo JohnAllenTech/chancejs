@@ -5,6 +5,8 @@ import { ZipOptions } from './zip/interfaces'
 import { countries } from './country/constants'
 import { Picker } from '@chancejs/pick'
 import { CountryOptions, CountryReturnType } from './country/interfaces'
+import { CountiesOptions } from './counties'
+import { countiesObject } from './counties'
 
 export class Location extends Generator implements ILocation {
   private naturalGenerator: NaturalGenerator
@@ -73,6 +75,9 @@ export class Location extends Generator implements ILocation {
   }
   public state(options?: LocationOptions): string {
     return 'string'
+  }
+  public counties(options: CountiesOptions = { country: 'uk' }): string {
+    return this.picker.pickOne(countiesObject[options.country]).name
   }
   public street(options?: LocationOptions): string {
     return 'string'
