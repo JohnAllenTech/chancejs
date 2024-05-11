@@ -22,7 +22,9 @@ export class FloatingGenerator extends Generator implements IFloatingGenerator {
 
     const fixed = Math.pow(10, options?.fixed || 4)
 
-    const max = Number.MAX_SAFE_INTEGER / fixed
+    const max =
+      (options?.max !== undefined ? options.max : Number.MAX_SAFE_INTEGER) /
+      fixed
     const min = options?.min !== undefined ? options.min : -max / 10
 
     if (options?.min && options?.fixed && options?.min < min) {
@@ -31,7 +33,11 @@ export class FloatingGenerator extends Generator implements IFloatingGenerator {
       )
     }
 
-    if (options?.max && options?.fixed && options?.max > max) {
+    if (
+      options?.max &&
+      options?.fixed &&
+      options?.max > Number.MAX_SAFE_INTEGER
+    ) {
       throw new FloatingOptionsException(
         `Chance: Max specified is out of range with fixed. Max should be, at most, ${max}.`
       )
