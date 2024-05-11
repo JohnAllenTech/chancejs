@@ -37,7 +37,9 @@ describe('floating function', () => {
   it('will not take fixed + min that would be out of range', () => {
     expect(() =>
       floating({ fixed: 13, min: -Number.MAX_SAFE_INTEGER - 1 })
-    ).toThrow('Chance: Min cannot be less than -9007199254740991.')
+    ).toThrow(
+      'Chance: Min specified is out of range with fixed. Min should be, at least, -9007199254740991.'
+    )
   })
 
   it('will not take fixed + max that would be out of range', () => {

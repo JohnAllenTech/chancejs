@@ -27,9 +27,13 @@ export class FloatingGenerator extends Generator implements IFloatingGenerator {
       fixed
     const min = options?.min !== undefined ? options.min : -max / 10
 
-    if (options?.min && options?.fixed && options?.min < min) {
+    if (
+      options?.min &&
+      options?.fixed &&
+      options?.min < -Number.MAX_SAFE_INTEGER
+    ) {
       throw new FloatingOptionsException(
-        `Chance: Min specified is out of range with fixed. Min should be, at least, ${min}.`
+        `Chance: Min specified is out of range with fixed. Min should be, at least, ${-Number.MAX_SAFE_INTEGER}.`
       )
     }
 
