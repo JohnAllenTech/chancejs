@@ -4,7 +4,10 @@ import { floating } from './function'
 
 describe('floating function', () => {
   it('returns a random floating', () => {
-    expect(typeof floating()).toBe('number')
+    const result = floating()
+    expect(typeof result).toBe('number')
+    expect(result).toBeGreaterThan(-Number.MAX_SAFE_INTEGER)
+    expect(result).toBeLessThan(Number.MAX_SAFE_INTEGER)
   })
 
   it('can take both a max and min and obey them both', () => {
@@ -32,9 +35,9 @@ describe('floating function', () => {
   })
 
   it('will not take fixed + min that would be out of range', () => {
-    expect(() => floating({ fixed: 13, min: -9007199254740992 })).toThrow(
-      'Chance: Min cannot be less than -9007199254740991.'
-    )
+    expect(() =>
+      floating({ fixed: 13, min: -Number.MAX_SAFE_INTEGER - 1 })
+    ).toThrow('Chance: Min cannot be less than -9007199254740991.')
   })
 
   it('will not take fixed + max that would be out of range', () => {
