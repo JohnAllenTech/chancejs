@@ -9,6 +9,7 @@ import { CountiesOptions } from './counties'
 import { countiesObject } from './counties'
 import { RawState, StateOptions, StateReturnType } from './state/interfaces'
 import { states } from './state/constants'
+import { AreacodeOptions } from './areacode/interfaces'
 
 export class Location extends Generator implements ILocation {
   private naturalGenerator: NaturalGenerator
@@ -28,8 +29,14 @@ export class Location extends Generator implements ILocation {
     return 'string'
   }
 
-  public areacode(options?: LocationOptions): string {
-    return 'string'
+  public areacode(options: AreacodeOptions = { parens: true }): string {
+    var areacode = options?.exampleNumber
+      ? '555'
+      : this.naturalGenerator.natural({ min: 2, max: 9 }).toString() +
+        this.naturalGenerator.natural({ min: 0, max: 8 }).toString() +
+        this.naturalGenerator.natural({ min: 0, max: 9 }).toString()
+
+    return options.parens ? '(' + areacode + ')' : areacode
   }
 
   public city(options?: LocationOptions): string {
