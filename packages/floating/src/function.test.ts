@@ -4,7 +4,10 @@ import { floating } from './function'
 
 describe('floating function', () => {
   it('returns a random floating', () => {
-    expect(typeof floating()).toBe('number')
+    const result = floating()
+    expect(typeof result).toBe('number')
+    expect(result).toBeGreaterThan(-Number.MAX_SAFE_INTEGER)
+    expect(result).toBeLessThan(Number.MAX_SAFE_INTEGER)
   })
 
   it('can take both a max and min and obey them both', () => {
@@ -15,15 +18,35 @@ describe('floating function', () => {
     })
   })
 
+  it('can take both a max and min and obey them both', () => {
+    times(1000, () => {
+      let n = floating({ min: 0, max: 100 })
+      expect(n).toBeGreaterThanOrEqual(0)
+      expect(n).toBeLessThanOrEqual(101)
+    })
+  })
+
+  it('can take both a max and min and obey them both', () => {
+    times(1000, () => {
+      let n = floating({ min: -100, max: 0 })
+      expect(n).toBeGreaterThanOrEqual(-100)
+      expect(n).toBeLessThanOrEqual(0)
+    })
+  })
+
   it('will not take fixed + min that would be out of range', () => {
-    expect(() => floating({ fixed: 13, min: -9007199254740992 })).toThrow(
-      'Chance: Min specified is out of range with fixed. Min should be, at least, -900.7199254740991.'
+    expect(() =>
+      floating({ fixed: 13, min: -Number.MAX_SAFE_INTEGER - 1 })
+    ).toThrow(
+      'Chance: Min specified is out of range with fixed. Min should be, at least, -9007199254740991.'
     )
   })
 
   it('will not take fixed + max that would be out of range', () => {
-    expect(() => floating({ fixed: 13, max: 9007199254740992 })).toThrow(
-      'Chance: Max specified is out of range with fixed. Max should be, at most, 900.7199254740991.'
+    expect(() =>
+      floating({ fixed: 13, max: Number.MAX_SAFE_INTEGER + 1 })
+    ).toThrow(
+      `Chance: Max specified is out of range with fixed. Max should be, at most, ${Number.MAX_SAFE_INTEGER}.`
     )
   })
 

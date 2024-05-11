@@ -22,26 +22,33 @@ export class FloatingGenerator extends Generator implements IFloatingGenerator {
 
     const fixed = Math.pow(10, options?.fixed || 4)
 
-    const max = Number.MAX_SAFE_INTEGER / fixed
-    const min = -max
+    const max =
+      (options?.max !== undefined ? options.max : Number.MAX_SAFE_INTEGER) /
+      fixed
+    const min = options?.min !== undefined ? options.min : -max / 10
 
-    if (options?.min && options?.fixed && options?.min < min) {
+    if (
+      options?.min &&
+      options?.fixed &&
+      options?.min < -Number.MAX_SAFE_INTEGER
+    ) {
       throw new FloatingOptionsException(
-        `Chance: Min specified is out of range with fixed. Min should be, at least, ${min}.`
+        `Chance: Min specified is out of range with fixed. Min should be, at least, ${-Number.MAX_SAFE_INTEGER}.`
       )
     }
 
-    if (options?.max && options?.fixed && options?.max > max) {
+    if (
+      options?.max &&
+      options?.fixed &&
+      options?.max > Number.MAX_SAFE_INTEGER
+    ) {
       throw new FloatingOptionsException(
-        `Chance: Max specified is out of range with fixed. Max should be, at most, ${max}.`
+        `Chance: Max specified is out of range with fixed. Max should be, at most, ${Number.MAX_SAFE_INTEGER}.`
       )
     }
-
-    // Todo - Make this work!
-    // options.precision = (typeof options.precision !== "undefined") ? options.precision : false;
 
     const num = this.integerGenerator.integer({
-      min: (options?.min || min) * fixed,
+      min: min * fixed,
       max: (options?.max || max) * fixed,
     })
     const num_fixed = (num / fixed).toFixed(options?.fixed)

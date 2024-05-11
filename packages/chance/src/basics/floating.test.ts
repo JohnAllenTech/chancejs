@@ -23,13 +23,13 @@ describe('floating method', () => {
     expect(() =>
       chance.floating({ fixed: 13, min: -9007199254740992 })
     ).toThrow(
-      'Chance: Min specified is out of range with fixed. Min should be, at least, -900.7199254740991.'
+      'Chance: Min specified is out of range with fixed. Min should be, at least, -9007199254740991.'
     )
   })
 
   it('will not take fixed + max that would be out of range', () => {
     expect(() => chance.floating({ fixed: 13, max: 9007199254740992 })).toThrow(
-      'Chance: Max specified is out of range with fixed. Max should be, at most, 900.7199254740991.'
+      'Chance: Max specified is out of range with fixed. Max should be, at most, 9007199254740991.'
     )
   })
 

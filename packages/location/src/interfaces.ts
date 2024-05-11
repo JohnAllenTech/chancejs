@@ -1,7 +1,9 @@
+import { AltitudeGeneratorFunction } from './altitude/interfaces'
 import { AreacodeGeneratorFunction } from './areacode/interfaces'
 import { CityGeneratorFunction } from './city/interfaces'
 import { CountiesGeneratorFunction } from './counties'
 import { CountryGeneratorFunction } from './country/interfaces'
+import { DepthGeneratorFunction } from './depth/interfaces'
 import { StateGeneratorFunction } from './state/interfaces'
 import { ZipGeneratorFunction } from './zip/interfaces'
 
@@ -24,13 +26,13 @@ export interface LocationGeneratorFunction {
 
 export interface ILocation {
   address: LocationGeneratorFunction
-  altitude: LocationGeneratorFunction
+  altitude: AltitudeGeneratorFunction
   areacode: AreacodeGeneratorFunction
   city: CityGeneratorFunction
   coordinates: LocationGeneratorFunction
   country: CountryGeneratorFunction
   counties: CountiesGeneratorFunction
-  depth: LocationGeneratorFunction
+  depth: DepthGeneratorFunction
   geohash: LocationGeneratorFunction
   latitude: LocationGeneratorFunction
   locale: LocationGeneratorFunction
