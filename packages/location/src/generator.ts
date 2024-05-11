@@ -1,6 +1,7 @@
-import { Generator, GeneratorOptions, n } from '@chancejs/generator'
+import { Generator, GeneratorOptions, n, capitalize } from '@chancejs/generator'
 import { ILocation, LocationOptions } from './interfaces'
 import { NaturalGenerator } from '@chancejs/natural'
+import { Text } from '@chancejs/text'
 import { ZipOptions } from './zip/interfaces'
 import { countries } from './country/constants'
 import { Picker } from '@chancejs/pick'
@@ -14,11 +15,13 @@ import { AreacodeOptions } from './areacode/interfaces'
 export class Location extends Generator implements ILocation {
   private naturalGenerator: NaturalGenerator
   private picker: Picker
+  private text: Text
 
   constructor(options: GeneratorOptions) {
     super(options)
     this.naturalGenerator = new NaturalGenerator(options)
     this.picker = new Picker(options)
+    this.text = new Text(options)
   }
 
   public address(options?: LocationOptions): string {
@@ -39,8 +42,8 @@ export class Location extends Generator implements ILocation {
     return options.parens ? '(' + areacode + ')' : areacode
   }
 
-  public city(options?: LocationOptions): string {
-    return 'string'
+  public city(_options?: LocationOptions): string {
+    return capitalize(this.text.word({ syllables: 3 }))
   }
   public coordinates(options?: LocationOptions): string {
     return 'string'

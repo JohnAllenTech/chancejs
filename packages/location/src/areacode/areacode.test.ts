@@ -6,7 +6,6 @@ describe('Testing areacode function', () => {
     times(1000, () => {
       const areaCode = areacode()
       expect(typeof areaCode).toBe('string')
-      console.log(areaCode)
       expect(/^\(([2-9][0-8][0-9])\)$/.test(areaCode)).toBe(true)
     })
   })

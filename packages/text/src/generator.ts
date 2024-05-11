@@ -1,4 +1,4 @@
-import { Generator, GeneratorOptions } from '@chancejs/generator'
+import { Generator, GeneratorOptions, capitalize } from '@chancejs/generator'
 import { IText } from './interfaces'
 import { NaturalGenerator } from '@chancejs/natural'
 import { CharacterGenerator } from '@chancejs/character'
@@ -105,7 +105,4 @@ export class Text extends Generator implements IText {
 
     return sentence_array.join(separator)
   }
-}
-function capitalize(text: string): string {
-  return text[0].toUpperCase() + text.slice(1)
 }
