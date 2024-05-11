@@ -14,17 +14,21 @@ import { states } from './state/constants'
 import { AreacodeOptions } from './areacode/interfaces'
 import { AltitudeOptions } from './altitude/interfaces'
 import { DepthOptions } from './depth/interfaces'
+import { CharacterGenerator } from '@chancejs/character'
+import { PostalOptions } from './postal/interfaces'
 
 export class Location extends Generator implements ILocation {
   private naturalGenerator: NaturalGenerator
   private picker: Picker
   private text: Text
+  private character: CharacterGenerator
 
   constructor(options: GeneratorOptions) {
     super(options)
     this.naturalGenerator = new NaturalGenerator(options)
     this.picker = new Picker(options)
     this.text = new Text(options)
+    this.character = new CharacterGenerator(options)
   }
 
   public address(options?: LocationOptions): string {
@@ -91,8 +95,21 @@ export class Location extends Generator implements ILocation {
   public phone(options?: LocationOptions): string {
     return 'string'
   }
-  public postal(options?: LocationOptions): string {
-    return 'string'
+  public postal(_options?: PostalOptions): string {
+    // Postal District
+    var pd = this.character.character({ pool: 'XVTSRPNKLMHJGECBA' })
+    // Forward Sortation Area (FSA)
+    var fsa =
+      pd +
+      this.naturalGenerator.natural({ max: 9 }) +
+      this.character.character({ alpha: true, casing: 'upper' })
+    // Local Delivery Unit (LDU)
+    var ldu =
+      this.naturalGenerator.natural({ max: 9 }) +
+      this.character.character({ alpha: true, casing: 'upper' }) +
+      this.naturalGenerator.natural({ max: 9 })
+
+    return fsa + ' ' + ldu
   }
   public postcode(options?: LocationOptions): string {
     return 'string'
