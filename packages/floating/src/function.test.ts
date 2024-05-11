@@ -15,9 +15,17 @@ describe('floating function', () => {
     })
   })
 
+  it('can take both a max and min and obey them both', () => {
+    times(1000, () => {
+      let n = floating({ min: 0, max: 100 })
+      expect(n).toBeGreaterThanOrEqual(0)
+      expect(n).toBeLessThanOrEqual(101)
+    })
+  })
+
   it('will not take fixed + min that would be out of range', () => {
     expect(() => floating({ fixed: 13, min: -9007199254740992 })).toThrow(
-      'Chance: Min specified is out of range with fixed. Min should be, at least, -900.7199254740991.'
+      'Chance: Min cannot be less than -9007199254740991.'
     )
   })
 

@@ -1,6 +1,7 @@
 import { Generator, GeneratorOptions, n, capitalize } from '@chancejs/generator'
 import { ILocation, LocationOptions } from './interfaces'
 import { NaturalGenerator } from '@chancejs/natural'
+import { floating } from '@chancejs/floating'
 import { Text } from '@chancejs/text'
 import { ZipOptions } from './zip/interfaces'
 import { countries } from './country/constants'
@@ -11,6 +12,8 @@ import { countiesObject } from './counties'
 import { RawState, StateOptions, StateReturnType } from './state/interfaces'
 import { states } from './state/constants'
 import { AreacodeOptions } from './areacode/interfaces'
+import { AltitudeOptions } from './altitude/interfaces'
+import { DepthOptions } from './depth/interfaces'
 
 export class Location extends Generator implements ILocation {
   private naturalGenerator: NaturalGenerator
@@ -28,8 +31,16 @@ export class Location extends Generator implements ILocation {
     return 'string'
   }
 
-  public altitude(options?: LocationOptions): string {
-    return 'string'
+  public altitude(options?: AltitudeOptions): number {
+    const min = options?.min ?? 0
+    const max = options?.max ?? 8848
+    const fixed = options?.fixed ?? 5
+
+    return floating({
+      min: options?.min ?? 0,
+      max: options?.max ?? 8848,
+      fixed: options?.fixed ?? 5,
+    })
   }
 
   public areacode(options: AreacodeOptions = { parens: true }): string {
@@ -58,8 +69,12 @@ export class Location extends Generator implements ILocation {
           : country.abbreviation
     ) as CountryReturnType<O>
   }
-  public depth(options?: LocationOptions): string {
-    return 'string'
+  public depth(options?: DepthOptions): number {
+    return floating({
+      min: options?.min ?? -10994,
+      max: options?.max ?? 0,
+      fixed: options?.fixed ?? 5,
+    })
   }
   public geohash(options?: LocationOptions): string {
     return 'string'
