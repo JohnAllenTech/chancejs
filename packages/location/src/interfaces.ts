@@ -1,3 +1,5 @@
+import { AreacodeGeneratorFunction } from './areacode/interfaces'
+import { CityGeneratorFunction } from './city/interfaces'
 import { CountiesGeneratorFunction } from './counties'
 import { CountryGeneratorFunction } from './country/interfaces'
 import { StateGeneratorFunction } from './state/interfaces'
@@ -23,8 +25,8 @@ export interface LocationGeneratorFunction {
 export interface ILocation {
   address: LocationGeneratorFunction
   altitude: LocationGeneratorFunction
-  areacode: LocationGeneratorFunction
-  city: LocationGeneratorFunction
+  areacode: AreacodeGeneratorFunction
+  city: CityGeneratorFunction
   coordinates: LocationGeneratorFunction
   country: CountryGeneratorFunction
   counties: CountiesGeneratorFunction
