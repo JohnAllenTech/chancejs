@@ -39,7 +39,7 @@ export class FloatingGenerator extends Generator implements IFloatingGenerator {
       options?.max > Number.MAX_SAFE_INTEGER
     ) {
       throw new FloatingOptionsException(
-        `Chance: Max specified is out of range with fixed. Max should be, at most, ${max}.`
+        `Chance: Max specified is out of range with fixed. Max should be, at most, ${Number.MAX_SAFE_INTEGER}.`
       )
     }
 

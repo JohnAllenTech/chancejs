@@ -38,8 +38,10 @@ describe('floating function', () => {
   })
 
   it('will not take fixed + max that would be out of range', () => {
-    expect(() => floating({ fixed: 13, max: 9007199254740992 })).toThrow(
-      'Chance: Max specified is out of range with fixed. Max should be, at most, 900.7199254740992.'
+    expect(() =>
+      floating({ fixed: 13, max: Number.MAX_SAFE_INTEGER + 1 })
+    ).toThrow(
+      `Chance: Max specified is out of range with fixed. Max should be, at most, ${Number.MAX_SAFE_INTEGER}.`
     )
   })
 
