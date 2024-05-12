@@ -12,7 +12,7 @@ export type LongitudeReturnType<O extends LongitudeOptions> =
 
 export type LongitudeGeneratorFunction = <O extends LongitudeOptions>(
   /**
-   * Returns a random longitude.
+   * Generates a random longitude based on the provided options.
    *
    * @param { LongitudeOptions} [options={}]
    * @return { LongitudeReturnType<O> }
