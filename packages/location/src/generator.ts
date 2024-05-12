@@ -16,12 +16,15 @@ import { AltitudeOptions } from './altitude/interfaces'
 import { DepthOptions } from './depth/interfaces'
 import { CharacterGenerator } from '@chancejs/character'
 import { PostalOptions } from './postal/interfaces'
+import { LatitudeOptions } from './latitude/interfaces'
+import { IntegerGenerator } from '@chancejs/integer'
 
 export class Location extends Generator implements ILocation {
   private naturalGenerator: NaturalGenerator
   private picker: Picker
   private text: Text
   private character: CharacterGenerator
+  private integer: IntegerGenerator
 
   constructor(options: GeneratorOptions) {
     super(options)
@@ -29,6 +32,7 @@ export class Location extends Generator implements ILocation {
     this.picker = new Picker(options)
     this.text = new Text(options)
     this.character = new CharacterGenerator(options)
+    this.integer = new IntegerGenerator(options)
   }
 
   public address(options?: LocationOptions): string {
@@ -36,10 +40,6 @@ export class Location extends Generator implements ILocation {
   }
 
   public altitude(options?: AltitudeOptions): number {
-    const min = options?.min ?? 0
-    const max = options?.max ?? 8848
-    const fixed = options?.fixed ?? 5
-
     return floating({
       min: options?.min ?? 0,
       max: options?.max ?? 8848,
@@ -83,8 +83,57 @@ export class Location extends Generator implements ILocation {
   public geohash(options?: LocationOptions): string {
     return 'string'
   }
-  public latitude(options?: LocationOptions): string {
-    return 'string'
+  public latitude(options?: LatitudeOptions): string | number {
+    const format = options?.format ?? 'dd'
+
+    if (format === 'ddm' || format === 'dms') {
+      testRange(
+        !!options?.min && (options?.min < 0 || options?.min > 89),
+        'Chance: Min specified is out of range. Should be between 0 - 89'
+      )
+      testRange(
+        !!options?.max && (options?.max < 0 || options?.max > 89),
+        'Chance: Max specified is out of range. Should be between 0 - 89'
+      )
+      testRange(
+        !!options?.fixed && options?.fixed > 4,
+        'Chance: Fixed specified should be below or equal to 4'
+      )
+    }
+
+    switch (format) {
+      case 'ddm': {
+        return (
+          this.integer.integer({
+            min: options?.min ?? 0,
+            max: options?.max ?? 89,
+          }) +
+          '°' +
+          floating({ min: 0, max: 59, fixed: options?.fixed ?? 4 })
+        )
+      }
+      case 'dms': {
+        return (
+          this.integer.integer({
+            min: options?.min ?? 0,
+            max: options?.max ?? 89,
+          }) +
+          '°' +
+          this.integer.integer({ min: 0, max: 59 }) +
+          '’' +
+          floating({ min: 0, max: 59, fixed: options?.fixed ?? 4 }) +
+          '”'
+        )
+      }
+      case 'dd':
+      default: {
+        return floating({
+          min: options?.min ?? -90,
+          max: options?.max ?? 90,
+          fixed: options?.fixed ?? 5,
+        })
+      }
+    }
   }
   public locale(options?: LocationOptions): string {
     return 'string'
@@ -151,5 +200,11 @@ export class Location extends Generator implements ILocation {
     ).join('')
 
     return options?.plusfour ? zip.slice(0, 5) + '-' + zip.slice(5) : zip
+  }
+}
+
+function testRange(test: boolean, errorMessage: string | undefined) {
+  if (test) {
+    throw new RangeError(errorMessage)
   }
 }
