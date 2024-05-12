@@ -26,6 +26,8 @@ import { StreetOptions, StreetSuffix } from './street/interfaces'
 import { street_suffixes } from './street/constants'
 import { LocaleOptions } from './locale/interfaces'
 import { locale_languages, locale_regions } from './locale/constants'
+import { provinces } from './province/constants'
+import { ProvinceOptions } from './province/interfaces'
 
 export class Location extends Generator implements ILocation {
   private naturalGenerator: NaturalGenerator
@@ -230,8 +232,9 @@ export class Location extends Generator implements ILocation {
   public postcode(options?: LocationOptions): string {
     return 'string'
   }
-  public province(options?: LocationOptions): string {
-    return 'string'
+  public province(options?: ProvinceOptions): string {
+    const province = this.picker.pickOne(provinces[options?.country ?? 'ca'])
+    return options?.full ? province.name : province.abbreviation
   }
   public state<O extends StateOptions>(options?: O): StateReturnType<O> {
     let validStates: RawState[] = []
