@@ -24,6 +24,8 @@ import { GeohashOptions } from './geohash/interfaces'
 import { string } from '@chancejs/string'
 import { StreetOptions, StreetSuffix } from './street/interfaces'
 import { street_suffixes } from './street/constants'
+import { LocaleOptions } from './locale/interfaces'
+import { locale_languages, locale_regions } from './locale/constants'
 
 export class Location extends Generator implements ILocation {
   private naturalGenerator: NaturalGenerator
@@ -146,8 +148,10 @@ export class Location extends Generator implements ILocation {
       }
     }
   }
-  public locale(options?: LocationOptions): string {
-    return 'string'
+  public locale(options?: LocaleOptions): string {
+    return this.picker.pickOne(
+      options?.region ? locale_regions : locale_languages
+    )
   }
 
   public longitude<O extends LongitudeOptions>(
@@ -275,27 +279,6 @@ export class Location extends Generator implements ILocation {
           street
         break
     }
-    return street
-  }
-
-  public street2(options?: StreetOptions): string {
-    const country = options?.country ?? 'us'
-    const syllables = options?.syllables ?? 2
-    const suffix = this.street_suffix(country)
-    let street: string
-
-    switch (country) {
-      case 'us':
-      case 'it':
-        street = capitalize(this.text.word({ syllables }))
-        street +=
-          ' ' + (options?.short_suffix ? suffix.abbreviation : suffix.name)
-        break
-      default:
-        street = ''
-        break
-    }
-
     return street
   }
 
