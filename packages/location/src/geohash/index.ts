@@ -1,0 +1,1 @@
+export { geohash } from './geohash'
