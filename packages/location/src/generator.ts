@@ -20,6 +20,8 @@ import { LatitudeOptions, LatitudeReturnType } from './latitude/interfaces'
 import { IntegerGenerator } from '@chancejs/integer'
 import { LongitudeOptions, LongitudeReturnType } from './longitude/interfaces'
 import { CoordinatesOptions } from './coordinates/interfaces'
+import { GeohashOptions } from './geohash/interfaces'
+import { string } from '@chancejs/string'
 
 export class Location extends Generator implements ILocation {
   private naturalGenerator: NaturalGenerator
@@ -82,8 +84,11 @@ export class Location extends Generator implements ILocation {
       fixed: options?.fixed ?? 5,
     })
   }
-  public geohash(options?: LocationOptions): string {
-    return 'string'
+  public geohash(options?: GeohashOptions): string {
+    return string({
+      length: options?.length ?? 7,
+      pool: '0123456789bcdefghjkmnpqrstuvwxyz',
+    })
   }
   public latitude<O extends LatitudeOptions>(
     options?: O
