@@ -65,7 +65,7 @@ describe('Testing latitude function', () => {
     for (let i = 0; i < 1000; i++) {
       const CHARS_TO_CONTAIN = ['°']
       const CHARS_NOT_TO_CONTAIN = ['’', '”']
-      let latitudeValue = latitude({ format: 'ddm' }) as string
+      let latitudeValue = latitude({ format: 'ddm' })
 
       expect(typeof latitudeValue).toEqual('string')
       expect(
@@ -80,7 +80,7 @@ describe('Testing latitude function', () => {
   it('will obey DMS format', () => {
     for (let i = 0; i < 1000; i++) {
       const CHARS_TO_CONTAIN = ['°', '’', '”']
-      let latitudeValue = latitude({ format: 'dms' }) as string
+      let latitudeValue = latitude({ format: 'dms' })
 
       expect(typeof latitudeValue).toEqual('string')
       expect(

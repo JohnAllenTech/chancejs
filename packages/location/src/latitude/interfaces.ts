@@ -7,15 +7,18 @@ export interface LatitudeOptions extends LocationOptions {
   format?: 'ddm' | 'dms' | 'dd'
 }
 
-export interface LatitudeGeneratorFunction {
+export type LatitudeReturnType<O extends LatitudeOptions> =
+  O['format'] extends 'dd' ? number : string
+
+export type LatitudeGeneratorFunction = <O extends LatitudeOptions>(
   /**
    * Returns a random latitude.
    *
    * @param { LatitudeOptions} [options={}]
-   * @return { number }
+   * @return { LatitudeReturnType<O> }
    * @example
    * // returns number
    * latitude()
    */
-  (options?: LatitudeOptions): string | number
-}
+  options?: O
+) => LatitudeReturnType<O>
