@@ -19,6 +19,7 @@ import { PostalOptions } from './postal/interfaces'
 import { LatitudeOptions, LatitudeReturnType } from './latitude/interfaces'
 import { IntegerGenerator } from '@chancejs/integer'
 import { LongitudeOptions, LongitudeReturnType } from './longitude/interfaces'
+import { CoordinatesOptions } from './coordinates/interfaces'
 
 export class Location extends Generator implements ILocation {
   private naturalGenerator: NaturalGenerator
@@ -61,8 +62,8 @@ export class Location extends Generator implements ILocation {
   public city(_options?: LocationOptions): string {
     return capitalize(this.text.word({ syllables: 3 }))
   }
-  public coordinates(options?: LocationOptions): string {
-    return 'string'
+  public coordinates(options?: CoordinatesOptions): string {
+    return this.latitude(options) + ', ' + this.longitude(options)
   }
   public country<O extends CountryOptions>(options?: O): CountryReturnType<O> {
     var country = this.picker.pickOne(countries)
