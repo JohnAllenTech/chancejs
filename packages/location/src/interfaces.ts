@@ -1,6 +1,7 @@
 import { AltitudeGeneratorFunction } from './altitude/interfaces'
 import { AreacodeGeneratorFunction } from './areacode/interfaces'
 import { CityGeneratorFunction } from './city/interfaces'
+import { CoordinatesGeneratorFunction } from './coordinates/interfaces'
 import { CountiesGeneratorFunction } from './counties'
 import { CountryGeneratorFunction } from './country/interfaces'
 import { DepthGeneratorFunction } from './depth/interfaces'
@@ -32,7 +33,7 @@ export interface ILocation {
   altitude: AltitudeGeneratorFunction
   areacode: AreacodeGeneratorFunction
   city: CityGeneratorFunction
-  coordinates: LocationGeneratorFunction
+  coordinates: CoordinatesGeneratorFunction
   country: CountryGeneratorFunction
   counties: CountiesGeneratorFunction
   depth: DepthGeneratorFunction
