@@ -1,4 +1,3 @@
-// Delete if not needed
 export const timezones = [
   {
     name: 'Dateline Standard Time',
@@ -419,7 +418,7 @@ export const timezones = [
     offset: -1,
     isdst: true,
     text: '(UTC-02:00) Mid-Atlantic - Old',
-    utc: [],
+    utc: ['America/Noronha', 'Atlantic/South_Georgia', 'Etc/GMT+2'],
   },
   {
     name: 'Azores Standard Time',
