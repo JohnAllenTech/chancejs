@@ -22,6 +22,8 @@ import { LongitudeOptions, LongitudeReturnType } from './longitude/interfaces'
 import { CoordinatesOptions } from './coordinates/interfaces'
 import { GeohashOptions } from './geohash/interfaces'
 import { string } from '@chancejs/string'
+import { StreetOptions, StreetSuffix } from './street/interfaces'
+import { street_suffixes } from './street/constants'
 
 export class Location extends Generator implements ILocation {
   private naturalGenerator: NaturalGenerator
@@ -251,9 +253,56 @@ export class Location extends Generator implements ILocation {
   public counties(options: CountiesOptions = { country: 'uk' }): string {
     return this.picker.pickOne(countiesObject[options.country]).name
   }
-  public street(options?: LocationOptions): string {
-    return 'string'
+  public street(options?: StreetOptions): string {
+    let street = ''
+    const country = options?.country ?? 'us'
+    const syllables = options?.syllables ?? 2
+    const suffix = this.street_suffix(country)
+
+    switch (country) {
+      case 'us':
+        street = this.text.word({ syllables })
+        street = capitalize(street)
+        street += ' '
+        street += options?.short_suffix ? suffix.abbreviation : suffix.name
+        break
+      case 'it':
+        street = this.text.word({ syllables })
+        street = capitalize(street)
+        street =
+          (options?.short_suffix ? suffix.abbreviation : suffix.name) +
+          ' ' +
+          street
+        break
+    }
+    return street
   }
+
+  public street2(options?: StreetOptions): string {
+    const country = options?.country ?? 'us'
+    const syllables = options?.syllables ?? 2
+    const suffix = this.street_suffix(country)
+    let street: string
+
+    switch (country) {
+      case 'us':
+      case 'it':
+        street = capitalize(this.text.word({ syllables }))
+        street +=
+          ' ' + (options?.short_suffix ? suffix.abbreviation : suffix.name)
+        break
+      default:
+        street = ''
+        break
+    }
+
+    return street
+  }
+
+  private street_suffix(country: keyof typeof street_suffixes): StreetSuffix {
+    return this.picker.pickOne(street_suffixes[country ?? 'us'])
+  }
+
   public zip(options?: ZipOptions): string {
     let zip = n(
       () => this.naturalGenerator.natural({ max: 9 }).toString(),

@@ -10,6 +10,7 @@ import { LatitudeGeneratorFunction } from './latitude/interfaces'
 import { LongitudeGeneratorFunction } from './longitude/interfaces'
 import { PostalGeneratorFunction } from './postal/interfaces'
 import { StateGeneratorFunction } from './state/interfaces'
+import { StreetGeneratorFunction } from './street/interfaces'
 import { ZipGeneratorFunction } from './zip/interfaces'
 
 export interface LocationOptions {
@@ -47,6 +48,6 @@ export interface ILocation {
   postcode: LocationGeneratorFunction
   province: LocationGeneratorFunction
   state: StateGeneratorFunction
-  street: LocationGeneratorFunction
+  street: StreetGeneratorFunction
   zip: ZipGeneratorFunction
 }
