@@ -5,6 +5,7 @@ import { CountiesGeneratorFunction } from './counties'
 import { CountryGeneratorFunction } from './country/interfaces'
 import { DepthGeneratorFunction } from './depth/interfaces'
 import { LatitudeGeneratorFunction } from './latitude/interfaces'
+import { LongitudeGeneratorFunction } from './longitude/interfaces'
 import { PostalGeneratorFunction } from './postal/interfaces'
 import { StateGeneratorFunction } from './state/interfaces'
 import { ZipGeneratorFunction } from './zip/interfaces'
@@ -38,7 +39,7 @@ export interface ILocation {
   geohash: LocationGeneratorFunction
   latitude: LatitudeGeneratorFunction
   locale: LocationGeneratorFunction
-  longitude: LocationGeneratorFunction
+  longitude: LongitudeGeneratorFunction
   phone: LocationGeneratorFunction
   postal: PostalGeneratorFunction
   postcode: LocationGeneratorFunction

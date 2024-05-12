@@ -16,8 +16,9 @@ import { AltitudeOptions } from './altitude/interfaces'
 import { DepthOptions } from './depth/interfaces'
 import { CharacterGenerator } from '@chancejs/character'
 import { PostalOptions } from './postal/interfaces'
-import { LatitudeOptions } from './latitude/interfaces'
+import { LatitudeOptions, LatitudeReturnType } from './latitude/interfaces'
 import { IntegerGenerator } from '@chancejs/integer'
+import { LongitudeOptions, LongitudeReturnType } from './longitude/interfaces'
 
 export class Location extends Generator implements ILocation {
   private naturalGenerator: NaturalGenerator
@@ -83,7 +84,9 @@ export class Location extends Generator implements ILocation {
   public geohash(options?: LocationOptions): string {
     return 'string'
   }
-  public latitude(options?: LatitudeOptions): string | number {
+  public latitude<O extends LatitudeOptions>(
+    options?: O
+  ): LatitudeReturnType<O> {
     const format = options?.format ?? 'dd'
 
     if (format === 'ddm' || format === 'dms') {
@@ -103,27 +106,27 @@ export class Location extends Generator implements ILocation {
 
     switch (format) {
       case 'ddm': {
-        return (
-          this.integer.integer({
-            min: options?.min ?? 0,
-            max: options?.max ?? 89,
-          }) +
+        return (this.integer.integer({
+          min: options?.min ?? 0,
+          max: options?.max ?? 89,
+        }) +
           '°' +
-          floating({ min: 0, max: 59, fixed: options?.fixed ?? 4 })
-        )
+          floating({
+            min: 0,
+            max: 59,
+            fixed: options?.fixed ?? 4,
+          })) as LatitudeReturnType<O>
       }
       case 'dms': {
-        return (
-          this.integer.integer({
-            min: options?.min ?? 0,
-            max: options?.max ?? 89,
-          }) +
+        return (this.integer.integer({
+          min: options?.min ?? 0,
+          max: options?.max ?? 89,
+        }) +
           '°' +
           this.integer.integer({ min: 0, max: 59 }) +
           '’' +
           floating({ min: 0, max: 59, fixed: options?.fixed ?? 4 }) +
-          '”'
-        )
+          '”') as LatitudeReturnType<O>
       }
       case 'dd':
       default: {
@@ -131,15 +134,67 @@ export class Location extends Generator implements ILocation {
           min: options?.min ?? -90,
           max: options?.max ?? 90,
           fixed: options?.fixed ?? 5,
-        })
+        }) as LatitudeReturnType<O>
       }
     }
   }
   public locale(options?: LocationOptions): string {
     return 'string'
   }
-  public longitude(options?: LocationOptions): string {
-    return 'string'
+
+  public longitude<O extends LongitudeOptions>(
+    options?: O
+  ): LongitudeReturnType<O> {
+    const format = options?.format ?? 'dd'
+
+    if (format === 'ddm' || format === 'dms') {
+      testRange(
+        !!options?.min && (options?.min < 0 || options?.min > 89),
+        'Chance: Min specified is out of range. Should be between 0 - 89'
+      )
+      testRange(
+        !!options?.max && (options?.max < 0 || options?.max > 89),
+        'Chance: Max specified is out of range. Should be between 0 - 89'
+      )
+      testRange(
+        !!options?.fixed && options?.fixed > 4,
+        'Chance: Fixed specified should be below or equal to 4'
+      )
+    }
+
+    switch (format) {
+      case 'ddm': {
+        return (this.integer.integer({
+          min: options?.min ?? 0,
+          max: options?.max ?? 179,
+        }) +
+          '°' +
+          floating({
+            min: 0,
+            max: 59,
+            fixed: options?.fixed ?? 4,
+          })) as LongitudeReturnType<O>
+      }
+      case 'dms': {
+        return (this.integer.integer({
+          min: options?.min ?? 0,
+          max: options?.max ?? 179,
+        }) +
+          '°' +
+          this.integer.integer({ min: 0, max: 59 }) +
+          '’' +
+          floating({ min: 0, max: 59, fixed: options?.fixed ?? 4 }) +
+          '”') as LongitudeReturnType<O>
+      }
+      case 'dd':
+      default: {
+        return floating({
+          min: options?.min ?? -180,
+          max: options?.max ?? 180,
+          fixed: options?.fixed ?? 5,
+        }) as LongitudeReturnType<O>
+      }
+    }
   }
   public phone(options?: LocationOptions): string {
     return 'string'
