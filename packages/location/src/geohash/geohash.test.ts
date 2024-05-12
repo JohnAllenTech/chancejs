@@ -18,4 +18,16 @@ describe('Testing geohash function', () => {
       expect(result.length).toBe(length)
     })
   })
+
+  test('geohash() handles minimal length of 1', () => {
+    const result = geohash({ length: 1 })
+    expect(typeof result).toBe('string')
+    expect(result.length).toBe(1)
+  })
+
+  test('geohash() handles maximal length of 12', () => {
+    const result = geohash({ length: 12 })
+    expect(typeof result).toBe('string')
+    expect(result.length).toBe(12)
+  })
 })
