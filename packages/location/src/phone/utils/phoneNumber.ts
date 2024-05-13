@@ -32,25 +32,22 @@ export const format = (
 ): string => {
   let _patterns = patterns.slice().reverse()
 
-  while (_patterns.length !== 0) {
-    let pattern = _patterns.pop()
-    if (pattern) {
-      let phoneNumberDigits = phoneNumber
-        .replace(/[()\[\]\-_A-Za-z ]/gi, '')
-        .split('')
-      let maskDigits = pattern.mask.split('')
+  for (const pattern of _patterns) {
+    let phoneNumberDigits = phoneNumber
+      .replace(/[()\[\]\-_A-Za-z ]/gi, '')
+      .split('')
+    let maskDigits = pattern.mask.split('')
 
-      for (let i = 0; i < maskDigits.length; i++) {
-        if (maskDigits[i] === ' ') {
-          phoneNumberDigits.splice(i, 0, ' ')
-        }
+    maskDigits.forEach((char, i) => {
+      if (char === ' ') {
+        phoneNumberDigits.splice(i, 0, ' ')
       }
+    })
 
-      let formattedPhoneNumber = phoneNumberDigits.join('')
+    let formattedPhoneNumber = phoneNumberDigits.join('')
 
-      if (pattern.regex.test(formattedPhoneNumber)) {
-        return formattedPhoneNumber.replace(/ /g, separator)
-      }
+    if (pattern.regex.test(formattedPhoneNumber)) {
+      return formattedPhoneNumber.replace(/ /g, separator)
     }
   }
 
