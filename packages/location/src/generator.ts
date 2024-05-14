@@ -29,6 +29,8 @@ import { locale_languages, locale_regions } from './locale/constants'
 import { provinces } from './province/constants'
 import { ProvinceOptions } from './province/interfaces'
 import { PhoneOptions } from './phone/interfaces'
+import { postcodeAreas, PostcodeOptions } from './postcode'
+import { bool } from '@chancejs/bool'
 
 export class Location extends Generator implements ILocation {
   private naturalGenerator: NaturalGenerator
@@ -766,8 +768,19 @@ export class Location extends Generator implements ILocation {
 
     return fsa + ' ' + ldu
   }
-  public postcode(options?: LocationOptions): string {
-    return 'string'
+  public postcode(_options?: PostcodeOptions): string {
+    const area = this.picker.pickOne(postcodeAreas).code
+    const district = this.naturalGenerator.natural({ max: 9 }) // Generates a random digit from 0 to 9 for the district
+    const subDistrict = bool()
+      ? this.character.character({ alpha: true, casing: 'upper' })
+      : ''
+    const outward = `${area}${district}${subDistrict}` // Concatenating area, district, and sub-district (if applicable)
+
+    const sector = this.naturalGenerator.natural({ max: 9 }) // Generates a random digit from 0 to 9 for the sector
+    const unit = `${this.character.character({ alpha: true, casing: 'upper' })}${this.character.character({ alpha: true, casing: 'upper' })}` // Generates two random uppercase letters for the unit
+    const inward = `${sector}${unit}` // Concatenating sector and unit
+
+    return `${outward} ${inward}` // Combining outward and inward parts with a space separator
   }
   public province(options?: ProvinceOptions): string {
     const province = this.picker.pickOne(provinces[options?.country ?? 'ca'])

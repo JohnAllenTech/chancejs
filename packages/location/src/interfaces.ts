@@ -9,7 +9,10 @@ import { GeohashGeneratorFunction } from './geohash/interfaces'
 import { LatitudeGeneratorFunction } from './latitude/interfaces'
 import { LocaleGeneratorFunction } from './locale/interfaces'
 import { LongitudeGeneratorFunction } from './longitude/interfaces'
+import { PhoneGeneratorFunction } from './phone/interfaces'
 import { PostalGeneratorFunction } from './postal/interfaces'
+import { PostcodeGeneratorFunction } from './postcode/interfaces'
+import { ProvinceGeneratorFunction } from './province/interfaces'
 import { StateGeneratorFunction } from './state/interfaces'
 import { StreetGeneratorFunction } from './street/interfaces'
 import { ZipGeneratorFunction } from './zip/interfaces'
@@ -44,10 +47,10 @@ export interface ILocation {
   latitude: LatitudeGeneratorFunction
   locale: LocaleGeneratorFunction
   longitude: LongitudeGeneratorFunction
-  phone: LocationGeneratorFunction
+  phone: PhoneGeneratorFunction
   postal: PostalGeneratorFunction
-  postcode: LocationGeneratorFunction
-  province: LocationGeneratorFunction
+  postcode: PostcodeGeneratorFunction
+  province: ProvinceGeneratorFunction
   state: StateGeneratorFunction
   street: StreetGeneratorFunction
   zip: ZipGeneratorFunction
