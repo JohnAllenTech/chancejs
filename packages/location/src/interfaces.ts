@@ -1,3 +1,4 @@
+import { AddressGeneratorFunction } from './address/interfaces'
 import { AltitudeGeneratorFunction } from './altitude/interfaces'
 import { AreacodeGeneratorFunction } from './areacode/interfaces'
 import { CityGeneratorFunction } from './city/interfaces'
@@ -35,7 +36,7 @@ export interface LocationGeneratorFunction {
 }
 
 export interface ILocation {
-  address: LocationGeneratorFunction
+  address: AddressGeneratorFunction
   altitude: AltitudeGeneratorFunction
   areacode: AreacodeGeneratorFunction
   city: CityGeneratorFunction

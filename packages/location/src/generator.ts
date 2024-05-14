@@ -31,6 +31,7 @@ import { ProvinceOptions } from './province/interfaces'
 import { PhoneOptions } from './phone/interfaces'
 import { postcodeAreas, PostcodeOptions } from './postcode'
 import { bool } from '@chancejs/bool'
+import { AddressOptions } from './address/interfaces'
 
 export class Location extends Generator implements ILocation {
   private naturalGenerator: NaturalGenerator
@@ -48,8 +49,12 @@ export class Location extends Generator implements ILocation {
     this.integer = new IntegerGenerator(options)
   }
 
-  public address(options?: LocationOptions): string {
-    return 'string'
+  public address(options?: AddressOptions): string {
+    return (
+      this.naturalGenerator.natural({ min: 1, max: 2000 }) +
+      ' ' +
+      this.street(options)
+    )
   }
 
   public altitude(options?: AltitudeOptions): number {
