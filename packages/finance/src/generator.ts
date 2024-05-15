@@ -8,7 +8,7 @@ import { CCTypeReturnType, CcTypeOptions, cc_types } from './cc_type'
 import { CcOptions } from './cc'
 import { calculateCheckDigit } from './cc/util/luhnCheck'
 import { CurrencyOptions, currencies } from './currency'
-import { currencyPair } from './currency_pair'
+import { CurrencyPairOptions, CurrencyPairReturnType } from './currency_pair'
 
 export class Finance extends Generator implements IFinance {
   private naturalGenerator: NaturalGenerator
@@ -66,9 +66,15 @@ export class Finance extends Generator implements IFinance {
   public currency(_options?: CurrencyOptions) {
     return this.picker.pickOne(currencies)
   }
-  public currency_pair(_options?: FinanceOptions): currencyPair {
+  public currency_pair<O extends CurrencyPairOptions>(
+    options?: O
+  ): CurrencyPairReturnType<O> {
     const currencyPair = this.picker.pickSet(currencies, 2)
-    return [currencyPair[0], currencyPair[1]]
+    return (
+      options?.string
+        ? `${currencyPair[0].code}/${currencyPair[1].code}`
+        : [currencyPair[0], currencyPair[1]]
+    ) as CurrencyPairReturnType<O>
   }
   public dollar(options?: FinanceOptions): string {
     return 'string'
