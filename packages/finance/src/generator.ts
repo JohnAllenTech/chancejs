@@ -4,10 +4,11 @@ import { Picker } from '@chancejs/pick'
 import { IFinance, FinanceOptions } from './interfaces'
 import { NaturalGenerator } from '@chancejs/natural'
 import { IntegerGenerator } from '@chancejs/integer'
-import { cc_types } from './cc_type'
-import { CCTypeReturnType, CcTypeOptions } from './cc_type/interfaces'
-import { CcOptions } from './cc/interfaces'
+import { CCTypeReturnType, CcTypeOptions, cc_types } from './cc_type'
+import { CcOptions } from './cc'
 import { calculateCheckDigit } from './cc/util/luhnCheck'
+import { CurrencyOptions, currencies } from './currency'
+import { currencyPair } from './currency_pair'
 
 export class Finance extends Generator implements IFinance {
   private naturalGenerator: NaturalGenerator
@@ -62,11 +63,12 @@ export class Finance extends Generator implements IFinance {
     return (options?.raw ? type : type.name) as CCTypeReturnType<O>
   }
 
-  public currency(options?: FinanceOptions): string {
-    return 'string'
+  public currency(_options?: CurrencyOptions) {
+    return this.picker.pickOne(currencies)
   }
-  public currency_pair(options?: FinanceOptions): string {
-    return 'string'
+  public currency_pair(_options?: FinanceOptions): currencyPair {
+    const currencyPair = this.picker.pickSet(currencies, 2)
+    return [currencyPair[0], currencyPair[1]]
   }
   public dollar(options?: FinanceOptions): string {
     return 'string'
