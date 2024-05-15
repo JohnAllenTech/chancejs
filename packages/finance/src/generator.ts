@@ -1,10 +1,10 @@
 import { Generator, GeneratorOptions, n } from '@chancejs/generator'
 import { Picker } from '@chancejs/pick'
-
 import { IFinance, FinanceOptions } from './interfaces'
 import { FloatingGenerator } from '@chancejs/floating'
-import { NaturalGenerator } from '@chancejs/natural'
 import { IntegerGenerator } from '@chancejs/integer'
+import { Time } from '@chancejs/time'
+
 import { CCTypeReturnType, CcTypeOptions, cc_types } from './cc_type'
 import { CcOptions } from './cc'
 import { calculateCheckDigit } from './cc/util/luhnCheck'
@@ -13,11 +13,9 @@ import { CurrencyPairOptions, CurrencyPairReturnType } from './currency_pair'
 import { DollarOptions } from './dollar'
 import { EuroOptions } from './euro'
 import { ExpMonthOptions } from './exp_month'
-import { Time } from '@chancejs/time'
 import { ExpOptions, ExpReturnType, RawExp } from './exp'
 
 export class Finance extends Generator implements IFinance {
-  private naturalGenerator: NaturalGenerator
   private picker: Picker
   private integer: IntegerGenerator
   private float: FloatingGenerator
@@ -25,7 +23,6 @@ export class Finance extends Generator implements IFinance {
 
   constructor(options: GeneratorOptions) {
     super(options)
-    this.naturalGenerator = new NaturalGenerator(options)
     this.picker = new Picker(options)
     this.integer = new IntegerGenerator(options)
     this.float = new FloatingGenerator(options)
