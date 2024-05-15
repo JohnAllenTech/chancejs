@@ -2,6 +2,7 @@ import { Generator, GeneratorOptions, n } from '@chancejs/generator'
 import { Picker } from '@chancejs/pick'
 
 import { IFinance, FinanceOptions } from './interfaces'
+import { FloatingGenerator } from '@chancejs/floating'
 import { NaturalGenerator } from '@chancejs/natural'
 import { IntegerGenerator } from '@chancejs/integer'
 import { CCTypeReturnType, CcTypeOptions, cc_types } from './cc_type'
@@ -9,17 +10,21 @@ import { CcOptions } from './cc'
 import { calculateCheckDigit } from './cc/util/luhnCheck'
 import { CurrencyOptions, currencies } from './currency'
 import { CurrencyPairOptions, CurrencyPairReturnType } from './currency_pair'
+import { DollarOptions } from './dollar'
+import { EuroOptions } from './euro'
 
 export class Finance extends Generator implements IFinance {
   private naturalGenerator: NaturalGenerator
   private picker: Picker
   private integer: IntegerGenerator
+  private float: FloatingGenerator
 
   constructor(options: GeneratorOptions) {
     super(options)
     this.naturalGenerator = new NaturalGenerator(options)
     this.picker = new Picker(options)
     this.integer = new IntegerGenerator(options)
+    this.float = new FloatingGenerator(options)
   }
 
   public cc(options?: CcOptions): string {
@@ -76,11 +81,43 @@ export class Finance extends Generator implements IFinance {
         : [currencyPair[0], currencyPair[1]]
     ) as CurrencyPairReturnType<O>
   }
-  public dollar(options?: FinanceOptions): string {
-    return 'string'
+  public dollar(options?: DollarOptions): string {
+    let dollar = this.float
+      .floating({
+        min: options?.min,
+        max: options?.max ?? 10000,
+        fixed: 2,
+      })
+      .toString()
+
+    const cents = dollar.split('.')[1]
+
+    if (!cents) {
+      dollar += '.00'
+    } else if (cents.length < 2) {
+      dollar = dollar + '0'
+    }
+
+    return parseInt(dollar) < 0 ? '-$' + dollar.replace('-', '') : '$' + dollar
   }
-  public euro(options?: FinanceOptions): string {
-    return 'string'
+  public euro(options?: EuroOptions): string {
+    let euro = this.float
+      .floating({
+        min: options?.min,
+        max: options?.max ?? 10000,
+        fixed: 2,
+      })
+      .toString()
+
+    const cent = euro.split('.')[1]
+
+    if (!cent) {
+      euro += '.00'
+    } else if (cent.length < 2) {
+      euro += '0'
+    }
+
+    return parseInt(euro) < 0 ? '-' + euro.replace('-', '') + '€' : euro + '€'
   }
   public exp(options?: FinanceOptions): string {
     return 'string'

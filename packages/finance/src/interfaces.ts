@@ -2,6 +2,8 @@ import { CcGeneratorFunction } from './cc'
 import { CcTypeGeneratorFunction } from './cc_type'
 import { CurrencyGeneratorFunction } from './currency'
 import { CurrencyPairGeneratorFunction } from './currency_pair'
+import { DollarGeneratorFunction } from './dollar'
+import { EuroGeneratorFunction } from './euro'
 
 export interface FinanceOptions {
   seed?: number
@@ -25,8 +27,8 @@ export interface IFinance {
   cc_type: CcTypeGeneratorFunction
   currency: CurrencyGeneratorFunction
   currency_pair: CurrencyPairGeneratorFunction
-  dollar: FinanceGeneratorFunction
-  euro: FinanceGeneratorFunction
+  dollar: DollarGeneratorFunction
+  euro: EuroGeneratorFunction
   exp: FinanceGeneratorFunction
   exp_month: FinanceGeneratorFunction
   exp_year: FinanceGeneratorFunction
