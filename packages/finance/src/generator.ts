@@ -8,6 +8,8 @@ import { cc_types } from './cc_type'
 import { CCTypeReturnType, CcTypeOptions } from './cc_type/interfaces'
 import { CcOptions } from './cc/interfaces'
 import { calculateCheckDigit } from './cc/util/luhnCheck'
+import { currencies } from './currency/constants'
+import { CurrencyOptions } from './currency/interfaces'
 
 export class Finance extends Generator implements IFinance {
   private naturalGenerator: NaturalGenerator
@@ -62,8 +64,8 @@ export class Finance extends Generator implements IFinance {
     return (options?.raw ? type : type.name) as CCTypeReturnType<O>
   }
 
-  public currency(options?: FinanceOptions): string {
-    return 'string'
+  public currency(_options?: CurrencyOptions) {
+    return this.picker.pickOne(currencies)
   }
   public currency_pair(options?: FinanceOptions): string {
     return 'string'
