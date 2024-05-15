@@ -4,6 +4,9 @@ import { CurrencyGeneratorFunction } from './currency'
 import { CurrencyPairGeneratorFunction } from './currency_pair'
 import { DollarGeneratorFunction } from './dollar'
 import { EuroGeneratorFunction } from './euro'
+import { ExpGeneratorFunction } from './exp'
+import { ExpMonthGeneratorFunction } from './exp_month'
+import { ExpYearGeneratorFunction } from './exp_year'
 
 export interface FinanceOptions {
   seed?: number
@@ -29,7 +32,7 @@ export interface IFinance {
   currency_pair: CurrencyPairGeneratorFunction
   dollar: DollarGeneratorFunction
   euro: EuroGeneratorFunction
-  exp: FinanceGeneratorFunction
-  exp_month: FinanceGeneratorFunction
-  exp_year: FinanceGeneratorFunction
+  exp: ExpGeneratorFunction
+  exp_month: ExpMonthGeneratorFunction
+  exp_year: ExpYearGeneratorFunction
 }

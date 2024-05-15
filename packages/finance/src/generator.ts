@@ -1,10 +1,10 @@
 import { Generator, GeneratorOptions, n } from '@chancejs/generator'
 import { Picker } from '@chancejs/pick'
-
 import { IFinance, FinanceOptions } from './interfaces'
 import { FloatingGenerator } from '@chancejs/floating'
-import { NaturalGenerator } from '@chancejs/natural'
 import { IntegerGenerator } from '@chancejs/integer'
+import { Time } from '@chancejs/time'
+
 import { CCTypeReturnType, CcTypeOptions, cc_types } from './cc_type'
 import { CcOptions } from './cc'
 import { calculateCheckDigit } from './cc/util/luhnCheck'
@@ -12,19 +12,21 @@ import { CurrencyOptions, currencies } from './currency'
 import { CurrencyPairOptions, CurrencyPairReturnType } from './currency_pair'
 import { DollarOptions } from './dollar'
 import { EuroOptions } from './euro'
+import { ExpMonthOptions } from './exp_month'
+import { ExpOptions, ExpReturnType, RawExp } from './exp'
 
 export class Finance extends Generator implements IFinance {
-  private naturalGenerator: NaturalGenerator
   private picker: Picker
   private integer: IntegerGenerator
   private float: FloatingGenerator
+  private time: Time
 
   constructor(options: GeneratorOptions) {
     super(options)
-    this.naturalGenerator = new NaturalGenerator(options)
     this.picker = new Picker(options)
     this.integer = new IntegerGenerator(options)
     this.float = new FloatingGenerator(options)
+    this.time = new Time(options)
   }
 
   public cc(options?: CcOptions): string {
@@ -119,13 +121,50 @@ export class Finance extends Generator implements IFinance {
 
     return parseInt(euro) < 0 ? '-' + euro.replace('-', '') + '€' : euro + '€'
   }
-  public exp(options?: FinanceOptions): string {
-    return 'string'
+  public exp<O extends ExpOptions>(options?: O): ExpReturnType<O> {
+    const year = this.exp_year()
+    let exp: RawExp = {
+      year: year,
+      month:
+        year === new Date().getFullYear().toString()
+          ? this.exp_month({ future: true })
+          : this.exp_month(),
+    }
+
+    // If the year is this year, need to ensure month is greater than the
+    // current month or this expiration will not be valid
+    if (exp.year === new Date().getFullYear().toString()) {
+      exp.month = this.exp_month({ future: true })
+    } else {
+      exp.month = this.exp_month()
+    }
+
+    return (options?.raw ? exp : exp.month + '/' + exp.year) as ExpReturnType<O>
   }
-  public exp_month(options?: FinanceOptions): string {
-    return 'string'
+  public exp_month(options?: ExpMonthOptions): string {
+    let month,
+      month_int,
+      // Date object months are 0 indexed
+      curMonth = new Date().getMonth() + 1
+
+    if (options?.future && curMonth !== 12) {
+      do {
+        month = this.time.month({ raw: true }).numeric
+        month_int = parseInt(month, 10)
+      } while (month_int <= curMonth)
+    } else {
+      month = this.time.month({ raw: true }).numeric
+    }
+    return month
   }
   public exp_year(options?: FinanceOptions): string {
-    return 'string'
+    const date = new Date()
+    const curMonth = date.getMonth() + 1
+    const curYear = date.getFullYear()
+
+    return this.time.year({
+      min: curMonth === 12 ? curYear + 1 : curYear,
+      max: curYear + 10,
+    })
   }
 }
