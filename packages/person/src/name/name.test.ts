@@ -38,9 +38,14 @@ describe('Testing person name function', () => {
   it('returns an random full name with prefix', () => {
     times(1000, () => {
       const result = name({ prefix: true })
+      console.log(result)
       expect(typeof result).toEqual('string')
       expect(result.length).toBeGreaterThanOrEqual(3)
-      expect(/[a-zA-Z]{2,4}\.? [a-zA-Z]+\ [a-zA-Z]+/.test(result)).toEqual(true)
+      expect(
+        /[a-zA-Z\u00C0-\u017F]{2,4}\.?\ [a-zA-Z\u00C0-\u017F]+\ [a-zA-Z\u00C0-\u017F]+/.test(
+          result
+        )
+      ).toEqual(true)
     })
   })
 
