@@ -9,5 +9,8 @@
     "outDir": "dist",
     "baseUrl": ".",
     "resolveJsonModule": true
-  }
+  },
+   "include": [
+    "./packages/**/*"
+]
 }
