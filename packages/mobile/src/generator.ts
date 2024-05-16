@@ -3,6 +3,7 @@ import { IMobile, MobileOptions } from './interfaces'
 import { NaturalGenerator } from '@chancejs/natural'
 import { StringGenerator } from '@chancejs/string'
 import { AndroidIdOptions } from './android_id'
+import { AppleTokenOptions } from './apple_token'
 
 export class Mobile extends Generator implements IMobile {
   private naturalGenerator: NaturalGenerator
@@ -24,8 +25,8 @@ export class Mobile extends Generator implements IMobile {
     )
   }
 
-  public apple_token(options?: MobileOptions): string {
-    return 'string'
+  public apple_token(_options?: AppleTokenOptions): string {
+    return this.string.string({ pool: 'abcdef1234567890', length: 64 })
   }
 
   public bb_pin(options?: MobileOptions): string {

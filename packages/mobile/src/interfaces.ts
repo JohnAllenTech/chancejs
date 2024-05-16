@@ -1,4 +1,5 @@
 import { AndroidIdGeneratorFunction } from './android_id'
+import { AppleTokenGeneratorFunction } from './apple_token'
 
 export interface MobileOptions {
   seed?: number
@@ -19,7 +20,7 @@ export interface MobileGeneratorFunction {
 
 export interface IMobile {
   android_id: AndroidIdGeneratorFunction
-  apple_token: MobileGeneratorFunction
+  apple_token: AppleTokenGeneratorFunction
   bb_pin: MobileGeneratorFunction
   wp7_anid: MobileGeneratorFunction
   wp8_anid2: MobileGeneratorFunction
