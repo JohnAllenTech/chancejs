@@ -4,6 +4,7 @@ import { NaturalGenerator } from '@chancejs/natural'
 import { StringGenerator } from '@chancejs/string'
 import { AndroidIdOptions } from './android_id'
 import { AppleTokenOptions } from './apple_token'
+import { BbPinOptions } from './bb_pin'
 
 export class Mobile extends Generator implements IMobile {
   private naturalGenerator: NaturalGenerator
@@ -29,8 +30,8 @@ export class Mobile extends Generator implements IMobile {
     return this.string.string({ pool: 'abcdef1234567890', length: 64 })
   }
 
-  public bb_pin(options?: MobileOptions): string {
-    return 'string'
+  public bb_pin(_options?: BbPinOptions): string {
+    return this.hash({ length: 8 })
   }
 
   public wp7_anid(options?: MobileOptions): string {
@@ -39,5 +40,16 @@ export class Mobile extends Generator implements IMobile {
 
   public wp8_anid2(options?: MobileOptions): string {
     return 'string'
+  }
+
+  private hash = (options?: {
+    length?: number
+    casing?: 'lower' | 'upper'
+  }) => {
+    const HEX_POOL = '0123456789abcdef'
+    return this.string.string({
+      pool: options?.casing === 'upper' ? HEX_POOL.toUpperCase() : HEX_POOL,
+      length: options?.length,
+    })
   }
 }
