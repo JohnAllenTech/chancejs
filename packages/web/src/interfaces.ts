@@ -1,3 +1,7 @@
+import { PortGeneratorFunction } from './port'
+import { TldGeneratorFunction } from './tld'
+import { TwitterGeneratorFunction } from './twitter'
+
 export interface WebOptions {
   seed?: number
 }
@@ -28,7 +32,10 @@ export interface IWeb {
   ipv6: WebGeneratorFunction
   klout: WebGeneratorFunction
   profession: WebGeneratorFunction
-  tld: WebGeneratorFunction
-  twitter: WebGeneratorFunction
+  tld: TldGeneratorFunction
+  twitter: TwitterGeneratorFunction
+  loremPicsum: WebGeneratorFunction
+  port: PortGeneratorFunction
+  semvar: WebGeneratorFunction
   url: WebGeneratorFunction
 }

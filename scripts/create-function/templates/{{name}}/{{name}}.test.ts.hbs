@@ -1,8 +1,11 @@
+import { times } from '@chancejs/generator'
 import { {{name}} } from './{{name}}'
 
 describe('Testing {{pascalCase name}} {{pascalCase name}} function', () => {
   it('returns an random {{name}}', () => {
-    const result = {{name}}()
-    expect(typeof result).toEqual('{{returnType}}')
+     times(1000, () => {
+        const result = {{name}}()
+        expect(typeof result).toEqual('{{returnType}}')
+     })
   })
 })
