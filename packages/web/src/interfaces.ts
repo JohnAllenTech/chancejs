@@ -1,3 +1,4 @@
+import { DomainGeneratorFunction } from './domain'
 import { PortGeneratorFunction } from './port'
 import { TldGeneratorFunction } from './tld'
 import { TwitterGeneratorFunction } from './twitter'
@@ -23,7 +24,7 @@ export interface IWeb {
   avatar: WebGeneratorFunction
   color: WebGeneratorFunction
   company: WebGeneratorFunction
-  domain: WebGeneratorFunction
+  domain: DomainGeneratorFunction
   email: WebGeneratorFunction
   fbid: WebGeneratorFunction
   google_analytics: WebGeneratorFunction

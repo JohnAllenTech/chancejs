@@ -5,6 +5,7 @@ import { Text } from '@chancejs/text'
 import { IntegerGenerator } from '@chancejs/integer'
 import { Picker } from '@chancejs/pick'
 import { tlds } from './tld'
+import { DomainOptions } from './domain'
 
 export class Web extends Generator implements IWeb {
   private naturalGenerator: NaturalGenerator
@@ -32,8 +33,8 @@ export class Web extends Generator implements IWeb {
     return 'string'
   }
 
-  public domain(options?: WebOptions): string {
-    return 'string'
+  public domain(options?: DomainOptions): string {
+    return `${this.text.word()}.${options?.tld ?? this.tld()}`
   }
 
   public email(options?: WebOptions): string {
