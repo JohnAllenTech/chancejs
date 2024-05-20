@@ -1,6 +1,9 @@
 import { WebOptions } from '../interfaces'
+import { const_tlds } from './constants'
 
 export interface TldOptions extends WebOptions {}
+
+export type Tld = (typeof const_tlds)[number]
 
 export interface TldGeneratorFunction {
   /**
