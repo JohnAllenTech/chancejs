@@ -8,6 +8,7 @@ import { tlds } from './tld'
 import { DomainOptions } from './domain'
 import { EmailOptions } from './email'
 import { companies } from './company'
+import { ProfessionOptions, professions, ranks } from './profession'
 
 export class Web extends Generator implements IWeb {
   private naturalGenerator: NaturalGenerator
@@ -60,8 +61,9 @@ export class Web extends Generator implements IWeb {
   public klout(options?: WebOptions): string {
     return 'string'
   }
-  public profession(options?: WebOptions): string {
-    return 'string'
+  public profession(options?: ProfessionOptions): string {
+    const profession = this.picker.pickOne(professions)
+    return options?.rank ? this.picker.pickOne(ranks) + profession : profession
   }
   public tld(): string {
     return this.picker.pickOne(tlds)
