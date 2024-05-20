@@ -1,3 +1,4 @@
+import { CompanyGeneratorFunction } from './company'
 import { DomainGeneratorFunction } from './domain'
 import { EmailGeneratorFunction } from './email'
 import { PortGeneratorFunction } from './port'
@@ -24,7 +25,7 @@ export interface WebGeneratorFunction {
 export interface IWeb {
   avatar: WebGeneratorFunction
   color: WebGeneratorFunction
-  company: WebGeneratorFunction
+  company: CompanyGeneratorFunction
   domain: DomainGeneratorFunction
   email: EmailGeneratorFunction
   fbid: WebGeneratorFunction

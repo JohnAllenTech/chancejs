@@ -7,6 +7,7 @@ import { Picker } from '@chancejs/pick'
 import { tlds } from './tld'
 import { DomainOptions } from './domain'
 import { EmailOptions } from './email'
+import { companies } from './company'
 
 export class Web extends Generator implements IWeb {
   private naturalGenerator: NaturalGenerator
@@ -30,8 +31,8 @@ export class Web extends Generator implements IWeb {
     return 'string'
   }
 
-  public company(options?: WebOptions): string {
-    return 'string'
+  public company(): string {
+    return this.picker.pickOne(companies)
   }
 
   public domain(options?: DomainOptions): string {
