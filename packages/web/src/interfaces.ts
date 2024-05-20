@@ -1,6 +1,7 @@
 import { CompanyGeneratorFunction } from './company'
 import { DomainGeneratorFunction } from './domain'
 import { EmailGeneratorFunction } from './email'
+import { IpGeneratorFunction } from './ip'
 import { PortGeneratorFunction } from './port'
 import { ProfessionGeneratorFunction } from './profession'
 import { TldGeneratorFunction } from './tld'
@@ -32,7 +33,7 @@ export interface IWeb {
   fbid: WebGeneratorFunction
   google_analytics: WebGeneratorFunction
   hashtag: WebGeneratorFunction
-  ip: WebGeneratorFunction
+  ip: IpGeneratorFunction
   ipv6: WebGeneratorFunction
   klout: WebGeneratorFunction
   profession: ProfessionGeneratorFunction

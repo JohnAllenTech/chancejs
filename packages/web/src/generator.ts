@@ -52,8 +52,16 @@ export class Web extends Generator implements IWeb {
   public hashtag(options?: WebOptions): string {
     return 'string'
   }
-  public ip(options?: WebOptions): string {
-    return 'string'
+  public ip(): string {
+    return (
+      this.naturalGenerator.natural({ min: 1, max: 254 }) +
+      '.' +
+      this.naturalGenerator.natural({ max: 255 }) +
+      '.' +
+      this.naturalGenerator.natural({ max: 255 }) +
+      '.' +
+      this.naturalGenerator.natural({ min: 1, max: 254 })
+    )
   }
   public ipv6(options?: WebOptions): string {
     return 'string'
