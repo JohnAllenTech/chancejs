@@ -1,9 +1,10 @@
-import { Generator, GeneratorOptions } from '@chancejs/generator'
+import { Generator, GeneratorOptions, n } from '@chancejs/generator'
 import { IWeb, WebOptions } from './interfaces'
 import { NaturalGenerator } from '@chancejs/natural'
 import { Text } from '@chancejs/text'
 import { IntegerGenerator } from '@chancejs/integer'
 import { Picker } from '@chancejs/pick'
+import { Utils } from '@chancejs/utils'
 import { tlds } from './tld'
 import { DomainOptions } from './domain'
 import { EmailOptions } from './email'
@@ -15,6 +16,7 @@ export class Web extends Generator implements IWeb {
   private text: Text
   private integer: IntegerGenerator
   private picker: Picker
+  private utils: Utils
 
   constructor(options: GeneratorOptions) {
     super(options)
@@ -22,6 +24,7 @@ export class Web extends Generator implements IWeb {
     this.text = new Text(options)
     this.integer = new IntegerGenerator(options)
     this.picker = new Picker(options)
+    this.utils = new Utils(options)
   }
 
   public avatar(options?: WebOptions): string {
@@ -63,8 +66,8 @@ export class Web extends Generator implements IWeb {
       this.naturalGenerator.natural({ min: 1, max: 254 })
     )
   }
-  public ipv6(options?: WebOptions): string {
-    return 'string'
+  public ipv6(): string {
+    return n(this.utils.hash, 8, { length: 4 }).join(':')
   }
   public klout(options?: WebOptions): string {
     return 'string'
