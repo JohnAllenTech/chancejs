@@ -38,7 +38,6 @@ describe('Testing person name function', () => {
   it('returns an random full name with prefix', () => {
     times(1000, () => {
       const result = name({ prefix: true })
-      console.log(result)
       expect(typeof result).toEqual('string')
       expect(result.length).toBeGreaterThanOrEqual(3)
       expect(
