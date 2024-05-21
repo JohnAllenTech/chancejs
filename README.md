@@ -47,11 +47,18 @@ THANK YOU!
 
 ### Contribute!
 
-Be a part of this project! You can run the test using the following.
+Be a part of this project! You can run the tests using the following.
 
-1. Install dependencies from package.json by running `npm install`
-2. Run the test via `npm test`
-3. Make some fun new modules!
+1. Install dependencies from package.json by running `yarn install`
+2. Run the tests via `npm run test:all`
+
+#### Adding new packages and or enhancing functionality of existing packages !
+
+To add a new package like @chancejs/person or @chancejs/web you can run `npm run package:create`
+
+To add functions to that (or any other) package you can run `npm run function:create`
+
+These commands will scaffold all the boilerplate you need and get you working on logic straight away!
 
 This project is licensed under the [MIT License](http://en.wikipedia.org/wiki/MIT_License) so feel free to hack away :)
 
@@ -61,4 +68,6 @@ Run tests for all packages with `npm run test:all `
 
 Run test for individual package with `yarn workspace @chancejs/${PACKAGE_TO_TEST} test` ie `yarn workspace @chancejs/letter test`
 
-Proudly written in Washington, D.C.
+Proudly written in Washington, D.C. 🇺🇸
+
+Shamelessly rewritten in TypeScript in Kilkenny, Ireland 🇮🇪
