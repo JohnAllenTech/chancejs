@@ -1,12 +1,11 @@
 import { Generator, GeneratorOptions } from '@chancejs/generator'
-import { IMobile, MobileOptions } from './interfaces'
-import { NaturalGenerator } from '@chancejs/natural'
+import { IMobile } from './interfaces'
 import { StringGenerator } from '@chancejs/string'
 import { IntegerGenerator } from '@chancejs/integer'
+import { Utils } from '@chancejs/utils'
 import { AndroidIdOptions } from './android_id'
 import { AppleTokenOptions } from './apple_token'
 import { BbPinOptions } from './bb_pin'
-import { Utils } from '@chancejs/utils'
 
 export class Mobile extends Generator implements IMobile {
   private utils: Utils
