@@ -47,4 +47,11 @@ export class Utils extends Generator {
 
     return guid
   }
+
+  public pad = (number: number, width: number, pad = '0') => {
+    const numStr = number.toString()
+    return numStr.length >= width
+      ? numStr
+      : pad.repeat(width - numStr.length) + numStr
+  }
 }
