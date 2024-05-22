@@ -7,6 +7,7 @@ import { PortGeneratorFunction } from './port'
 import { ProfessionGeneratorFunction } from './profession'
 import { TldGeneratorFunction } from './tld'
 import { TwitterGeneratorFunction } from './twitter'
+import { UrlGeneratorFunction } from './url'
 
 export interface WebOptions {
   seed?: number
@@ -43,5 +44,5 @@ export interface IWeb {
   loremPicsum: WebGeneratorFunction
   port: PortGeneratorFunction
   semvar: WebGeneratorFunction
-  url: WebGeneratorFunction
+  url: UrlGeneratorFunction
 }

@@ -10,6 +10,8 @@ import { DomainOptions } from './domain'
 import { EmailOptions } from './email'
 import { companies } from './company'
 import { ProfessionOptions, professions, ranks } from './profession'
+import { UrlObject } from 'url'
+import { UrlOptions } from './url'
 
 export class Web extends Generator implements IWeb {
   private naturalGenerator: NaturalGenerator
@@ -84,8 +86,19 @@ export class Web extends Generator implements IWeb {
   public twitter(): string {
     return '@' + this.text.word()
   }
-  public url(options?: WebOptions): string {
-    return 'string'
+  public url(options: UrlOptions = {}): string {
+    const {
+      extensions,
+      domain_prefix = '',
+      domain = this.domain(),
+      protocol = 'http',
+      path = this.text.word(),
+    } = options
+
+    const extension = extensions ? '.' + this.picker.pickOne(extensions) : ''
+    const prefix = domain_prefix ? domain_prefix + '.' : ''
+
+    return `${protocol}://${prefix}${domain}/${path}${extension}`
   }
 
   public loremPicsum(options?: WebOptions): string {
