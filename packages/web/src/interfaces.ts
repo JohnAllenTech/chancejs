@@ -36,7 +36,7 @@ export interface IWeb {
   hashtag: WebGeneratorFunction
   ip: IpGeneratorFunction
   ipv6: Ipv6GeneratorFunction
-  klout: WebGeneratorFunction
+  klout: () => number
   profession: ProfessionGeneratorFunction
   tld: TldGeneratorFunction
   twitter: TwitterGeneratorFunction
