@@ -2,7 +2,7 @@ import { Tld } from 'src/tld'
 import { WebOptions } from '../interfaces'
 
 export interface DomainOptions extends WebOptions {
-  tld: Tld
+  tld?: Tld
 }
 
 export interface DomainGeneratorFunction {
