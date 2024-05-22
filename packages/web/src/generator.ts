@@ -69,8 +69,10 @@ export class Web extends Generator implements IWeb {
   public ipv6(): string {
     return n(this.utils.hash, 8, { length: 4 }).join(':')
   }
-  public klout(options?: WebOptions): string {
-    return 'string'
+
+  // keeping this for completeness but klout was sunsetted in 2018
+  public klout(): number {
+    return this.naturalGenerator.natural({ min: 1, max: 99 })
   }
   public profession(options?: ProfessionOptions): string {
     const profession = this.picker.pickOne(professions)
