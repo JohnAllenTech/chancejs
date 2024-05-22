@@ -52,7 +52,16 @@ export class Web extends Generator implements IWeb {
     return 'string'
   }
   public google_analytics(options?: WebOptions): string {
-    return 'string'
+    const account = this.utils.pad(
+      this.naturalGenerator.natural({ max: 999999 }),
+      6
+    )
+    const property = this.utils.pad(
+      this.naturalGenerator.natural({ max: 99 }),
+      2
+    )
+
+    return 'UA-' + account + '-' + property
   }
   public hashtag(options?: WebOptions): string {
     return 'string'

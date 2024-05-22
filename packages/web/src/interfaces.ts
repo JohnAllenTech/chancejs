@@ -1,6 +1,7 @@
 import { CompanyGeneratorFunction } from './company'
 import { DomainGeneratorFunction } from './domain'
 import { EmailGeneratorFunction } from './email'
+import { GoogleAnalyticsGeneratorFunction } from './google_analytics'
 import { IpGeneratorFunction } from './ip'
 import { Ipv6GeneratorFunction } from './ipv6'
 import { PortGeneratorFunction } from './port'
@@ -33,7 +34,7 @@ export interface IWeb {
   domain: DomainGeneratorFunction
   email: EmailGeneratorFunction
   fbid: WebGeneratorFunction
-  google_analytics: WebGeneratorFunction
+  google_analytics: GoogleAnalyticsGeneratorFunction
   hashtag: WebGeneratorFunction
   ip: IpGeneratorFunction
   ipv6: Ipv6GeneratorFunction
