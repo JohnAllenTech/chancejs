@@ -2,6 +2,7 @@ import { CompanyGeneratorFunction } from './company'
 import { DomainGeneratorFunction } from './domain'
 import { EmailGeneratorFunction } from './email'
 import { GoogleAnalyticsGeneratorFunction } from './google_analytics'
+import { HashtagGeneratorFunction } from './hashtag'
 import { IpGeneratorFunction } from './ip'
 import { Ipv6GeneratorFunction } from './ipv6'
 import { PortGeneratorFunction } from './port'
@@ -35,7 +36,7 @@ export interface IWeb {
   email: EmailGeneratorFunction
   fbid: WebGeneratorFunction
   google_analytics: GoogleAnalyticsGeneratorFunction
-  hashtag: WebGeneratorFunction
+  hashtag: HashtagGeneratorFunction
   ip: IpGeneratorFunction
   ipv6: Ipv6GeneratorFunction
   klout: () => number
