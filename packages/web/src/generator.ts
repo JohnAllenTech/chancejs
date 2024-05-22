@@ -5,13 +5,14 @@ import { Text } from '@chancejs/text'
 import { IntegerGenerator } from '@chancejs/integer'
 import { Picker } from '@chancejs/pick'
 import { Utils } from '@chancejs/utils'
+import { BlueImpMD5 } from '@chancejs/blue-imp-md5'
 import { tlds } from './tld'
 import { DomainOptions } from './domain'
 import { EmailOptions } from './email'
 import { companies } from './company'
 import { ProfessionOptions, professions, ranks } from './profession'
-import { UrlObject } from 'url'
 import { UrlOptions } from './url'
+import { AvatarOptions } from './avatar'
 
 export class Web extends Generator implements IWeb {
   private naturalGenerator: NaturalGenerator
@@ -19,6 +20,7 @@ export class Web extends Generator implements IWeb {
   private integer: IntegerGenerator
   private picker: Picker
   private utils: Utils
+  private blueMd5: BlueImpMD5
 
   constructor(options: GeneratorOptions) {
     super(options)
@@ -27,10 +29,29 @@ export class Web extends Generator implements IWeb {
     this.integer = new IntegerGenerator(options)
     this.picker = new Picker(options)
     this.utils = new Utils(options)
+    this.blueMd5 = new BlueImpMD5()
   }
 
-  public avatar(options?: WebOptions): string {
-    return 'string'
+  public avatar(options: AvatarOptions = {}): string {
+    const URL_BASE = '//www.gravatar.com/avatar/'
+    const {
+      protocol = 'http',
+      fileExtension = '',
+      fallback = '',
+      rating = '',
+      email = this.email(),
+      size = '',
+    } = options
+
+    const queryParams = [
+      size && `s=${size}`,
+      rating && `r=${rating}`,
+      fallback && `d=${fallback}`,
+    ]
+      .filter(Boolean)
+      .join('&')
+
+    return `${protocol}:${URL_BASE}${this.blueMd5.md5(email)}${fileExtension ? `.${fileExtension}` : ''}${queryParams ? `?${queryParams}` : ''}`
   }
 
   public color(options?: WebOptions): string {
