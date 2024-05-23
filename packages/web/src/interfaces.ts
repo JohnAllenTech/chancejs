@@ -6,6 +6,7 @@ import { GoogleAnalyticsGeneratorFunction } from './google_analytics'
 import { HashtagGeneratorFunction } from './hashtag'
 import { IpGeneratorFunction } from './ip'
 import { Ipv6GeneratorFunction } from './ipv6'
+import { LoremPicsumGeneratorFunction } from './loremPicsum'
 import { PortGeneratorFunction } from './port'
 import { ProfessionGeneratorFunction } from './profession'
 import { TldGeneratorFunction } from './tld'
@@ -44,7 +45,7 @@ export interface IWeb {
   profession: ProfessionGeneratorFunction
   tld: TldGeneratorFunction
   twitter: TwitterGeneratorFunction
-  loremPicsum: WebGeneratorFunction
+  loremPicsum: LoremPicsumGeneratorFunction
   port: PortGeneratorFunction
   semvar: WebGeneratorFunction
   url: UrlGeneratorFunction

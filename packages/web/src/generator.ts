@@ -13,6 +13,7 @@ import { companies } from './company'
 import { ProfessionOptions, professions, ranks } from './profession'
 import { UrlOptions } from './url'
 import { AvatarOptions } from './avatar'
+import { LoremPicsumOptions } from './loremPicsum'
 
 export class Web extends Generator implements IWeb {
   private naturalGenerator: NaturalGenerator
@@ -131,8 +132,13 @@ export class Web extends Generator implements IWeb {
     return `${protocol}://${prefix}${domain}/${path}${extension}`
   }
 
-  public loremPicsum(options?: WebOptions): string {
-    return 'string'
+  public loremPicsum(options?: LoremPicsumOptions): string {
+    const greyscale = options?.greyscale ? 'g/' : ''
+    const query = options?.blurred ? '/?blur' : '/?random'
+    const width = options?.height ?? 500
+    const height = options?.width ?? 500
+
+    return `https://picsum.photos/${greyscale}${width}/${height}${query}`
   }
 
   public port(): number {
