@@ -84,8 +84,8 @@ export class Web extends Generator implements IWeb {
 
     return 'UA-' + account + '-' + property
   }
-  public hashtag(options?: WebOptions): string {
-    return 'string'
+  public hashtag(): string {
+    return '#' + this.text.word()
   }
   public ip(): string {
     return (
