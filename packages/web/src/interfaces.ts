@@ -2,6 +2,7 @@ import { AvatarGeneratorFunction } from './avatar'
 import { CompanyGeneratorFunction } from './company'
 import { DomainGeneratorFunction } from './domain'
 import { EmailGeneratorFunction } from './email'
+import { FbidGeneratorFunction } from './fbid'
 import { GoogleAnalyticsGeneratorFunction } from './google_analytics'
 import { HashtagGeneratorFunction } from './hashtag'
 import { IpGeneratorFunction } from './ip'
@@ -35,7 +36,7 @@ export interface IWeb {
   company: CompanyGeneratorFunction
   domain: DomainGeneratorFunction
   email: EmailGeneratorFunction
-  fbid: WebGeneratorFunction
+  fbid: FbidGeneratorFunction
   google_analytics: GoogleAnalyticsGeneratorFunction
   hashtag: HashtagGeneratorFunction
   ip: IpGeneratorFunction
