@@ -69,8 +69,8 @@ export class Web extends Generator implements IWeb {
   public email(options?: EmailOptions): string {
     return `${this.text.word({ length: options?.length })}@${options?.domain ?? this.domain()}`
   }
-  public fbid(options?: WebOptions): string {
-    return 'string'
+  public fbid(): string {
+    return '10000' + this.naturalGenerator.natural({ numerals: 11 }).toString()
   }
   public google_analytics(options?: WebOptions): string {
     const account = this.utils.pad(
