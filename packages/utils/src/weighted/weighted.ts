@@ -1,7 +1,11 @@
 import { Utils } from '../generator'
-import { WeightedGeneratorFunction } from './interfaces'
 
-export const weighted: WeightedGeneratorFunction = options => {
-  const utils = new Utils({})
-  return utils.weighted(options)
+export const weighted = <T>(
+  arr: Array<T>,
+  weights: Array<number>,
+  trim?: boolean,
+  seed?: number
+) => {
+  const utils = new Utils({ seed })
+  return utils.weighted(arr, weights, trim)
 }

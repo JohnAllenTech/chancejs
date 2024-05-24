@@ -1,7 +1,6 @@
 import { Generator, GeneratorOptions } from '@chancejs/generator'
 import { StringGenerator } from '@chancejs/string'
 import { NaturalGenerator } from '@chancejs/natural'
-import { WeightedOptions } from './weighted'
 
 export class Utils extends Generator {
   private string: StringGenerator
@@ -59,7 +58,6 @@ export class Utils extends Generator {
       : pad.repeat(width - numStr.length) + numStr
   }
 
-  // TODO remove any and properly type the return of this
   public shuffle = <T>(arr: T[]): T[] => {
     const newArray = []
     let length = arr.length
@@ -79,16 +77,17 @@ export class Utils extends Generator {
     return newArray
   }
 
-  x = this.shuffle(['1', '2'])
-
-  // TODO remove any and properly type the return of this
-  public weighted = (options: WeightedOptions): any => {
-    if (options.arr.length !== options.weights.length) {
+  public weighted = <T>(
+    arr: Array<T>,
+    weights: Array<number>,
+    trim?: boolean
+  ): T => {
+    if (arr.length !== weights.length) {
       throw new RangeError('Chance: Length of array and weights must match')
     }
 
     // Scan weights array and sum valid entries
-    let sum = options.weights.reduce((acc: any, val: number) => {
+    let sum = weights.reduce((acc: any, val: number) => {
       if (isNaN(val)) {
         throw new RangeError('Chance: All weights must be numbers')
       }
@@ -105,27 +104,25 @@ export class Utils extends Generator {
     // Find array entry corresponding to selected value
     let total = 0
     let lastGoodIdx = -1
-    let chosenIdx = options.weights.findIndex(
-      (val: number, weightIndex: number) => {
-        total += val
-        if (val > 0) {
-          if (selected <= total) {
-            return true
-          }
-          lastGoodIdx = weightIndex
+    let chosenIdx = weights.findIndex((val: number, weightIndex: number) => {
+      total += val
+      if (val > 0) {
+        if (selected <= total) {
+          return true
         }
-        return weightIndex === options.weights.length - 1
+        lastGoodIdx = weightIndex
       }
-    )
+      return weightIndex === weights.length - 1
+    })
 
     if (chosenIdx === -1) {
       chosenIdx = lastGoodIdx
     }
 
-    const chosen = options.arr[chosenIdx]
-    if (options.trim) {
-      options.arr.splice(chosenIdx, 1)
-      options.weights.splice(chosenIdx, 1)
+    const chosen = arr[chosenIdx]
+    if (trim) {
+      arr.splice(chosenIdx, 1)
+      weights.splice(chosenIdx, 1)
     }
 
     return chosen
