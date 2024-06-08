@@ -6,5 +6,5 @@ export const google_analytics: GoogleAnalyticsGeneratorFunction = (
   options?: GoogleAnalyticsOptions
 ) => {
   const web = new Web({ seed: options?.seed })
-  return web.google_analytics(options)
+  return web.google_analytics()
 }

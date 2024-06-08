@@ -1,4 +1,5 @@
 import { AvatarGeneratorFunction } from './avatar'
+import { ColorGeneratorFunction } from './color'
 import { CompanyGeneratorFunction } from './company'
 import { DomainGeneratorFunction } from './domain'
 import { EmailGeneratorFunction } from './email'
@@ -33,7 +34,7 @@ export interface WebGeneratorFunction {
 
 export interface IWeb {
   avatar: AvatarGeneratorFunction
-  color: WebGeneratorFunction
+  color: ColorGeneratorFunction
   company: CompanyGeneratorFunction
   domain: DomainGeneratorFunction
   email: EmailGeneratorFunction
