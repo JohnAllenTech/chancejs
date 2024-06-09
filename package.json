@@ -30,19 +30,17 @@
     "nx": "19.0.0",
     "nyc": "^15.1.0",
     "plop": "^3.1.0",
-    "prettier": "3.2.5"
+    "prettier": "3.2.5",
+    "@changesets/cli": "^2.27.5"
   },
   "scripts": {
-    "coverage": "./scripts/aggregate-coverage.sh",
-    "docs": "docpress build",
-    "docs:publish": "git-update-ghpages -e",
     "package:create": "plop --plopfile ./scripts/create-package/plopfile.js",
     "generator:create": "plop --plopfile ./scripts/create-generator/plopfile.js",
     "function:create": "plop --plopfile ./scripts/create-function/plopfile.js",
     "test:all": "yarn nx run-many -t test",
     "build:all": "yarn nx run-many -t build",
     "graph": "yarn nx graph",
-    "prepare": "husky"
+    "version": "yarn changeset"
   },
   "keywords": [
     "chance",
@@ -62,17 +60,6 @@
       "web": "https://www.victorquinn.com"
     }
   ],
-  "docpress": {
-    "scripts": [
-      "chance.js",
-      "analytics.js",
-      "https://platform.twitter.com/widgets.js"
-    ],
-    "github": "chancejs/chancejs",
-    "css": [
-      "docs/chance.css"
-    ]
-  },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
   },
