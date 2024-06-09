@@ -1,4 +1,4 @@
-import { Generator, GeneratorOptions, n } from '@chancejs/generator'
+import { Generator, GeneratorOptions, n, times } from '@chancejs/generator'
 import { IWeb, WebOptions } from './interfaces'
 import { NaturalGenerator } from '@chancejs/natural'
 import { Text } from '@chancejs/text'
@@ -18,6 +18,7 @@ import { UrlOptions } from './url'
 import { AvatarOptions } from './avatar'
 import { LoremPicsumOptions } from './loremPicsum'
 import { ColorOptions, colorNames } from './color'
+import { SemverOptions } from './semver'
 
 export class Web extends Generator implements IWeb {
   private naturalGenerator: NaturalGenerator
@@ -254,7 +255,19 @@ export class Web extends Generator implements IWeb {
     return this.integer.integer({ min: 0, max: 65535 })
   }
 
-  public semvar(options?: WebOptions): string {
-    return 'string'
+  public semver(options?: SemverOptions): string {
+    const range =
+      options?.range ??
+      this.picker.pickOne(['^', '~', '<', '>', '<=', '>=', '='])
+
+    const prerelease = options?.include_prerelease
+      ? this.utils.weighted(['', '-dev', '-beta', '-alpha'], [50, 10, 5, 1])
+      : ''
+
+    const versions = times(3, () =>
+      this.naturalGenerator.natural({ min: 1, max: 10 })
+    )
+
+    return range + versions.join('.') + prerelease
   }
 }

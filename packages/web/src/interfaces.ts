@@ -11,6 +11,7 @@ import { Ipv6GeneratorFunction } from './ipv6'
 import { LoremPicsumGeneratorFunction } from './loremPicsum'
 import { PortGeneratorFunction } from './port'
 import { ProfessionGeneratorFunction } from './profession'
+import { SemverGeneratorFunction } from './semver'
 import { TldGeneratorFunction } from './tld'
 import { TwitterGeneratorFunction } from './twitter'
 import { UrlGeneratorFunction } from './url'
@@ -43,12 +44,13 @@ export interface IWeb {
   hashtag: HashtagGeneratorFunction
   ip: IpGeneratorFunction
   ipv6: Ipv6GeneratorFunction
+  // didnt fully implement this correct as I suspect its dead code
   klout: () => number
   profession: ProfessionGeneratorFunction
   tld: TldGeneratorFunction
   twitter: TwitterGeneratorFunction
   loremPicsum: LoremPicsumGeneratorFunction
   port: PortGeneratorFunction
-  semvar: WebGeneratorFunction
+  semver: SemverGeneratorFunction
   url: UrlGeneratorFunction
 }
