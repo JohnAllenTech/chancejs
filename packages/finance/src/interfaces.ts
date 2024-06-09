@@ -7,6 +7,7 @@ import { EuroGeneratorFunction } from './euro'
 import { ExpGeneratorFunction } from './exp'
 import { ExpMonthGeneratorFunction } from './exp_month'
 import { ExpYearGeneratorFunction } from './exp_year'
+import { IbanGeneratorFunction } from './iban'
 
 export interface FinanceOptions {
   seed?: number
@@ -35,4 +36,5 @@ export interface IFinance {
   exp: ExpGeneratorFunction
   exp_month: ExpMonthGeneratorFunction
   exp_year: ExpYearGeneratorFunction
+  iban: IbanGeneratorFunction
 }

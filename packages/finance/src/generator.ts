@@ -2,7 +2,8 @@ import { Generator, GeneratorOptions, n } from '@chancejs/generator'
 import { Picker } from '@chancejs/pick'
 import { IFinance, FinanceOptions } from './interfaces'
 import { FloatingGenerator } from '@chancejs/floating'
-import { IntegerGenerator } from '@chancejs/integer'
+import { StringGenerator } from '@chancejs/string'
+import { Utils } from '@chancejs/utils'
 import { Time } from '@chancejs/time'
 
 import { CCTypeReturnType, CcTypeOptions, cc_types } from './cc_type'
@@ -14,19 +15,25 @@ import { DollarOptions } from './dollar'
 import { EuroOptions } from './euro'
 import { ExpMonthOptions } from './exp_month'
 import { ExpOptions, ExpReturnType, RawExp } from './exp'
+import { IbanOptions, alpha, alphanum } from './iban'
+import { NaturalGenerator } from '@chancejs/natural'
 
 export class Finance extends Generator implements IFinance {
   private picker: Picker
-  private integer: IntegerGenerator
+  private natural: NaturalGenerator
+  private string: StringGenerator
   private float: FloatingGenerator
   private time: Time
+  private utils: Utils
 
   constructor(options: GeneratorOptions) {
     super(options)
     this.picker = new Picker(options)
-    this.integer = new IntegerGenerator(options)
+    this.natural = new NaturalGenerator(options)
+    this.string = new StringGenerator(options)
     this.float = new FloatingGenerator(options)
     this.time = new Time(options)
+    this.utils = new Utils(options)
   }
 
   public cc(options?: CcOptions): string {
@@ -37,7 +44,7 @@ export class Finance extends Generator implements IFinance {
     let number = ccType.prefix
     // Generates n - 1 digits
     n(() => {
-      number += this.integer.integer({ min: 0, max: 9 }).toString()
+      number += this.natural.natural({ max: 9 }).toString()
     }, digitsToGenerate)
     // Generates the last digit according to Luhn algorithm
     return (number += calculateCheckDigit(number))
@@ -166,5 +173,16 @@ export class Finance extends Generator implements IFinance {
       min: curMonth === 12 ? curYear + 1 : curYear,
       max: curYear + 10,
     })
+  }
+  public iban() {
+    return (
+      this.string.string({ length: 2, pool: alpha }) +
+      this.utils.pad(this.natural.natural({ max: 99 }), 2) +
+      this.string.string({ length: 4, pool: alphanum }) +
+      this.utils.pad(
+        this.natural.natural(),
+        this.natural.natural({ min: 6, max: 26 })
+      )
+    )
   }
 }
