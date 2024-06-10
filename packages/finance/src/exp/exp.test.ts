@@ -1,4 +1,4 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { exp } from './exp' // Ensure correct import
 
 describe('Testing exp_month and exp_year functions', () => {

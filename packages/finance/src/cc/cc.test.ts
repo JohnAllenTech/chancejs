@@ -1,4 +1,4 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { Finance } from '../generator'
 import { cc } from './cc'
 import { luhn_check } from './util/luhnCheck'

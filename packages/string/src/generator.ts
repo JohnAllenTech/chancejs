@@ -4,9 +4,9 @@ import {
   validateNumber,
   validateRange,
   times,
-} from '@chancejs/generator'
-import { NaturalGenerator } from '@chancejs/natural'
-import { CharacterGenerator } from '@chancejs/character'
+} from '@johnallentech/generator'
+import { NaturalGenerator } from '@johnallentech/natural'
+import { CharacterGenerator } from '@johnallentech/character'
 import { StringOptions, IStringGenerator } from './interfaces'
 
 export class StringGenerator extends Generator implements IStringGenerator {

@@ -1,4 +1,4 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { exp_year } from './exp_year' // Assuming this is the correct import
 
 test('exp_year() returns an expiration year', () => {

@@ -1,6 +1,6 @@
 {
-  "name": "@chancejs/time",
-  "version": "1.0.0",
+  "name": "@johnallentech/time",
+  "version": "1.0.1",
   "description": "provides time based randomness",
   "homepage": "https://chancejs.com/",
   "author": "Victor Quinn <mail@victorquinn.com>",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chancejs/chancejs.git"
+    "url": "git+https://github.com/JohnAllenTech/chancejs.git"
   },
   "license": "MIT",
   "bugs": {
@@ -37,8 +37,8 @@
     "typescript": "^4.6.3"
   },
   "dependencies": {
-    "@chancejs/generator": "1.0.0",
-    "@chancejs/integer": "1.0.0",
-    "@chancejs/natural": "1.0.0"
+    "@johnallentech/generator": "1.0.2",
+    "@johnallentech/integer": "1.0.0",
+    "@johnallentech/natural": "1.0.0"
   }
 }

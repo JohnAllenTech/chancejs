@@ -1,6 +1,6 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { geohash } from './geohash'
-import { integer } from '@chancejs/integer'
+import { integer } from '@johnallentech/integer'
 
 describe('Testing geohash function', () => {
   test('geohash() looks right', () => {

@@ -1,6 +1,10 @@
-import { Generator, GeneratorOptions, validateRange } from '@chancejs/generator'
+import {
+  Generator,
+  GeneratorOptions,
+  validateRange,
+} from '@johnallentech/generator'
 import { HexOptions, IHexGenerator } from './interfaces'
-import { NaturalGenerator } from '@chancejs/natural'
+import { NaturalGenerator } from '@johnallentech/natural'
 
 export class HexGenerator extends Generator implements IHexGenerator {
   private naturalGenerator: NaturalGenerator

@@ -1,4 +1,4 @@
-import { IntegerGenerator } from '@chancejs/integer'
+import { IntegerGenerator } from '@johnallentech/integer'
 import { paragraph } from './paragraph'
 
 describe('Testing Text Paragraph', () => {

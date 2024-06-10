@@ -1,4 +1,4 @@
-import { Generator } from '@chancejs/generator'
+import { Generator } from '@johnallentech/generator'
 import { BooleanLiklihoodRangeException } from './exceptions'
 import { BooleanOptions, IBooleanGenerator } from './interfaces'
 

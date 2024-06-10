@@ -1,6 +1,6 @@
 {
-  "name": "@chancejs/animal",
-  "version": "1.0.0",
+  "name": "@johnallentech/animal",
+  "version": "1.0.2",
   "description": "gives a random &#x27;animal&#x27; based on what you specify",
   "homepage": "https://chancejs.com/",
   "author": "Victor Quinn <mail@victorquinn.com>",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chancejs/chancejs.git"
+    "url": "git+https://github.com/JohnAllenTech/chancejs.git"
   },
   "license": "MIT",
   "bugs": {
@@ -35,5 +35,13 @@
     "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
-  }
+  },
+  "dependencies": {
+    "@johnallentech/generator": "1.0.2",
+    "@johnallentech/pick": "1.0.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "types": "./lib/cjs/index.d.ts"
 }

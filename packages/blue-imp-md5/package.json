@@ -1,5 +1,5 @@
 {
-  "name": "@chancejs/blue-imp-md5",
+  "name": "@johnallentech/blue-imp-md5",
   "version": "1.0.0",
   "description": "The Blue Imp MD5 implementation for Chance.js.",
   "homepage": "http://chancejs.com",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chancejs/chancejs.git"
+    "url": "git+https://github.com/JohnAllenTech/chancejs.git"
   },
   "license": "MIT",
   "bugs": {

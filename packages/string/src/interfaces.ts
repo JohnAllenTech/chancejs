@@ -1,4 +1,4 @@
-import { CharacterOptions } from '@chancejs/character'
+import { CharacterOptions } from '@johnallentech/character'
 
 export interface StringOptions extends CharacterOptions {
   /**

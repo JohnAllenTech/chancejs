@@ -1,6 +1,6 @@
 import { birthday } from './birthday'
 import { ageRanges } from '../age/constants'
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 
 const age = (dt: Readonly<Date>) => {
   // - uses the format returned by ymd, instead of Date -- improves speed between 30% and 60%

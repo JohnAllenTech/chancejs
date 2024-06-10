@@ -1,4 +1,4 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { iban } from './iban'
 
 describe('Testing Finance Iban function', () => {

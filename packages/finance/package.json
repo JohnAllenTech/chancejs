@@ -1,5 +1,5 @@
 {
-  "name": "@chancejs/finance",
+  "name": "@johnallentech/finance",
   "version": "1.0.0",
   "description": "provides finance related randomness",
   "homepage": "https://chancejs.com/",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chancejs/chancejs.git"
+    "url": "git+https://github.com/JohnAllenTech/chancejs.git"
   },
   "license": "MIT",
   "bugs": {
@@ -35,5 +35,14 @@
     "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "@johnallentech/floating": "1.0.0",
+    "@johnallentech/generator": "1.0.2",
+    "@johnallentech/natural": "1.0.0",
+    "@johnallentech/pick": "1.0.0",
+    "@johnallentech/string": "1.0.0",
+    "@johnallentech/time": "1.0.0",
+    "@johnallentech/utils": "1.0.0"
   }
 }

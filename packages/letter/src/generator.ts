@@ -1,5 +1,5 @@
-import { Generator, GeneratorOptions } from '@chancejs/generator'
-import { CharacterGenerator, LETTERS } from '@chancejs/character'
+import { Generator, GeneratorOptions } from '@johnallentech/generator'
+import { CharacterGenerator, LETTERS } from '@johnallentech/character'
 import { LetterOptions, ILetterGenerator } from './interfaces'
 
 export class LetterGenerator extends Generator implements ILetterGenerator {

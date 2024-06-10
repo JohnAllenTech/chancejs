@@ -1,5 +1,5 @@
-import { CharacterGenerator } from '@chancejs/character'
-import { Generator, GeneratorOptions } from '@chancejs/generator'
+import { CharacterGenerator } from '@johnallentech/character'
+import { Generator, GeneratorOptions } from '@johnallentech/generator'
 import { ITemplateGenerator } from './interfaces'
 import { CopyToken, EscapeToken, ReplaceToken } from './tokens'
 import { IToken } from './tokens/interface'

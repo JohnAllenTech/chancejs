@@ -1,5 +1,5 @@
 {
-  "name": "@chancejs/mobile",
+  "name": "@johnallentech/mobile",
   "version": "1.0.0",
   "description": "returns mobile/cell phone related randomness",
   "homepage": "https://chancejs.com/",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chancejs/chancejs.git"
+    "url": "git+https://github.com/JohnAllenTech/chancejs.git"
   },
   "license": "MIT",
   "bugs": {

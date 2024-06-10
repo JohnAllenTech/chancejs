@@ -1,5 +1,5 @@
-import { Generator, GeneratorOptions } from '@chancejs/generator'
-import { IntegerGenerator } from '@chancejs/integer'
+import { Generator, GeneratorOptions } from '@johnallentech/generator'
+import { IntegerGenerator } from '@johnallentech/integer'
 import { FloatingOptionsException } from './exceptions'
 import { FloatingOptions, IFloatingGenerator } from './interfaces'
 

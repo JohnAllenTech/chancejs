@@ -1,10 +1,11 @@
-import { Generator, GeneratorOptions, n } from '@chancejs/generator'
-import { Picker } from '@chancejs/pick'
+import { Generator, GeneratorOptions, n } from '@johnallentech/generator'
+import { Picker } from '@johnallentech/pick'
 import { IFinance, FinanceOptions } from './interfaces'
-import { FloatingGenerator } from '@chancejs/floating'
-import { StringGenerator } from '@chancejs/string'
-import { Utils } from '@chancejs/utils'
-import { Time } from '@chancejs/time'
+import { FloatingGenerator } from '@johnallentech/floating'
+import { StringGenerator } from '@johnallentech/string'
+import { Utils } from '@johnallentech/utils'
+import { Time } from '@johnallentech/time'
+import { NaturalGenerator } from '@johnallentech/natural'
 
 import { CCTypeReturnType, CcTypeOptions, cc_types } from './cc_type'
 import { CcOptions } from './cc'
@@ -15,8 +16,7 @@ import { DollarOptions } from './dollar'
 import { EuroOptions } from './euro'
 import { ExpMonthOptions } from './exp_month'
 import { ExpOptions, ExpReturnType, RawExp } from './exp'
-import { IbanOptions, alpha, alphanum } from './iban'
-import { NaturalGenerator } from '@chancejs/natural'
+import { alpha, alphanum } from './iban'
 
 export class Finance extends Generator implements IFinance {
   private picker: Picker

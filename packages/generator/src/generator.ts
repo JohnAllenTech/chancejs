@@ -1,4 +1,4 @@
-import { MersenneTwister } from '@chancejs/mersenne-twister'
+import { MersenneTwister } from '@johnallentech/mersenne-twister'
 import { GeneratorOptions, RandomNumberGeneratorFunction } from './interfaces'
 
 export abstract class Generator {

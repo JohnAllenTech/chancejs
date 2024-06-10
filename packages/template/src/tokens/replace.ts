@@ -3,7 +3,7 @@ import {
   LETTERS,
   LETTERS_UPPERCASE,
   NUMBERS,
-} from '@chancejs/character'
+} from '@johnallentech/character'
 import {
   InvalidReplacementCharacterException,
   TokenCharacterException,

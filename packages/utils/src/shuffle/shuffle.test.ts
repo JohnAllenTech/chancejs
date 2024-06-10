@@ -1,4 +1,4 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { shuffle } from './shuffle'
 
 describe('Testing Shuffle function', () => {

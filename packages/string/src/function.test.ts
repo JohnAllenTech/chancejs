@@ -1,6 +1,6 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { string } from './function'
-import { natural } from '@chancejs/natural'
+import { natural } from '@johnallentech/natural'
 
 describe('string function', () => {
   it('works as expected', () => {

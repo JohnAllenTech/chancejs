@@ -1,4 +1,4 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { pickOne } from './pickOne'
 
 describe('pickOne function', () => {

@@ -1,6 +1,6 @@
-import { Generator, GeneratorOptions } from '@chancejs/generator'
-import { StringGenerator } from '@chancejs/string'
-import { NaturalGenerator } from '@chancejs/natural'
+import { Generator, GeneratorOptions } from '@johnallentech/generator'
+import { StringGenerator } from '@johnallentech/string'
+import { NaturalGenerator } from '@johnallentech/natural'
 
 export class Utils extends Generator {
   private string: StringGenerator

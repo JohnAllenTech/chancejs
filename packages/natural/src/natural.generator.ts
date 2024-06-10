@@ -3,8 +3,8 @@ import {
   GeneratorOptions,
   validateRange,
   Range,
-} from '@chancejs/generator'
-import { IntegerGenerator } from '@chancejs/integer'
+} from '@johnallentech/generator'
+import { IntegerGenerator } from '@johnallentech/integer'
 import {
   NaturalExcludeException,
   NaturalNumeralsRangeException,

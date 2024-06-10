@@ -1,4 +1,4 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { date } from './date'
 
 describe('Testing Time Date function', () => {

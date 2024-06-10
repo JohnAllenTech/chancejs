@@ -24,6 +24,8 @@ package-lock.json
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+.yarnrc.yml
+
 
 # Ignore build artifacts from version control
 lib

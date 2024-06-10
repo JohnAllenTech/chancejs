@@ -1,5 +1,3 @@
-import { AnimalTypes } from './interfaces'
-
 export class AnimalOptionTypeException extends TypeError {
   constructor() {
     super(

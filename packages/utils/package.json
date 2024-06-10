@@ -1,6 +1,6 @@
 {
-  "name": "@chancejs/utils",
-  "version": "1.0.0",
+  "name": "@johnallentech/utils",
+  "version": "1.0.1",
   "description": "provides utils for other chance packages",
   "homepage": "https://chancejs.com/",
   "author": "Victor Quinn <mail@victorquinn.com>",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chancejs/chancejs.git"
+    "url": "git+https://github.com/JohnAllenTech/chancejs.git"
   },
   "license": "MIT",
   "bugs": {
@@ -35,5 +35,10 @@
     "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "@johnallentech/generator": "1.0.2",
+    "@johnallentech/natural": "1.0.0",
+    "@johnallentech/string": "1.0.0"
   }
 }
