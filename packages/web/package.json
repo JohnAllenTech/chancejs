@@ -1,6 +1,6 @@
 {
   "name": "@johnallentech/web",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "provides web based randomness",
   "homepage": "https://chancejs.com/",
   "author": "Victor Quinn <mail@victorquinn.com>",

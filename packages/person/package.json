@@ -1,6 +1,6 @@
 {
   "name": "@johnallentech/person",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generate a random person with Chance.js.",
   "homepage": "https://chancejs.com/",
   "author": "Victor Quinn <mail@victorquinn.com>",
@@ -40,6 +40,7 @@
     "@johnallentech/generator": "1.0.2",
     "@johnallentech/natural": "1.0.0",
     "@johnallentech/pick": "1.0.0",
-    "@johnallentech/time": "1.0.1"
+    "@johnallentech/time": "1.0.1",
+    "@johnallentech/character": "1.0.0"
   }
 }
