@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@chancejs/character": "1.0.0",
-    "@chancejs/generator": "1.0.0",
+    "@chancejs/generator": "1.0.2",
     "@chancejs/natural": "1.0.0"
   }
 }

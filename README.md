@@ -54,7 +54,7 @@ Be a part of this project! You can run the tests using the following.
 
 #### Adding new packages and or enhancing functionality of existing packages !
 
-To add a new package like @chancejs/person or @chancejs/web you can run `npm run package:create`
+To add a new package like @johnallentech/person or @johnallentech/web you can run `npm run package:create`
 
 To add functions to that (or any other) package you can run `npm run function:create`
 
@@ -66,7 +66,7 @@ This project is licensed under the [MIT License](http://en.wikipedia.org/wiki/MI
 
 Run tests for all packages with `npm run test:all `
 
-Run test for individual package with `yarn workspace @chancejs/${PACKAGE_TO_TEST} test` ie `yarn workspace @chancejs/letter test`
+Run test for individual package with `yarn workspace @johnallentech/${PACKAGE_TO_TEST} test` ie `yarn workspace @johnallentech/letter test`
 
 Proudly written in Washington, D.C. 🇺🇸
 

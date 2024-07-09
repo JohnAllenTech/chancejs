@@ -5,6 +5,7 @@ import { FloatingGenerator } from '@chancejs/floating'
 import { StringGenerator } from '@chancejs/string'
 import { Utils } from '@chancejs/utils'
 import { Time } from '@chancejs/time'
+import { NaturalGenerator } from '@chancejs/natural'
 
 import { CCTypeReturnType, CcTypeOptions, cc_types } from './cc_type'
 import { CcOptions } from './cc'
@@ -15,8 +16,7 @@ import { DollarOptions } from './dollar'
 import { EuroOptions } from './euro'
 import { ExpMonthOptions } from './exp_month'
 import { ExpOptions, ExpReturnType, RawExp } from './exp'
-import { IbanOptions, alpha, alphanum } from './iban'
-import { NaturalGenerator } from '@chancejs/natural'
+import { alpha, alphanum } from './iban'
 
 export class Finance extends Generator implements IFinance {
   private picker: Picker

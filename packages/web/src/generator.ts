@@ -1,5 +1,5 @@
 import { Generator, GeneratorOptions, n, times } from '@chancejs/generator'
-import { IWeb, WebOptions } from './interfaces'
+import { IWeb } from './interfaces'
 import { NaturalGenerator } from '@chancejs/natural'
 import { Text } from '@chancejs/text'
 import { IntegerGenerator } from '@chancejs/integer'
