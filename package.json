@@ -37,7 +37,7 @@
     "generator:create": "plop --plopfile ./scripts/create-generator/plopfile.js",
     "function:create": "plop --plopfile ./scripts/create-function/plopfile.js",
     "test:all": "yarn nx run-many -t test",
-    "build:all": "yarn nx run-many -t build",
+    "build:all": "yarn nx run-many -t build --parallel=5",
     "graph": "yarn nx graph",
     "version": "yarn changeset",
     "publish": "yarn workspaces foreach -A npm publish"
