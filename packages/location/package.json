@@ -28,12 +28,12 @@
     "url": "https://github.com/chancejs/chancejs/issues"
   },
   "devDependencies": {
-    "@types/jest": "^27.4.1",
-    "@types/node": "^18.7.2",
-    "eslint": "^8.14.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^18.19.39",
+    "eslint": "^8.57.0",
     "jest": "^27.5.1",
-    "ts-jest": "^27.1.4",
-    "ts-node": "^10.7.0",
+    "ts-jest": "^27.1.5",
+    "ts-node": "^10.9.2",
     "typescript": "^4.6.3"
   },
   "dependencies": {
@@ -45,8 +45,8 @@
     "@johnallentech/natural": "1.0.0",
     "@johnallentech/pick": "1.0.0",
     "@johnallentech/string": "1.0.0",
-    "@johnallentech/text": "1.0.0",
-    "@johnallentech/time": "1.0.0",
+    "@johnallentech/text": "1.0.1",
+    "@johnallentech/time": "1.0.1",
     "@johnallentech/utils": "1.0.0"
   }
 }
