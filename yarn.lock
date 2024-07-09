@@ -2487,6 +2487,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@johnallentech/person@workspace:packages/person"
   dependencies:
+    "@johnallentech/character": "npm:1.0.0"
     "@johnallentech/generator": "npm:1.0.2"
     "@johnallentech/natural": "npm:1.0.0"
     "@johnallentech/pick": "npm:1.0.0"
