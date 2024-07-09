@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { email } from './email'
 
 describe('Testing Web Email function', () => {

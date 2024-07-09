@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { twitter } from './twitter'
 
 describe('Testing Web Twitter function', () => {

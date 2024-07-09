@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { name } from './name'
 
 describe('Testing person name function', () => {

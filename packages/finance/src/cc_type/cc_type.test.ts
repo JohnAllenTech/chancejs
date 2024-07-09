@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { cc_type } from './cc_type'
 
 describe('cc_type() function', () => {

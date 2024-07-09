@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { port } from './port'
 
 describe('Testing Web Port function', () => {

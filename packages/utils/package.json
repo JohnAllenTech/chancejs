@@ -1,5 +1,5 @@
 {
-  "name": "@johnallentech/utils",
+  "name": "@chancejs/utils",
   "version": "1.0.1",
   "description": "provides utils for other chance packages",
   "homepage": "https://chancejs.com/",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JohnAllenTech/chancejs.git"
+    "url": "git+https://github.com/chancejs/chancejs.git"
   },
   "license": "MIT",
   "bugs": {
@@ -37,8 +37,8 @@
     "typescript": "^4.6.3"
   },
   "dependencies": {
-    "@johnallentech/generator": "1.0.2",
-    "@johnallentech/natural": "1.0.0",
-    "@johnallentech/string": "1.0.0"
+    "@chancejs/generator": "1.0.2",
+    "@chancejs/natural": "1.0.0",
+    "@chancejs/string": "1.0.0"
   }
 }

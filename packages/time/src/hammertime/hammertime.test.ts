@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { hammertime } from './hammertime'
 
 describe('Testing Time Hammertime function', () => {

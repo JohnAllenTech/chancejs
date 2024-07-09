@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { semver } from './semver'
 
 describe('Testing semver function', () => {

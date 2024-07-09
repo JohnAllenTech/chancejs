@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { street } from './street'
 import { street_suffixes } from './constants'
 

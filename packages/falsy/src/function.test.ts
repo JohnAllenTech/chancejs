@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { falsy } from './function'
 
 describe('falsy function', () => {

@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { domain } from './domain'
 
 describe('Testing Web Domain function', () => {

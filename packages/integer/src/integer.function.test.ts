@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { integer } from './integer.function'
 
 describe('integer function', () => {

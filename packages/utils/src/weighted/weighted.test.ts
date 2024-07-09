@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { weighted } from './weighted'
 
 describe('Testing Weighted Weighted function', () => {

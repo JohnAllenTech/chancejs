@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { euro } from './euro' // Ensure the correct import path
 
 describe('Testing Euro function', () => {

@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { ip } from './ip'
 
 describe('Testing Web Ip function', () => {

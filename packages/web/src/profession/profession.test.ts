@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { profession } from './profession'
 import { professions, ranks } from './constants'
 

@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { hashtag } from './hashtag' // Adjust the path as necessary
 
 describe('Testing hashtag function', () => {

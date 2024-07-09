@@ -1,6 +1,6 @@
 import { phone } from './phone'
 import { format, isValid } from './utils/phoneNumber'
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 
 describe('Testing Phone Phone function', () => {
   it('returns a string', () => {

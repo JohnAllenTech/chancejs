@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { loremPicsum } from './loremPicsum'
 
 describe('Testing loremPicsum function', () => {

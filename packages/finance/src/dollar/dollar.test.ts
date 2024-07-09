@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { dollar } from './dollar'
 
 describe('Testing Dollar Dollar function', () => {

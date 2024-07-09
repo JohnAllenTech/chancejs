@@ -1,5 +1,5 @@
-import { Generator, GeneratorOptions } from '@johnallentech/generator'
-import { IntegerGenerator } from '@johnallentech/integer'
+import { Generator, GeneratorOptions } from '@chancejs/generator'
+import { IntegerGenerator } from '@chancejs/integer'
 import {
   Falsy,
   FalsyOptions,

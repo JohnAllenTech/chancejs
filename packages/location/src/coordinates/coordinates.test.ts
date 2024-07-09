@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { coordinates } from './coordinates'
 
 describe('Testing coordinates function', () => {

@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { timezone } from './timezone'
 
 describe('Testing Time Timezone function', () => {

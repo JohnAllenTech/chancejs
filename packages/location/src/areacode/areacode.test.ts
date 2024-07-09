@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { areacode } from './areacode'
 
 describe('Testing areacode function', () => {

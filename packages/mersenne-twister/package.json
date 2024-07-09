@@ -1,5 +1,5 @@
 {
-  "name": "@johnallentech/mersenne-twister",
+  "name": "@chancejs/mersenne-twister",
   "version": "1.0.0",
   "description": "The Mersenne Twister implementation for Chance.js.",
   "homepage": "http://chancejs.com",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JohnAllenTech/chancejs.git"
+    "url": "git+https://github.com/chancejs/chancejs.git"
   },
   "license": "MIT",
   "bugs": {

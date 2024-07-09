@@ -1,5 +1,5 @@
 {
-  "name": "@johnallentech/generator",
+  "name": "@chancejs/generator",
   "version": "1.0.2",
   "description": "Pseudo-random number generator interfaces for Chance.js.",
   "homepage": "https://chancejs.com/",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JohnAllenTech/chancejs.git"
+    "url": "git+https://github.com/chancejs/chancejs.git"
   },
   "license": "MIT",
   "bugs": {
@@ -37,6 +37,6 @@
     "typescript": "^4.6.3"
   },
   "dependencies": {
-    "@johnallentech/mersenne-twister": "1.0.0"
+    "@chancejs/mersenne-twister": "1.0.0"
   }
 }

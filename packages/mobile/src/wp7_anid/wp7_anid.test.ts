@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { wp7_anid } from './wp7_anid'
 
 describe('Testing Mobile Wp7Anid function', () => {

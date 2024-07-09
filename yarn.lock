@@ -2238,12 +2238,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@johnallentech/animal@workspace:packages/animal":
+"@chancejs/animal@workspace:packages/animal":
   version: 0.0.0-use.local
-  resolution: "@johnallentech/animal@workspace:packages/animal"
+  resolution: "@chancejs/animal@workspace:packages/animal"
   dependencies:
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/pick": "npm:1.0.0"
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/pick": "npm:1.0.0"
     "@types/jest": "npm:^27.4.1"
     "@types/node": "npm:^18.7.2"
     eslint: "npm:^8.14.0"
@@ -2254,194 +2254,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@johnallentech/blue-imp-md5@npm:1.0.0, @johnallentech/blue-imp-md5@workspace:packages/blue-imp-md5":
+"@chancejs/blue-imp-md5@npm:1.0.0, @chancejs/blue-imp-md5@workspace:packages/blue-imp-md5":
   version: 0.0.0-use.local
-  resolution: "@johnallentech/blue-imp-md5@workspace:packages/blue-imp-md5"
-  dependencies:
-    "@types/jest": "npm:^27.4.1"
-    "@types/node": "npm:^18.7.2"
-    eslint: "npm:^8.14.0"
-    jest: "npm:^27.5.1"
-    ts-jest: "npm:^27.1.4"
-    ts-node: "npm:^10.7.0"
-    typescript: "npm:^4.6.3"
-  languageName: unknown
-  linkType: soft
-
-"@johnallentech/bool@npm:1.0.0, @johnallentech/bool@workspace:packages/bool":
-  version: 0.0.0-use.local
-  resolution: "@johnallentech/bool@workspace:packages/bool"
-  dependencies:
-    "@johnallentech/generator": "npm:1.0.2"
-    "@types/jest": "npm:^27.4.1"
-    "@types/node": "npm:^18.7.2"
-    eslint: "npm:^8.14.0"
-    jest: "npm:^27.5.1"
-    ts-jest: "npm:^27.1.4"
-    ts-node: "npm:^10.7.0"
-    typescript: "npm:^4.6.3"
-  languageName: unknown
-  linkType: soft
-
-"@johnallentech/character@npm:1.0.0, @johnallentech/character@workspace:packages/character":
-  version: 0.0.0-use.local
-  resolution: "@johnallentech/character@workspace:packages/character"
-  dependencies:
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/natural": "npm:1.0.0"
-    "@types/jest": "npm:^27.4.1"
-    "@types/node": "npm:^18.7.2"
-    eslint: "npm:^8.14.0"
-    jest: "npm:^27.5.1"
-    ts-jest: "npm:^27.1.4"
-    ts-node: "npm:^10.7.0"
-    typescript: "npm:^4.6.3"
-  languageName: unknown
-  linkType: soft
-
-"@johnallentech/falsy@workspace:packages/falsy":
-  version: 0.0.0-use.local
-  resolution: "@johnallentech/falsy@workspace:packages/falsy"
-  dependencies:
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/integer": "npm:1.0.0"
-    "@types/jest": "npm:^27.4.1"
-    "@types/node": "npm:^18.7.2"
-    eslint: "npm:^8.14.0"
-    jest: "npm:^27.5.1"
-    ts-jest: "npm:^27.1.4"
-    ts-node: "npm:^10.7.0"
-    typescript: "npm:^4.6.3"
-  languageName: unknown
-  linkType: soft
-
-"@johnallentech/finance@workspace:packages/finance":
-  version: 0.0.0-use.local
-  resolution: "@johnallentech/finance@workspace:packages/finance"
-  dependencies:
-    "@johnallentech/floating": "npm:1.0.0"
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/natural": "npm:1.0.0"
-    "@johnallentech/pick": "npm:1.0.0"
-    "@johnallentech/string": "npm:1.0.0"
-    "@johnallentech/time": "npm:1.0.0"
-    "@johnallentech/utils": "npm:1.0.0"
-    "@types/jest": "npm:^27.4.1"
-    "@types/node": "npm:^18.7.2"
-    eslint: "npm:^8.14.0"
-    jest: "npm:^27.5.1"
-    ts-jest: "npm:^27.1.4"
-    ts-node: "npm:^10.7.0"
-    typescript: "npm:^4.6.3"
-  languageName: unknown
-  linkType: soft
-
-"@johnallentech/floating@npm:1.0.0, @johnallentech/floating@workspace:packages/floating":
-  version: 0.0.0-use.local
-  resolution: "@johnallentech/floating@workspace:packages/floating"
-  dependencies:
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/integer": "npm:1.0.0"
-    "@types/jest": "npm:^27.4.1"
-    "@types/node": "npm:^18.7.2"
-    eslint: "npm:^8.14.0"
-    jest: "npm:^27.5.1"
-    ts-jest: "npm:^27.1.4"
-    ts-node: "npm:^10.7.0"
-    typescript: "npm:^4.6.3"
-  languageName: unknown
-  linkType: soft
-
-"@johnallentech/generator@npm:1.0.2, @johnallentech/generator@workspace:packages/generator":
-  version: 0.0.0-use.local
-  resolution: "@johnallentech/generator@workspace:packages/generator"
-  dependencies:
-    "@johnallentech/mersenne-twister": "npm:1.0.0"
-    "@types/jest": "npm:^27.4.1"
-    "@types/node": "npm:^18.7.2"
-    eslint: "npm:^8.14.0"
-    jest: "npm:^27.5.1"
-    ts-jest: "npm:^27.1.4"
-    ts-node: "npm:^10.7.0"
-    typescript: "npm:^4.6.3"
-  languageName: unknown
-  linkType: soft
-
-"@johnallentech/hex@npm:1.0.0, @johnallentech/hex@workspace:packages/hex":
-  version: 0.0.0-use.local
-  resolution: "@johnallentech/hex@workspace:packages/hex"
-  dependencies:
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/natural": "npm:1.0.0"
-    "@types/jest": "npm:^27.4.1"
-    "@types/node": "npm:^18.7.2"
-    eslint: "npm:^8.14.0"
-    jest: "npm:^27.5.1"
-    ts-jest: "npm:^27.1.4"
-    ts-node: "npm:^10.7.0"
-    typescript: "npm:^4.6.3"
-  languageName: unknown
-  linkType: soft
-
-"@johnallentech/integer@npm:1.0.0, @johnallentech/integer@workspace:packages/integer":
-  version: 0.0.0-use.local
-  resolution: "@johnallentech/integer@workspace:packages/integer"
-  dependencies:
-    "@johnallentech/generator": "npm:1.0.2"
-    "@types/jest": "npm:^27.4.1"
-    "@types/node": "npm:^18.7.2"
-    eslint: "npm:^8.14.0"
-    jest: "npm:^27.5.1"
-    ts-jest: "npm:^27.1.4"
-    ts-node: "npm:^10.7.0"
-    typescript: "npm:^4.6.3"
-  languageName: unknown
-  linkType: soft
-
-"@johnallentech/letter@workspace:packages/letter":
-  version: 0.0.0-use.local
-  resolution: "@johnallentech/letter@workspace:packages/letter"
-  dependencies:
-    "@johnallentech/character": "npm:1.0.0"
-    "@johnallentech/generator": "npm:1.0.2"
-    "@types/jest": "npm:^27.4.1"
-    "@types/node": "npm:^18.7.2"
-    eslint: "npm:^8.14.0"
-    jest: "npm:^27.5.1"
-    ts-jest: "npm:^27.1.4"
-    ts-node: "npm:^10.7.0"
-    typescript: "npm:^4.6.3"
-  languageName: unknown
-  linkType: soft
-
-"@johnallentech/location@workspace:packages/location":
-  version: 0.0.0-use.local
-  resolution: "@johnallentech/location@workspace:packages/location"
-  dependencies:
-    "@johnallentech/bool": "npm:1.0.0"
-    "@johnallentech/character": "npm:1.0.0"
-    "@johnallentech/floating": "npm:1.0.0"
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/integer": "npm:1.0.0"
-    "@johnallentech/natural": "npm:1.0.0"
-    "@johnallentech/pick": "npm:1.0.0"
-    "@johnallentech/string": "npm:1.0.0"
-    "@johnallentech/text": "npm:1.0.0"
-    "@johnallentech/time": "npm:1.0.0"
-    "@johnallentech/utils": "npm:1.0.0"
-    "@types/jest": "npm:^27.4.1"
-    "@types/node": "npm:^18.7.2"
-    eslint: "npm:^8.14.0"
-    jest: "npm:^27.5.1"
-    ts-jest: "npm:^27.1.4"
-    ts-node: "npm:^10.7.0"
-    typescript: "npm:^4.6.3"
-  languageName: unknown
-  linkType: soft
-
-"@johnallentech/mersenne-twister@npm:1.0.0, @johnallentech/mersenne-twister@workspace:packages/mersenne-twister":
-  version: 0.0.0-use.local
-  resolution: "@johnallentech/mersenne-twister@workspace:packages/mersenne-twister"
+  resolution: "@chancejs/blue-imp-md5@workspace:packages/blue-imp-md5"
   dependencies:
     "@types/jest": "npm:^27.4.1"
     "@types/node": "npm:^18.7.2"
@@ -2453,9 +2268,180 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@johnallentech/mobile@workspace:packages/mobile":
+"@chancejs/bool@npm:1.0.0, @chancejs/bool@workspace:packages/bool":
   version: 0.0.0-use.local
-  resolution: "@johnallentech/mobile@workspace:packages/mobile"
+  resolution: "@chancejs/bool@workspace:packages/bool"
+  dependencies:
+    "@chancejs/generator": "npm:1.0.2"
+    "@types/jest": "npm:^27.4.1"
+    "@types/node": "npm:^18.7.2"
+    eslint: "npm:^8.14.0"
+    jest: "npm:^27.5.1"
+    ts-jest: "npm:^27.1.4"
+    ts-node: "npm:^10.7.0"
+    typescript: "npm:^4.6.3"
+  languageName: unknown
+  linkType: soft
+
+"@chancejs/character@npm:1.0.0, @chancejs/character@workspace:packages/character":
+  version: 0.0.0-use.local
+  resolution: "@chancejs/character@workspace:packages/character"
+  dependencies:
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/natural": "npm:1.0.0"
+    "@types/jest": "npm:^27.4.1"
+    "@types/node": "npm:^18.7.2"
+    eslint: "npm:^8.14.0"
+    jest: "npm:^27.5.1"
+    ts-jest: "npm:^27.1.4"
+    ts-node: "npm:^10.7.0"
+    typescript: "npm:^4.6.3"
+  languageName: unknown
+  linkType: soft
+
+"@chancejs/falsy@workspace:packages/falsy":
+  version: 0.0.0-use.local
+  resolution: "@chancejs/falsy@workspace:packages/falsy"
+  dependencies:
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/integer": "npm:1.0.0"
+    "@types/jest": "npm:^27.4.1"
+    "@types/node": "npm:^18.7.2"
+    eslint: "npm:^8.14.0"
+    jest: "npm:^27.5.1"
+    ts-jest: "npm:^27.1.4"
+    ts-node: "npm:^10.7.0"
+    typescript: "npm:^4.6.3"
+  languageName: unknown
+  linkType: soft
+
+"@chancejs/finance@workspace:packages/finance":
+  version: 0.0.0-use.local
+  resolution: "@chancejs/finance@workspace:packages/finance"
+  dependencies:
+    "@chancejs/floating": "npm:1.0.0"
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/natural": "npm:1.0.0"
+    "@chancejs/pick": "npm:1.0.0"
+    "@chancejs/string": "npm:1.0.0"
+    "@chancejs/time": "npm:1.0.0"
+    "@chancejs/utils": "npm:1.0.0"
+    "@types/jest": "npm:^27.4.1"
+    "@types/node": "npm:^18.7.2"
+    eslint: "npm:^8.14.0"
+    jest: "npm:^27.5.1"
+    ts-jest: "npm:^27.1.4"
+    ts-node: "npm:^10.7.0"
+    typescript: "npm:^4.6.3"
+  languageName: unknown
+  linkType: soft
+
+"@chancejs/floating@npm:1.0.0, @chancejs/floating@workspace:packages/floating":
+  version: 0.0.0-use.local
+  resolution: "@chancejs/floating@workspace:packages/floating"
+  dependencies:
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/integer": "npm:1.0.0"
+    "@types/jest": "npm:^27.4.1"
+    "@types/node": "npm:^18.7.2"
+    eslint: "npm:^8.14.0"
+    jest: "npm:^27.5.1"
+    ts-jest: "npm:^27.1.4"
+    ts-node: "npm:^10.7.0"
+    typescript: "npm:^4.6.3"
+  languageName: unknown
+  linkType: soft
+
+"@chancejs/generator@npm:1.0.2, @chancejs/generator@workspace:packages/generator":
+  version: 0.0.0-use.local
+  resolution: "@chancejs/generator@workspace:packages/generator"
+  dependencies:
+    "@chancejs/mersenne-twister": "npm:1.0.0"
+    "@types/jest": "npm:^27.4.1"
+    "@types/node": "npm:^18.7.2"
+    eslint: "npm:^8.14.0"
+    jest: "npm:^27.5.1"
+    ts-jest: "npm:^27.1.4"
+    ts-node: "npm:^10.7.0"
+    typescript: "npm:^4.6.3"
+  languageName: unknown
+  linkType: soft
+
+"@chancejs/hex@npm:1.0.0, @chancejs/hex@workspace:packages/hex":
+  version: 0.0.0-use.local
+  resolution: "@chancejs/hex@workspace:packages/hex"
+  dependencies:
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/natural": "npm:1.0.0"
+    "@types/jest": "npm:^27.4.1"
+    "@types/node": "npm:^18.7.2"
+    eslint: "npm:^8.14.0"
+    jest: "npm:^27.5.1"
+    ts-jest: "npm:^27.1.4"
+    ts-node: "npm:^10.7.0"
+    typescript: "npm:^4.6.3"
+  languageName: unknown
+  linkType: soft
+
+"@chancejs/integer@npm:1.0.0, @chancejs/integer@workspace:packages/integer":
+  version: 0.0.0-use.local
+  resolution: "@chancejs/integer@workspace:packages/integer"
+  dependencies:
+    "@chancejs/generator": "npm:1.0.2"
+    "@types/jest": "npm:^27.4.1"
+    "@types/node": "npm:^18.7.2"
+    eslint: "npm:^8.14.0"
+    jest: "npm:^27.5.1"
+    ts-jest: "npm:^27.1.4"
+    ts-node: "npm:^10.7.0"
+    typescript: "npm:^4.6.3"
+  languageName: unknown
+  linkType: soft
+
+"@chancejs/letter@workspace:packages/letter":
+  version: 0.0.0-use.local
+  resolution: "@chancejs/letter@workspace:packages/letter"
+  dependencies:
+    "@chancejs/character": "npm:1.0.0"
+    "@chancejs/generator": "npm:1.0.2"
+    "@types/jest": "npm:^27.4.1"
+    "@types/node": "npm:^18.7.2"
+    eslint: "npm:^8.14.0"
+    jest: "npm:^27.5.1"
+    ts-jest: "npm:^27.1.4"
+    ts-node: "npm:^10.7.0"
+    typescript: "npm:^4.6.3"
+  languageName: unknown
+  linkType: soft
+
+"@chancejs/location@workspace:packages/location":
+  version: 0.0.0-use.local
+  resolution: "@chancejs/location@workspace:packages/location"
+  dependencies:
+    "@chancejs/bool": "npm:1.0.0"
+    "@chancejs/character": "npm:1.0.0"
+    "@chancejs/floating": "npm:1.0.0"
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/integer": "npm:1.0.0"
+    "@chancejs/natural": "npm:1.0.0"
+    "@chancejs/pick": "npm:1.0.0"
+    "@chancejs/string": "npm:1.0.0"
+    "@chancejs/text": "npm:1.0.0"
+    "@chancejs/time": "npm:1.0.0"
+    "@chancejs/utils": "npm:1.0.0"
+    "@types/jest": "npm:^27.4.1"
+    "@types/node": "npm:^18.7.2"
+    eslint: "npm:^8.14.0"
+    jest: "npm:^27.5.1"
+    ts-jest: "npm:^27.1.4"
+    ts-node: "npm:^10.7.0"
+    typescript: "npm:^4.6.3"
+  languageName: unknown
+  linkType: soft
+
+"@chancejs/mersenne-twister@npm:1.0.0, @chancejs/mersenne-twister@workspace:packages/mersenne-twister":
+  version: 0.0.0-use.local
+  resolution: "@chancejs/mersenne-twister@workspace:packages/mersenne-twister"
   dependencies:
     "@types/jest": "npm:^27.4.1"
     "@types/node": "npm:^18.7.2"
@@ -2467,12 +2453,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@johnallentech/natural@npm:1.0.0, @johnallentech/natural@workspace:packages/natural":
+"@chancejs/mobile@workspace:packages/mobile":
   version: 0.0.0-use.local
-  resolution: "@johnallentech/natural@workspace:packages/natural"
+  resolution: "@chancejs/mobile@workspace:packages/mobile"
   dependencies:
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/integer": "npm:1.0.0"
     "@types/jest": "npm:^27.4.1"
     "@types/node": "npm:^18.7.2"
     eslint: "npm:^8.14.0"
@@ -2483,15 +2467,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@johnallentech/person@workspace:packages/person":
+"@chancejs/natural@npm:1.0.0, @chancejs/natural@workspace:packages/natural":
   version: 0.0.0-use.local
-  resolution: "@johnallentech/person@workspace:packages/person"
+  resolution: "@chancejs/natural@workspace:packages/natural"
   dependencies:
-    "@johnallentech/character": "npm:1.0.0"
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/natural": "npm:1.0.0"
-    "@johnallentech/pick": "npm:1.0.0"
-    "@johnallentech/time": "npm:1.0.1"
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/integer": "npm:1.0.0"
     "@types/jest": "npm:^27.4.1"
     "@types/node": "npm:^18.7.2"
     eslint: "npm:^8.14.0"
@@ -2502,12 +2483,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@johnallentech/pick@npm:1.0.0, @johnallentech/pick@workspace:packages/pick":
+"@chancejs/person@workspace:packages/person":
   version: 0.0.0-use.local
-  resolution: "@johnallentech/pick@workspace:packages/pick"
+  resolution: "@chancejs/person@workspace:packages/person"
   dependencies:
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/natural": "npm:1.0.0"
+    "@chancejs/character": "npm:1.0.0"
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/natural": "npm:1.0.0"
+    "@chancejs/pick": "npm:1.0.0"
+    "@chancejs/time": "npm:1.0.1"
     "@types/jest": "npm:^27.4.1"
     "@types/node": "npm:^18.7.2"
     eslint: "npm:^8.14.0"
@@ -2518,12 +2502,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@johnallentech/prime@workspace:packages/prime":
+"@chancejs/pick@npm:1.0.0, @chancejs/pick@workspace:packages/pick":
   version: 0.0.0-use.local
-  resolution: "@johnallentech/prime@workspace:packages/prime"
+  resolution: "@chancejs/pick@workspace:packages/pick"
   dependencies:
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/pick": "npm:1.0.0"
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/natural": "npm:1.0.0"
     "@types/jest": "npm:^27.4.1"
     "@types/node": "npm:^18.7.2"
     eslint: "npm:^8.14.0"
@@ -2534,13 +2518,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@johnallentech/string@npm:1.0.0, @johnallentech/string@workspace:packages/string":
+"@chancejs/prime@workspace:packages/prime":
   version: 0.0.0-use.local
-  resolution: "@johnallentech/string@workspace:packages/string"
+  resolution: "@chancejs/prime@workspace:packages/prime"
   dependencies:
-    "@johnallentech/character": "npm:1.0.0"
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/natural": "npm:1.0.0"
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/pick": "npm:1.0.0"
     "@types/jest": "npm:^27.4.1"
     "@types/node": "npm:^18.7.2"
     eslint: "npm:^8.14.0"
@@ -2551,12 +2534,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@johnallentech/template@workspace:packages/template":
+"@chancejs/string@npm:1.0.0, @chancejs/string@workspace:packages/string":
   version: 0.0.0-use.local
-  resolution: "@johnallentech/template@workspace:packages/template"
+  resolution: "@chancejs/string@workspace:packages/string"
   dependencies:
-    "@johnallentech/character": "npm:1.0.0"
-    "@johnallentech/generator": "npm:1.0.2"
+    "@chancejs/character": "npm:1.0.0"
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/natural": "npm:1.0.0"
     "@types/jest": "npm:^27.4.1"
     "@types/node": "npm:^18.7.2"
     eslint: "npm:^8.14.0"
@@ -2567,22 +2551,38 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@johnallentech/text@npm:1.0.0":
+"@chancejs/template@workspace:packages/template":
+  version: 0.0.0-use.local
+  resolution: "@chancejs/template@workspace:packages/template"
+  dependencies:
+    "@chancejs/character": "npm:1.0.0"
+    "@chancejs/generator": "npm:1.0.2"
+    "@types/jest": "npm:^27.4.1"
+    "@types/node": "npm:^18.7.2"
+    eslint: "npm:^8.14.0"
+    jest: "npm:^27.5.1"
+    ts-jest: "npm:^27.1.4"
+    ts-node: "npm:^10.7.0"
+    typescript: "npm:^4.6.3"
+  languageName: unknown
+  linkType: soft
+
+"@chancejs/text@npm:1.0.0":
   version: 1.0.0
-  resolution: "@johnallentech/text@npm:1.0.0"
+  resolution: "@chancejs/text@npm:1.0.0"
   dependencies:
-    "@johnallentech/generator": "npm:1.0.2"
+    "@chancejs/generator": "npm:1.0.2"
   checksum: 10/caff262282d4be21616061fbf631a1d55f0162613d5c08d76e68959937b09b53fd73b83b89f268a74235a3a06f769712e4461fc6f8a66ca71f4d08792d96ca22
   languageName: node
   linkType: hard
 
-"@johnallentech/text@workspace:packages/text":
+"@chancejs/text@workspace:packages/text":
   version: 0.0.0-use.local
-  resolution: "@johnallentech/text@workspace:packages/text"
+  resolution: "@chancejs/text@workspace:packages/text"
   dependencies:
-    "@johnallentech/character": "npm:1.0.0"
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/natural": "npm:1.0.0"
+    "@chancejs/character": "npm:1.0.0"
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/natural": "npm:1.0.0"
     "@types/jest": "npm:^27.4.1"
     "@types/node": "npm:^18.7.2"
     eslint: "npm:^8.14.0"
@@ -2593,24 +2593,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@johnallentech/time@npm:1.0.0":
+"@chancejs/time@npm:1.0.0":
   version: 1.0.0
-  resolution: "@johnallentech/time@npm:1.0.0"
+  resolution: "@chancejs/time@npm:1.0.0"
   dependencies:
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/integer": "npm:1.0.0"
-    "@johnallentech/natural": "npm:1.0.0"
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/integer": "npm:1.0.0"
+    "@chancejs/natural": "npm:1.0.0"
   checksum: 10/76343bef54d1f37a87a0eabf141162260ad4020f38518fefe766ae668e75ef8040e97afc8efb76541154d2f9174eb12db62b8e7f6d5b2d74666962ed1d02b197
   languageName: node
   linkType: hard
 
-"@johnallentech/time@npm:1.0.1, @johnallentech/time@workspace:packages/time":
+"@chancejs/time@npm:1.0.1, @chancejs/time@workspace:packages/time":
   version: 0.0.0-use.local
-  resolution: "@johnallentech/time@workspace:packages/time"
+  resolution: "@chancejs/time@workspace:packages/time"
   dependencies:
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/integer": "npm:1.0.0"
-    "@johnallentech/natural": "npm:1.0.0"
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/integer": "npm:1.0.0"
+    "@chancejs/natural": "npm:1.0.0"
     "@types/jest": "npm:^27.4.1"
     "@types/node": "npm:^18.7.2"
     eslint: "npm:^8.14.0"
@@ -2621,20 +2621,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@johnallentech/utils@npm:1.0.0":
+"@chancejs/utils@npm:1.0.0":
   version: 1.0.0
-  resolution: "@johnallentech/utils@npm:1.0.0"
+  resolution: "@chancejs/utils@npm:1.0.0"
   checksum: 10/6a948c9b4893d14d89761f29a33bea9dc8c9a4b9da6c46bf3e467c4a4d3a89d5ec93e030062cf9b5934599643727d1b510e0d122b7ddfc92d5e0fd3935ee49e1
   languageName: node
   linkType: hard
 
-"@johnallentech/utils@workspace:packages/utils":
+"@chancejs/utils@workspace:packages/utils":
   version: 0.0.0-use.local
-  resolution: "@johnallentech/utils@workspace:packages/utils"
+  resolution: "@chancejs/utils@workspace:packages/utils"
   dependencies:
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/natural": "npm:1.0.0"
-    "@johnallentech/string": "npm:1.0.0"
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/natural": "npm:1.0.0"
+    "@chancejs/string": "npm:1.0.0"
     "@types/jest": "npm:^27.4.1"
     "@types/node": "npm:^18.7.2"
     eslint: "npm:^8.14.0"
@@ -2645,20 +2645,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@johnallentech/web@workspace:packages/web":
+"@chancejs/web@workspace:packages/web":
   version: 0.0.0-use.local
-  resolution: "@johnallentech/web@workspace:packages/web"
+  resolution: "@chancejs/web@workspace:packages/web"
   dependencies:
-    "@johnallentech/blue-imp-md5": "npm:1.0.0"
-    "@johnallentech/floating": "npm:1.0.0"
-    "@johnallentech/generator": "npm:1.0.2"
-    "@johnallentech/hex": "npm:1.0.0"
-    "@johnallentech/integer": "npm:1.0.0"
-    "@johnallentech/natural": "npm:1.0.0"
-    "@johnallentech/pick": "npm:1.0.0"
-    "@johnallentech/text": "npm:1.0.0"
-    "@johnallentech/time": "npm:1.0.1"
-    "@johnallentech/utils": "npm:1.0.0"
+    "@chancejs/blue-imp-md5": "npm:1.0.0"
+    "@chancejs/floating": "npm:1.0.0"
+    "@chancejs/generator": "npm:1.0.2"
+    "@chancejs/hex": "npm:1.0.0"
+    "@chancejs/integer": "npm:1.0.0"
+    "@chancejs/natural": "npm:1.0.0"
+    "@chancejs/pick": "npm:1.0.0"
+    "@chancejs/text": "npm:1.0.0"
+    "@chancejs/time": "npm:1.0.1"
+    "@chancejs/utils": "npm:1.0.0"
     "@types/jest": "npm:^27.4.1"
     "@types/node": "npm:^18.7.2"
     eslint: "npm:^8.14.0"

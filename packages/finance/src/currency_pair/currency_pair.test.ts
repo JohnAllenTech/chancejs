@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { currency_pair } from './currency_pair'
 
 describe('Testing CurrencyPair CurrencyPair function', () => {

@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { avatar } from './avatar' // Adjust the path as necessary
 import { email } from '../email'
 

@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { ipv6 } from './ipv6'
 
 describe('Testing Web Ipv6 function', () => {

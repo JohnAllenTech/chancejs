@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { tld } from './tld'
 import { tlds } from './constants'
 

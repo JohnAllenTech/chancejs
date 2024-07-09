@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { locale } from './locale'
 import { locale_languages, locale_regions } from './constants'
 

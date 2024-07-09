@@ -1,4 +1,4 @@
-import { times } from '@johnallentech/generator'
+import { times } from '@chancejs/generator'
 import { bb_pin } from './bb_pin'
 
 describe('Testing BbPin BbPin function', () => {

@@ -1,11 +1,7 @@
-import {
-  Generator,
-  GeneratorOptions,
-  capitalize,
-} from '@johnallentech/generator'
+import { Generator, GeneratorOptions, capitalize } from '@chancejs/generator'
 import { IText } from './interfaces'
-import { NaturalGenerator } from '@johnallentech/natural'
-import { CharacterGenerator } from '@johnallentech/character'
+import { NaturalGenerator } from '@chancejs/natural'
+import { CharacterGenerator } from '@chancejs/character'
 import { WordOptions } from './word/interfaces'
 import { SentenceOptions } from './sentence/interfaces'
 import { ParagraphOptions } from './paragraph/interfaces'
