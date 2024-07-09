@@ -12,7 +12,7 @@ $ yarn run generator:create
 
 This should generate a new package in the `/packages` directory with all of the necessary files to start with.
 
-Next, you write your generator function body and tests. Once, your code is merged in, your generator will be published as a separate npm package in the `@chancejs` namespace.
+Next, you write your generator function body and tests. Once, your code is merged in, your generator will be published as a separate npm package in the `@johnallentech` namespace.
 
 ## Adding generator methods to the Chance class
 
@@ -21,7 +21,7 @@ You can also add your generator to the `Chance` class as a method.
 Once you write your generator code and tests, you can install the package locally:
 
 ```sh
-$ yarn workspace @chancejs/chance add @chancejs/YOUR_GENERATOR@1.0.0
+$ yarn workspace @johnallentech/chance add @johnallentech/YOUR_GENERATOR@1.0.0
 ```
 
 Then you can generate the boilerplate code to add the generator as a method:

@@ -1,4 +1,4 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { apple_token } from './apple_token'
 
 describe('Testing Mobile AppleToken function', () => {

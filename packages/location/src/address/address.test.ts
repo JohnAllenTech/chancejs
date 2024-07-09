@@ -1,4 +1,4 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { address } from './address'
 
 describe('Testing location address function', () => {

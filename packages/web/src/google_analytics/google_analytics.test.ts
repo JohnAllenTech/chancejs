@@ -1,4 +1,4 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { google_analytics } from './google_analytics' // Adjust the path as necessary
 
 describe('Testing google_analytics function', () => {

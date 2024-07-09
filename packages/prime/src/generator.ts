@@ -1,7 +1,11 @@
-import { Generator, GeneratorOptions, validateRange } from '@chancejs/generator'
+import {
+  Generator,
+  GeneratorOptions,
+  validateRange,
+} from '@johnallentech/generator'
 import { PrimeOptions, IPrimeGenerator } from './interfaces'
 import { primes } from './data'
-import { Picker } from '@chancejs/pick'
+import { Picker } from '@johnallentech/pick'
 
 export class PrimeGenerator extends Generator implements IPrimeGenerator {
   private picker: Picker

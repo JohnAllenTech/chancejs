@@ -1,8 +1,8 @@
-import { Generator, GeneratorOptions } from '@chancejs/generator'
+import { Generator, GeneratorOptions } from '@johnallentech/generator'
 import { ITime, TimeOptions } from './interfaces'
-import { NaturalGenerator } from '@chancejs/natural'
-import { IntegerGenerator } from '@chancejs/integer'
-import { Picker } from '@chancejs/pick'
+import { NaturalGenerator } from '@johnallentech/natural'
+import { IntegerGenerator } from '@johnallentech/integer'
+import { Picker } from '@johnallentech/pick'
 
 import { DateOptions, DateReturnType } from './date/interfaces'
 import { months } from './month/constants'

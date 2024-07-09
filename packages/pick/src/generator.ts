@@ -1,5 +1,5 @@
-import { Generator, GeneratorOptions, times } from '@chancejs/generator'
-import { NaturalGenerator } from '@chancejs/natural'
+import { Generator, GeneratorOptions, times } from '@johnallentech/generator'
+import { NaturalGenerator } from '@johnallentech/natural'
 import { IPicker } from './interfaces'
 
 export class Picker extends Generator implements IPicker {

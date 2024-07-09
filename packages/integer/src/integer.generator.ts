@@ -1,4 +1,4 @@
-import { Generator, validateRange } from '@chancejs/generator'
+import { Generator, validateRange } from '@johnallentech/generator'
 import { IIntegerGenerator, IntegerOptions } from './interfaces'
 
 export class IntegerGenerator extends Generator implements IIntegerGenerator {

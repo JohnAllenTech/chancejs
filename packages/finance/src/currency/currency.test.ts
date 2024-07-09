@@ -1,4 +1,4 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { currencies } from './constants'
 import { currency } from './currency'
 

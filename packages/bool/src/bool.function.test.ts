@@ -1,4 +1,4 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { bool } from './bool.function'
 import { BooleanLiklihoodRangeException } from './exceptions'
 

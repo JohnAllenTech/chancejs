@@ -1,5 +1,5 @@
-import { Generator, GeneratorOptions } from '@chancejs/generator'
-import { NaturalGenerator } from '@chancejs/natural'
+import { Generator, GeneratorOptions } from '@johnallentech/generator'
+import { NaturalGenerator } from '@johnallentech/natural'
 import { LETTERS, LETTERS_UPPERCASE, NUMBERS, SYMBOLS } from './constants'
 import { CharacterOptions, ICharacterGenerator } from './interfaces'
 

@@ -1,8 +1,8 @@
-import { Generator } from '@chancejs/generator'
+import { Generator } from '@johnallentech/generator'
 import { AnimalOptionTypeException } from './exceptions'
 import { AnimalOptions, AnimalTypes, IAnimalGenerator } from './interfaces'
 import { animals } from './constants'
-import { pickOne } from '@chancejs/pick'
+import { pickOne } from '@johnallentech/pick'
 
 export class AnimalGenerator extends Generator implements IAnimalGenerator {
   animal(options?: AnimalOptions): string {

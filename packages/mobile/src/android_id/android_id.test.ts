@@ -1,4 +1,4 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { android_id } from './android_id'
 
 describe('android_id', () => {

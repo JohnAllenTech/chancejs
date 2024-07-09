@@ -1,4 +1,4 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { zip } from './zip'
 
 describe('Testing zip function', () => {

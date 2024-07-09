@@ -1,4 +1,4 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { wp8_anid2 } from './wp8_anid2'
 
 describe('Testing Wp8Anid2 Wp8Anid2 function', () => {

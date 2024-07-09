@@ -1,12 +1,17 @@
-import { Generator, GeneratorOptions, n, capitalize } from '@chancejs/generator'
-import { string } from '@chancejs/string'
-import { IntegerGenerator } from '@chancejs/integer'
-import { CharacterGenerator } from '@chancejs/character'
-import { bool } from '@chancejs/bool'
-import { Picker } from '@chancejs/pick'
-import { NaturalGenerator } from '@chancejs/natural'
-import { floating } from '@chancejs/floating'
-import { Text } from '@chancejs/text'
+import {
+  Generator,
+  GeneratorOptions,
+  n,
+  capitalize,
+} from '@johnallentech/generator'
+import { string } from '@johnallentech/string'
+import { IntegerGenerator } from '@johnallentech/integer'
+import { CharacterGenerator } from '@johnallentech/character'
+import { bool } from '@johnallentech/bool'
+import { Picker } from '@johnallentech/pick'
+import { NaturalGenerator } from '@johnallentech/natural'
+import { floating } from '@johnallentech/floating'
+import { Text } from '@johnallentech/text'
 
 import { AddressOptions } from './address'
 import { AltitudeOptions } from './altitude'

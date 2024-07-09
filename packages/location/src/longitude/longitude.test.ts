@@ -1,4 +1,4 @@
-import { floating } from '@chancejs/floating'
+import { floating } from '@johnallentech/floating'
 import { longitude } from './longitude'
 
 describe('Testing longitude function', () => {

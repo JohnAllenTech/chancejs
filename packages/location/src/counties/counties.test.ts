@@ -1,4 +1,4 @@
-import { times } from '@chancejs/generator'
+import { times } from '@johnallentech/generator'
 import { counties } from './counties'
 
 describe('Testing counties function', () => {
